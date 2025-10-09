@@ -1,0 +1,536 @@
+% This is the Reed College LaTeX thesis template. Most of the work
+% for the document class was done by Sam Noble (SN), as well as this
+% template. Later comments etc. by Ben Salzberg (BTS). Additional
+% restructuring and APA support by Jess Youngberg (JY).
+% Your comments and suggestions are more than welcome; please email
+% them to cus@reed.edu
+%
+% See https://www.reed.edu/cis/help/LaTeX/index.html for help. There are a
+% great bunch of help pages there, with notes on
+% getting started, bibtex, etc. Go there and read it if you're not
+% already familiar with LaTeX.
+%
+% Any line that starts with a percent symbol is a comment.
+% They won't show up in the document, and are useful for notes
+% to yourself and explaining commands.
+% Commenting also removes a line from the document;
+% very handy for troubleshooting problems. -BTS
+
+% As far as I know, this follows the requirements laid out in
+% the 2002-2003 Senior Handbook. Ask a librarian to check the
+% document before binding. -SN
+
+%%
+%% Preamble
+%%
+% \documentclass{<something>} must begin each LaTeX document
+\documentclass[12pt,twoside]{reedthesis}
+% Packages are extensions to the basic LaTeX functions. Whatever you
+% want to typeset, there is probably a package out there for it.
+% Chemistry (chemtex), screenplays, you name it.
+% Check out CTAN to see: https://www.ctan.org/
+%%
+\usepackage{graphicx,latexsym}
+\usepackage{amsmath}
+\usepackage{amssymb,amsthm}
+\usepackage{longtable,booktabs,setspace}
+\usepackage{chemarr} %% Useful for one reaction arrow, useless if you're not a chem major
+\usepackage[hyphens]{url}
+% Added by CII
+\usepackage{hyperref}
+\usepackage{lmodern}
+\usepackage{float}
+\floatplacement{figure}{H}
+% Thanks, @Xyv
+\usepackage{calc}
+% End of CII addition
+\usepackage{rotating}
+
+% Next line commented out by CII
+%%% \usepackage{natbib}
+% Comment out the natbib line above and uncomment the following two lines to use the new
+% biblatex-chicago style, for Chicago A. Also make some changes at the end where the
+% bibliography is included.
+%\usepackage{biblatex-chicago}
+%\bibliography{thesis}
+
+
+% Added by CII (Thanks, Hadley!)
+% Use ref for internal links
+\renewcommand{\hyperref}[2][???]{\autoref{#1}}
+\def\chapterautorefname{Chapter}
+\def\sectionautorefname{Section}
+\def\subsectionautorefname{Subsection}
+% End of CII addition
+
+% Added by CII
+\usepackage{caption}
+\captionsetup{width=5in}
+% End of CII addition
+
+% \usepackage{times} % other fonts are available like times, bookman, charter, palatino
+
+% Syntax highlighting #22
+
+% To pass between YAML and LaTeX the dollar signs are added by CII
+\title{A Comparison of Orthologous Proteins in Homotypic Vacuole Fusion}
+\author{Aden J. O'Brien}
+% The month and year that you submit your FINAL draft TO THE LIBRARY (May or December)
+\date{May 2025}
+\division{Mathematics and Natural Sciences}
+\advisor{Anna Ritz}
+\institution{Reed College}
+\degree{Bachelor of Arts}
+%If you have two advisors for some reason, you can use the following
+% Uncommented out by CII
+
+%This still causes errors ????-------------------------------------------------------
+% %------------------------------------------------------------------------------------
+
+% End of CII addition
+
+%%% Remember to use the correct department!
+\department{Biology}
+% if you're writing a thesis in an interdisciplinary major,
+% uncomment the line below and change the text as appropriate.
+% check the Senior Handbook if unsure.
+%\thedivisionof{The Established Interdisciplinary Committee for}
+% if you want the approval page to say "Approved for the Committee",
+% uncomment the next line
+%\approvedforthe{Committee}
+
+% Added by CII
+%%% Copied from knitr
+%% maxwidth is the original width if it's less than linewidth
+%% otherwise use linewidth (to make sure the graphics do not exceed the margin)
+\makeatletter
+\def\maxwidth{ %
+  \ifdim\Gin@nat@width>\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+\makeatother
+
+% From {rticles}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+% pandoc bounded issue update
+\makeatletter
+\@ifundefined{pandocbounded}{\newcommand{\pandocbounded}[1]{#1}}{}
+\makeatother
+% CSL issue update
+% Make the CSLReferences environment behave like a bibliography so \bibitem is valid
+\makeatletter
+\newenvironment{CSLReferences}[2]{%
+  \begin{thebibliography}{99}%
+  \setlength{\parindent}{0pt}%
+  \ifodd #1 \everypar{\setlength{\hangindent}{\cslhangindent}}\ignorespaces\fi
+  \ifnum #2 > 0 \setlength{\parskip}{#2\baselineskip}\fi
+}{%
+  \end{thebibliography}%
+}
+\makeatother
+% Zero-arg macro used in optional label of \bibitem
+\providecommand{\citeproctext}{}
+\usepackage{calc} % for calculating minipage widths
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+
+\renewcommand{\contentsname}{Table of Contents}
+% End of CII addition
+
+\setlength{\parskip}{0pt}
+
+% Added by CII
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+\Acknowledgements{
+I want to thank a few people.
+}
+
+\Dedication{
+You can have a dedication here if you wish.
+}
+
+\Preface{
+This is an example of a thesis setup to use the reed thesis document class
+(for LaTeX) and the R bookdown package, in general.
+}
+
+\Abstract{
+The preface pretty much says it all.
+
+\par
+
+Second paragraph of abstract starts here.
+}
+
+	\usepackage{setspace}\onehalfspacing
+% End of CII addition
+%%
+%% End Preamble
+%%
+%
+
+\begin{document}
+
+% Everything below added by CII
+  \maketitle
+
+\frontmatter % this stuff will be roman-numbered
+\pagestyle{empty} % this removes page numbers from the frontmatter
+
+  \begin{acknowledgements}
+    I want to thank a few people.
+  \end{acknowledgements}
+
+  \begin{preface}
+    This is an example of a thesis setup to use the reed thesis document class
+    (for LaTeX) and the R bookdown package, in general.
+  \end{preface}
+
+\chapter*{List of Abbreviations}
+\begin{longtable}{p{.20\textwidth} | p{.80\textwidth}}
+      \textbf{PPI} & Protein Protein Interactions \\
+  \end{longtable}
+
+  \hypersetup{linkcolor=black}
+  \setcounter{secnumdepth}{2}
+  \setcounter{tocdepth}{2}
+  \tableofcontents
+
+  \listoftables
+
+  \listoffigures
+
+  \begin{abstract}
+    The preface pretty much says it all.
+
+    \par
+
+    Second paragraph of abstract starts here.
+  \end{abstract}
+
+  \begin{dedication}
+    You can have a dedication here if you wish.
+  \end{dedication}
+
+\mainmatter % here the regular arabic numbering starts
+\pagestyle{fancyplain} % turns page numbering back on
+
+\chapter*{Introduction}\label{introduction}
+\addcontentsline{toc}{chapter}{Introduction}
+
+At a cursory glance, vacuoles may seem to be relatively simple organelles, storing water, nutrients, and waste products while lacking intra-organelle machinery in comparison to many of the more `glamorous' organelles. However, despite their simplicity, vacuoles play crucial roles in various cellular processes across all eukaryotes. These functions include, but are not limited to, waste disposal, maintaining internal cell pressure, structural support, storage for nutrients, ions, pigments, and water, endocytosis, exocytosis, osmoregulation, autophagy, and defense against pathogens.
+\textbar{} One such role of vacuoles is the regulation of stomatal opening and closing in the vast majority of terrestrial plants. The intake of carbon dioxide and other atmospheric gasses is essential for photosynthesis in all plants. However, to absorb atmospheric gasses plants must expose their internal structures to the environment which causes water stored within the plant to evaporate. Therefore, plants must carefully balance their CO2 absorption with water availability. Stomata are small mouth shaped pores present on the epidermis of nearly all land plants and are responsible for regulating gas exchange. The term stomata refers to a two part structure consisting of the stomatal aperture and two guard cells which surround the stomatal aperture creating a mouth like appearance. In the stomata's open state, both guard cells are deflated and the stomatal aperture is exposed allowing for the free exchange of atmospheric gasses and water between the plant and its environment. In the stomata's closed state, the guard cells inflate, covering the stomatal aperture and preventing gasses from entering or leaving the plant. In the deflated state, guard cells contain many small vacuoles filled primarily with water. In the inflated state, the vacuoles within guard cells fuse together to form much larger vacuoles, causing the guard cells to swell and cover the stomatal aperture. (write something about how fusion is critical to the functioning of vacuoles)
+\textbar{} In contrast to their simplistic internal structure, the process of vacuole fusion is remarkably complex. Consequently, researchers have turned to the study of model organisms in an attempt to better understand the components and signaling mechanisms involved in vacuole fusion. \emph{S. Cerevisiae}, also known as brewers yeast, has proven to be an ideal candidate for studying vacuole fusion (specifically homotypic vacuole fusion) due to its extensively studied genome, easy to visualize vacuoles, and our ability to isolate, purify, and store its vacuoles in high quantities. Furthermore, nearly 50 years of extensive research has been devoted to the study of yeast vacuole fusion providing researchers with a strong foundation of research to draw from.
+
+\chapter{Yeast Homotypic Vacuole Fusion}\label{YeastFusion}
+
+The process of homotypic vacuole fusion in \emph{S. Cerevisiae} is commonly divided into four general stages: Priming, Tethering, Docking, and Fusion.
+
+\section{Priming}\label{priming}
+
+\subsection{Components}\label{components}
+
+\begin{itemize}
+\tightlist
+\item
+  SNARE Complex
+
+  \begin{itemize}
+  \tightlist
+  \item
+    SNARE proteins have two separate classification systems based on functionality and structural features respectively. Functional classification splits SNAREs into two groups: v-SNAREs which are localized to the vesicle, and t-SNAREs which are localized to the target membrane. Likewise, structural classification also splits SNAREs into two groups: Q-SNAREs which contain the central amino acid residue glutamine, and R-SNAREs which contain the central amino acid residue arginine. While it is true that R-SNAREs are often also v-SNAREs and Q-SNAREs are often also t-SNAREs, this is not always the case. There are four distinct SNARE proteins present on the yeast vacuole membrane, three Q-SNAREs: Qa (Vam3), Qb (Vti1), Qc (Vam7), and one R-SNARE: R (Nyv1). In their inactive state, the four SNARE proteins form tightly bound bundles known as cis-SNARE complexes along the vacuole membrane.
+  \end{itemize}
+\item
+  Vps1
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Vps1 is responsible for sequestering individual Qa SNAREs, preventing them from forming stable cis-SNARE complexes along with the R SNARE and the other two Q SNAREs. It is thought that Vps1 polymerizes around the Qa SNARE domain, sequestering a population of Qa SNAREs which are able to undergo HOPS tethering but are unable to bind to other SNARE proteins. Vps1 must then be released prior to trans-SNARE assembly in a process involving Sec18 GTP hydrolysis independent from Sec17.
+  \end{itemize}
+\item
+  LMA1
+
+  \begin{itemize}
+  \tightlist
+  \item
+    While Sec18 is bound to the cis-SNARE complex, LMA1 is bound to Sec18. Upon Sec18 mediated ATP hydrolysis, LMA1 is released from Sec18 and is bound to the Qa SNARE, stabilizing the protein.
+  \end{itemize}
+\item
+  Sec17
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Sec17 is responsible for the recruitment of Sec18 to cis-SNARE complexes. It functions as an intermediary by binding to both Sec18 and the cis-SNARE complex.
+  \end{itemize}
+\item
+  Sec18
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Sec18 is responsible for ATP hydrolysis leading to the disassembly of the cis-SNARE complex and the transfer of LMA1 to the Qa SNARE.
+  \end{itemize}
+\item
+  Phosphoinositides
+
+  \begin{itemize}
+  \tightlist
+  \item
+    The primary role of phosphoinositides during the priming stage is the release of monomeric Sec18 from the vacuole membrane. Phosphatidic acid (PA) is responsible for binding and sequestering Sec18 along the vacuole membrane. The release of Sec18 from the membrane is catalyzed by the phosphatidic acid phosphatase Pah1p which converts PA to diacylglycerol (DAG). Once released from the membrane the Sec18 monomers assemble into the Sec18 hexamer which is the active form responsible for cis-SNARE disassembly.
+  \end{itemize}
+\item
+  Pah1
+
+  \begin{itemize}
+  \tightlist
+  \item
+    A phosphatidic acid phosphatase responsible for the conversion of PA to DAG
+  \end{itemize}
+\end{itemize}
+
+\subsection{Process}\label{process}
+
+It is important to note that the protein complexes present on the vacuole membrane prior to fusion are often the result of prior fusion reactions. For example, the cis-SNARE complex is assembled during the final step of the fusion process and remains bound in its cis conformation until the next fusion event. Likewise Sec17 is bound to the cis-SNARE complex in the same fashion. Prior to the initation of priming, Sec18 is bound to the membrane by Phosphatidic acid (PA) and acts as a membrane receptor for the protein LMA1. To initiate priming, PA is converted to Diacylglycerol (DAG) by the phosphatidic acid phosphatase Pah1. This conversion releases monomeric Sec18 from the membrane. The Sec18 monomers then assemble into hexameric complexes and are recruited to cis-SNARE complexes by Sec17. Sec18 binds to Sec17 and hydrolyzes ATP, facilitating the disassembly of the cis-SNARE complex into individual SNARE proteins. During this reaction, LMA1 dissociates from Sec18 and binds to the Qa SNARE (Vam3), providing stabilization. While three of the four SNARE proteins are membrane-anchored, the Qc SNARE (Vam7) is bound only to the other SNARE proteins within the cis-SNARE complex. Upon Sec18 mediated disassembly, the Qc SNARE and Sec17 are released into the cytosol. There is also evidence that bundles of Qa SNAREs exist along the membrane during the priming process. These Qa SNARE groups are sequestered by polymerized Vps1 proteins which prevent Qa snares from associating with other SNARE proteins. Additionally, several phosphoinositides such as Ergesterol and PI(4,5)P2 have been implicated in the priming stage of homotypic vacuole fusion although their functions have yet to be defined.
+
+\section{Tethering}\label{tethering}
+
+\subsection{Components}\label{components-1}
+
+\begin{itemize}
+\tightlist
+\item
+  Ypt7
+
+  \begin{itemize}
+  \tightlist
+  \item
+    A Ras-like GTPase which, in conjunction with the HOPS complex, acts as a tether holding the two opposing membranes in close proximity. Ypt7 is present in both its GTP and GDP forms along the vacuole membrane. While Ypt7 is able to associate with the non-phosphorylated HOPS complex in both its GTP and GDP forms, it can only associate with the phosphorylated HOPS complex in its GTP form.
+  \end{itemize}
+\item
+  HOPS Complex
+
+  \begin{itemize}
+  \tightlist
+  \item
+    A hexameric protein complex consisting of Vps39,Vps41,Vps33, Vps11, Vps16, and Vps18. The HOPS complex plays two main roles in yeast homotypic vacuole fusion: Vacuole tethering via Ypt7 binding, and organization of SNARE proteins.
+  \end{itemize}
+\item
+  Ccz1--Mon1 Complex
+
+  \begin{itemize}
+  \tightlist
+  \item
+    A protein complex responsible for the conversion of Ypt7-GDP to Ypt7-GTP
+  \end{itemize}
+\item
+  PI3P
+
+  \begin{itemize}
+  \tightlist
+  \item
+    A regulatory lipid which recruits the Ccz1--Mon1 Complex to Ypt7 in its GDP form. PI3P is also responsible for binding the Qc SNARE Vam7 to the HOPS complex
+  \end{itemize}
+\item
+  Vam7
+\end{itemize}
+
+\subsection{Process}\label{process-1}
+
+\section{Docking}\label{docking}
+
+\subsection{Components}\label{components-2}
+
+\begin{itemize}
+\tightlist
+\item
+  Rho1
+\item
+  Cdc42
+\end{itemize}
+
+\subsection{Process}\label{process-2}
+
+\section{Fusion}\label{fusion}
+
+\subsection{Components}\label{components-3}
+
+\subsection{Process}\label{process-3}
+
+\chapter{Guard Cell Homotypic Vacuole Fusion}\label{GuardFusion}
+
+\chapter{Computational Methods}\label{CompMethods}
+
+\chapter{Ortholog Comparisons}\label{OrthoComp}
+
+\chapter*{Conclusion}\label{conclusion}
+\addcontentsline{toc}{chapter}{Conclusion}
+
+If we don't want Conclusion to have a chapter number next to it, we can add the \texttt{\{-\}} attribute.
+
+\textbf{More info}
+
+And here's some other random info: the first paragraph after a chapter title or section head \emph{shouldn't be} indented, because indents are to tell the reader that you're starting a new paragraph. Since that's obvious after a chapter or section title, proper typesetting doesn't add an indent there.
+
+\chapter*{Appendix}\label{appendix}
+\addcontentsline{toc}{chapter}{Appendix}
+
+\section*{Protein Tables}\label{protein-tables}
+\addcontentsline{toc}{section}{Protein Tables}
+
+\subsection*{\texorpdfstring{\emph{S. Cerevisiae}}{S. Cerevisiae}}\label{s.-cerevisiae}
+\addcontentsline{toc}{subsection}{\emph{S. Cerevisiae}}
+
+\subsection*{\texorpdfstring{\emph{A. Thaliana}}{A. Thaliana}}\label{a.-thaliana}
+\addcontentsline{toc}{subsection}{\emph{A. Thaliana}}
+
+\backmatter
+
+\chapter*{References}\label{references}
+\addcontentsline{toc}{chapter}{References}
+
+\markboth{References}{References}
+
+\noindent 
+
+\setlength{\parindent}{-0.20in}
+
+Seals, Darren F., Gary Eitzen, Nathan Margolis, William T. Wickner, and Albert Price. 2000. ``A Ypt/Rab Effector Complex Containing the Sec1 Homolog Vps33p Is Required for Homotypic Vacuole Fusion.'' Proceedings of the NationalAcademy of Sciences of the United States of America 97(17):9402--7. \url{doi:10.1073/pnas.97.17.9402}.
+
+\phantomsection\label{refs}
+\begin{CSLReferences}{1}{0}
+\bibitem[\citeproctext]{ref-alpadi_dynamin-snare_2013}
+Alpadi, K., Kulkarni, A., Namjoshi, S., Srinivasan, S., Sippel, K. H., Ayscough, K., \ldots{} Peters, C. (2013). Dynamin-{SNARE} interactions control trans-{SNARE} formation in intracellular membrane fusion. \emph{Nature Communications}, \emph{4}, 1704. http://doi.org/\href{https://doi.org/10.1038/ncomms2724}{10.1038/ncomms2724}
+
+\bibitem[\citeproctext]{ref-boeddinghaus_cycle_2002}
+Boeddinghaus, C., Merz, A. J., Laage, R., \& Ungermann, C. (2002). A cycle of Vam7p release from and {PtdIns} 3-p--dependent rebinding to the yeast vacuole is required for homotypic vacuole fusion. \emph{Journal of Cell Biology}, \emph{157}(1), 79--90. http://doi.org/\href{https://doi.org/10.1083/jcb.200112098}{10.1083/jcb.200112098}
+
+\bibitem[\citeproctext]{ref-collins_sec17p_2005}
+Collins, K. M., Thorngren, N. L., Fratti, R. A., \& Wickner, W. T. (2005). Sec17p and {HOPS}, in distinct {SNARE} complexes, mediate {SNARE} complex disruption or assembly for fusion. \emph{The {EMBO} Journal}. http://doi.org/\href{https://doi.org/10.1038/sj.emboj.7600658}{10.1038/sj.emboj.7600658}
+
+\bibitem[\citeproctext]{ref-coonrod_homotypic_2013}
+Coonrod, E. M., Graham, L. A., Carpp, L. N., Carr, T. M., Stirrat, L., Bowers, K., \ldots{} Stevens, T. H. (2013). Homotypic vacuole fusion in yeast requires organelle acidification and not the v-{ATPase} membrane domain. \emph{Developmental Cell}, \emph{27}(4), 462--468. http://doi.org/\href{https://doi.org/10.1016/j.devcel.2013.10.014}{10.1016/j.devcel.2013.10.014}
+
+\bibitem[\citeproctext]{ref-desfougeres_organelle_2016}
+Desfougères, Y., Vavassori, S., Rompf, M., Gerasimaite, R., \& Mayer, A. (2016). Organelle acidification negatively regulates vacuole membrane fusion in vivo. \emph{Scientific Reports}, \emph{6}(1), 29045. http://doi.org/\href{https://doi.org/10.1038/srep29045}{10.1038/srep29045}
+
+\bibitem[\citeproctext]{ref-hong_snares_2005}
+Hong, W. (2005). {SNAREs} and traffic. \emph{Biochimica Et Biophysica Acta ({BBA}) - Molecular Cell Research}, \emph{1744}(2), 120--144. http://doi.org/\href{https://doi.org/10.1016/j.bbamcr.2005.03.014}{10.1016/j.bbamcr.2005.03.014}
+
+\bibitem[\citeproctext]{ref-jahn_mechanisms_2024}
+Jahn, R., Cafiso, D. C., \& Tamm, L. K. (2024). Mechanisms of {SNARE} proteins in membrane fusion. \emph{Nature Reviews Molecular Cell Biology}, \emph{25}(2), 101--118. http://doi.org/\href{https://doi.org/10.1038/s41580-023-00668-x}{10.1038/s41580-023-00668-x}
+
+\bibitem[\citeproctext]{ref-kato_ergosterol_2001}
+Kato, M., \& Wickner, W. (2001). Ergosterol is required for the Sec18/{ATP}‐dependent priming step of homotypic vacuole fusion. \emph{The {EMBO} Journal}, \emph{20}(15), 4035--4040. http://doi.org/\href{https://doi.org/10.1093/emboj/20.15.4035}{10.1093/emboj/20.15.4035}
+
+\bibitem[\citeproctext]{ref-kramer_hops_2011}
+Krämer, L., \& Ungermann, C. (2011). {HOPS} drives vacuole fusion by binding the vacuolar {SNARE} complex and the Vam7 {PX} domain via two distinct sites. \emph{Molecular Biology of the Cell}, \emph{22}(14), 2601--2611. http://doi.org/\href{https://doi.org/10.1091/mbc.e11-02-0104}{10.1091/mbc.e11-02-0104}
+
+\bibitem[\citeproctext]{ref-lee_ortholog-based_2008}
+Lee, S.-A., Chan, C., Tsai, C.-H., Lai, J.-M., Wang, F.-S., Kao, C.-Y., \& Huang, C.-Y. F. (2008). Ortholog-based protein-protein interaction prediction and its application to inter-species interactions. \emph{{BMC} Bioinformatics}, \emph{9}, S11. http://doi.org/\href{https://doi.org/10.1186/1471-2105-9-S12-S11}{10.1186/1471-2105-9-S12-S11}
+
+\bibitem[\citeproctext]{ref-mayer_sec18p_1996}
+Mayer, A., Wickner, W., \& Haas, A. (1996). Sec18p ({NSF})-driven release of Sec17p (alpha-{SNAP}) can precede docking and fusion of yeast vacuoles. \emph{Cell}, \emph{85}(1), 83--94. http://doi.org/\href{https://doi.org/10.1016/S0092-8674(00)81084-3}{10.1016/S0092-8674(00)81084-3}
+
+\bibitem[\citeproctext]{ref-muller_vtc_2002}
+Müller, O., Bayer, M. J., Peters, C., Andersen, J. S., Mann, M., \& Mayer, A. (2002). The vtc proteins in vacuole fusion: Coupling {NSF} activity to v(0) trans-complex formation. \emph{The {EMBO} Journal}, \emph{21}(3), 259--269. http://doi.org/\href{https://doi.org/10.1093/emboj/21.3.259}{10.1093/emboj/21.3.259}
+
+\bibitem[\citeproctext]{ref-orr_pi3p_2023}
+Orr, A., \& Wickner, W. (2023). {PI}3P regulates multiple stages of membrane fusion. \emph{Molecular Biology of the Cell}, \emph{34}(3), ar17. http://doi.org/\href{https://doi.org/10.1091/mbc.E22-10-0486}{10.1091/mbc.E22-10-0486}
+
+\bibitem[\citeproctext]{ref-ostrowicz_yeast_2008}
+Ostrowicz, C. W., Meiringer, C. T. A., \& Ungermann, C. (2008). Yeast vacuole fusion: A model system for eukaryotic endomembrane dynamics. \emph{Autophagy}, \emph{4}(1), 5--19. http://doi.org/\href{https://doi.org/10.4161/auto.5054}{10.4161/auto.5054}
+
+\bibitem[\citeproctext]{ref-peters_mutual_2004}
+Peters, C., Baars, T. L., Bühler, S., \& Mayer, A. (2004). Mutual control of membrane fission and fusion proteins. \emph{Cell}, \emph{119}(5), 667--678. http://doi.org/\href{https://doi.org/10.1016/j.cell.2004.11.023}{10.1016/j.cell.2004.11.023}
+
+\bibitem[\citeproctext]{ref-price_docking_2000}
+Price, A., Seals, D., Wickner, W., \& Ungermann, C. (2000). The docking stage of yeast vacuole fusion requires the transfer of proteins from a cis-snare complex to a rab/ypt protein. \emph{Journal of Cell Biology}, \emph{148}(6), 1231--1238. http://doi.org/\href{https://doi.org/10.1083/jcb.148.6.1231}{10.1083/jcb.148.6.1231}
+
+\bibitem[\citeproctext]{ref-rothlisberger_dynamin-related_2009}
+Röthlisberger, S., Jourdain, I., Johnson, C., Takegawa, K., \& Hyams, J. S. (2009). The dynamin-related protein Vps1 regulates vacuole fission, fusion and tubulation in the fission yeast, \emph{schizosaccharomyces pombe}. \emph{Fungal Genetics and Biology}, \emph{46}(12), 927--935. http://doi.org/\href{https://doi.org/10.1016/j.fgb.2009.07.008}{10.1016/j.fgb.2009.07.008}
+
+\bibitem[\citeproctext]{ref-sasser_yeast_2012}
+Sasser, T., Qiu, Q.-S., Karunakaran, S., Padolina, M., Reyes, A., Flood, B., \ldots{} Fratti, R. A. (2012). Yeast lipin 1 orthologue Pah1p regulates vacuole homeostasis and membrane fusion. \emph{The Journal of Biological Chemistry}, \emph{287}(3), 2221--2236. http://doi.org/\href{https://doi.org/10.1074/jbc.M111.317420}{10.1074/jbc.M111.317420}
+
+\bibitem[\citeproctext]{ref-seals_yptrab_2000}
+Seals, D. F., Eitzen, G., Margolis, N., Wickner, W. T., \& Price, A. (2000). A ypt/rab effector complex containing the Sec1 homolog Vps33p is required for homotypic vacuole fusion. \emph{Proceedings of the National Academy of Sciences of the United States of America}, \emph{97}(17), 9402--9407. http://doi.org/\href{https://doi.org/10.1073/pnas.97.17.9402}{10.1073/pnas.97.17.9402}
+
+\bibitem[\citeproctext]{ref-seeley_genomic_2002}
+Seeley, E. S., Kato, M., Margolis, N., Wickner, W., \& Eitzen, G. (2002). Genomic analysis of homotypic vacuole fusion. \emph{Molecular Biology of the Cell}, \emph{13}(3), 782--794. http://doi.org/\href{https://doi.org/10.1091/mbc.01-10-0512}{10.1091/mbc.01-10-0512}
+
+\bibitem[\citeproctext]{ref-shvarev_structure_2022}
+Shvarev, D., Schoppe, J., König, C., Perz, A., Füllbrunn, N., Kiontke, S., \ldots{} Ungermann, C. (2022, May 5). Structure of the lysosomal membrane fusion machinery. {bioRxiv}. http://doi.org/\href{https://doi.org/10.1101/2022.05.05.490745}{10.1101/2022.05.05.490745}
+
+\bibitem[\citeproctext]{ref-song_hops_2020}
+Song, H., Orr, A. S., Lee, M., Harner, M. E., \& Wickner, W. T. (2020). {HOPS} recognizes each {SNARE}, assembling ternary trans-complexes for rapid fusion upon engagement with the 4th {SNARE}. \emph{{eLife}}, \emph{9}, e53559. http://doi.org/\href{https://doi.org/10.7554/eLife.53559}{10.7554/eLife.53559}
+
+\bibitem[\citeproctext]{ref-song_sec17sec18_2017}
+Song, H., Orr, A., Duan, M., Merz, A. J., \& Wickner, W. (2017). Sec17/Sec18 act twice, enhancing membrane fusion and then disassembling cis-{SNARE} complexes. \emph{{eLife}}, \emph{6}, e26646. http://doi.org/\href{https://doi.org/10.7554/eLife.26646}{10.7554/eLife.26646}
+
+\bibitem[\citeproctext]{ref-song_sec17sec18_2021}
+Song, H., Torng, T. L., Orr, A. S., Brunger, A. T., \& Wickner, W. T. (2021). Sec17/Sec18 can support membrane fusion without help from completion of {SNARE} zippering. \emph{{eLife}}, \emph{10}, e67578. http://doi.org/\href{https://doi.org/10.7554/eLife.67578}{10.7554/eLife.67578}
+
+\bibitem[\citeproctext]{ref-song_tethering_2019}
+Song, H., \& Wickner, W. (2019). Tethering guides fusion-competent \emph{trans}-{SNARE} assembly. \emph{Proceedings of the National Academy of Sciences}, \emph{116}(28), 13952--13957. http://doi.org/\href{https://doi.org/10.1073/pnas.1907640116}{10.1073/pnas.1907640116}
+
+\bibitem[\citeproctext]{ref-song_fusion_2021}
+Song, H., \& Wickner, W. T. (2021). Fusion of tethered membranes can be driven by Sec18/{NSF} and Sec17/alpha{SNAP} without {HOPS}. \emph{{eLife}}, \emph{10}, e73240. http://doi.org/\href{https://doi.org/10.7554/eLife.73240}{10.7554/eLife.73240}
+
+\bibitem[\citeproctext]{ref-starr_participation_2019}
+Starr, M. L., \& Fratti, R. A. (2019). The participation of regulatory lipids in vacuole homotypic fusion. \emph{Trends in Biochemical Sciences}, \emph{44}(6), 546--554. http://doi.org/\href{https://doi.org/10.1016/j.tibs.2018.12.003}{10.1016/j.tibs.2018.12.003}
+
+\bibitem[\citeproctext]{ref-sudhof_membrane_2007}
+Südhof, T. C. (2007). Membrane fusion as a team effort. \emph{Proceedings of the National Academy of Sciences}, \emph{104}(34), 13541--13542. http://doi.org/\href{https://doi.org/10.1073/pnas.0706168104}{10.1073/pnas.0706168104}
+
+\bibitem[\citeproctext]{ref-noauthor_gtpase_nodate}
+The {GTPase} Ypt7p of saccharomyces cerevisiae is required on both partner vacuoles for the homotypic fusion step of vacuole inheritance. (n.d.). Retrieved September 26, 2025, from \url{https://www.embopress.org/doi/epdf/10.1002/j.1460-2075.1995.tb00210.x}
+
+\bibitem[\citeproctext]{ref-ungermann_vacuolar_1998}
+Ungermann, C., Nichols, B. J., Pelham, H. R. B., \& Wickner, W. (1998). A vacuolar v--t-{SNARE} complex, the predominant form in vivo and on isolated vacuoles, is disassembled and activated for docking and fusion. \emph{Journal of Cell Biology}, \emph{140}(1), 61--69. http://doi.org/\href{https://doi.org/10.1083/jcb.140.1.61}{10.1083/jcb.140.1.61}
+
+\bibitem[\citeproctext]{ref-wang_yeast_2003}
+Wang, C.-W., Stromhaug, P. E., Kauffman, E. J., Weisman, L. S., \& Klionsky, D. J. (2003). Yeast homotypic vacuole fusion requires the Ccz1--Mon1 complex during the tethering/docking stage. \emph{The Journal of Cell Biology}, \emph{163}(5), 973--985. http://doi.org/\href{https://doi.org/10.1083/jcb.200308071}{10.1083/jcb.200308071}
+
+\bibitem[\citeproctext]{ref-wickner_membrane_nodate}
+Wickner, W. (n.d.). Membrane fusion: Five lipids, four {SNAREs}, three chaperones, two nucleotides, and a rab, all dancing in a ring on yeast vacuoles.
+
+\bibitem[\citeproctext]{ref-wickner_yeast_2002}
+Wickner, W. (2002). Yeast vacuoles and membrane fusion pathways. \emph{The {EMBO} Journal}, \emph{21}(6), 1241--1247. http://doi.org/\href{https://doi.org/10.1093/emboj/21.6.1241}{10.1093/emboj/21.6.1241}
+
+\bibitem[\citeproctext]{ref-xu_heterodimer_1997}
+Xu, Z., Mayer, A., Muller, E., \& Wickner, W. (1997). A heterodimer of thioredoxin and {IB} 2 cooperates with Sec18p ({NSF}) to promote yeast vacuole inheritance. \emph{The Journal of Cell Biology}, \emph{136}(2), 299--306. http://doi.org/\href{https://doi.org/10.1083/jcb.136.2.299}{10.1083/jcb.136.2.299}
+
+\bibitem[\citeproctext]{ref-xu_lma1_1998}
+Xu, Z., Sato, K., \& Wickner, W. (1998). {LMA}1 binds to vacuoles at Sec18p ({NSF}), transfers upon {ATP} hydrolysis to a t-{SNARE} (Vam3p) complex, and is released during fusion. \emph{Cell}, \emph{93}(7), 1125--1134. http://doi.org/\href{https://doi.org/10.1016/S0092-8674(00)81457-9}{10.1016/S0092-8674(00)81457-9}
+
+\bibitem[\citeproctext]{ref-yoon_snare_2018}
+Yoon, T.-Y., \& Munson, M. (2018). {SNARE} complex assembly and disassembly. \emph{Current Biology}, \emph{28}(8), R397--R401. http://doi.org/\href{https://doi.org/10.1016/j.cub.2018.01.005}{10.1016/j.cub.2018.01.005}
+
+\bibitem[\citeproctext]{ref-zhang_vacuolar_2025}
+Zhang, C., Calderin, J. D., Topiwalla, A., Shah, V., Karat, J. M., Knapp, C. T., \ldots{} Fratti, R. A. (2025, August 2). Vacuolar phosphatidylinositol 3,4,5-trisphosphate controls fusion through binding Vam7, and membrane microdomain assembly. {bioRxiv}. http://doi.org/\href{https://doi.org/10.1101/2025.08.01.668199}{10.1101/2025.08.01.668199}
+
+\bibitem[\citeproctext]{ref-zheng_homotypic_2014}
+Zheng, J., Han, S. W., Rodriguez-Welsh, M. F., \& Rojas-Pierce, M. (2014). Homotypic vacuole fusion requires {VTI}11 and is regulated by phosphoinositides. \emph{Molecular Plant}, \emph{7}(6), 1026--1040. http://doi.org/\href{https://doi.org/10.1093/mp/ssu019}{10.1093/mp/ssu019}
+
+\bibitem[\citeproctext]{ref-zick_improved_2016}
+Zick, M., \& Wickner, W. (2016). Improved reconstitution of yeast vacuole fusion with physiological {SNARE} concentrations reveals an asymmetric rab({GTP}) requirement. \emph{Molecular Biology of the Cell}, \emph{27}(16), 2590--2597. http://doi.org/\href{https://doi.org/10.1091/mbc.e16-04-0230}{10.1091/mbc.e16-04-0230}
+
+\end{CSLReferences}
+
+
+% Index?
+
+\end{document}

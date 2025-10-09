@@ -1,0 +1,56 @@
+# Yeast Homotypic Vacuole Fusion {#YeastFusion}
+
+The process of homotypic vacuole fusion in _S. Cerevisiae_ is commonly divided into four general stages: Priming, Tethering, Docking, and Fusion. 
+  
+## Priming
+
+### Components
+  - SNARE Complex
+    - SNARE proteins have two separate classification systems based on functionality and structural features respectively. Functional classification splits SNAREs into two groups: v-SNAREs which are localized to the vesicle, and t-SNAREs which are localized to the target membrane. Likewise, structural classification also splits SNAREs into two groups: Q-SNAREs which contain the central amino acid residue glutamine, and R-SNAREs which contain the central amino acid residue arginine. While it is true that R-SNAREs are often also v-SNAREs and Q-SNAREs are often also t-SNAREs, this is not always the case. There are four distinct SNARE proteins present on the yeast vacuole membrane, three Q-SNAREs: Qa (Vam3), Qb (Vti1), Qc (Vam7), and one R-SNARE: R (Nyv1). In their inactive state, the four SNARE proteins form tightly bound bundles known as cis-SNARE complexes along the vacuole membrane.
+  - Vps1
+    - Vps1 is responsible for sequestering individual Qa SNAREs, preventing them from forming stable cis-SNARE complexes along with the R SNARE and the other two Q SNAREs. It is thought that Vps1 polymerizes around the Qa SNARE domain, sequestering a population of Qa SNAREs which are able to undergo HOPS tethering but are unable to bind to other SNARE proteins. Vps1 must then be released prior to trans-SNARE assembly in a process involving Sec18 GTP hydrolysis independent from Sec17.
+  - LMA1
+    - While Sec18 is bound to the cis-SNARE complex, LMA1 is bound to Sec18. Upon Sec18 mediated ATP hydrolysis, LMA1 is released from Sec18 and is bound to the Qa SNARE, stabilizing the protein.
+  - Sec17
+    - Sec17 is responsible for the recruitment of Sec18 to cis-SNARE complexes. It functions as an intermediary by binding to both Sec18 and the cis-SNARE complex.
+  - Sec18
+    - Sec18 is responsible for ATP hydrolysis leading to the disassembly of the cis-SNARE complex and the transfer of LMA1 to the Qa SNARE.
+  - Phosphoinositides
+    - The primary role of phosphoinositides during the priming stage is the release of monomeric Sec18 from the vacuole membrane. Phosphatidic acid (PA) is responsible for binding and sequestering Sec18 along the vacuole membrane. The release of Sec18 from the membrane is catalyzed by the phosphatidic acid phosphatase Pah1p which converts PA to diacylglycerol (DAG). Once released from the membrane the Sec18 monomers assemble into the Sec18 hexamer which is the active form responsible for cis-SNARE disassembly.
+  - Pah1
+    - A phosphatidic acid phosphatase responsible for the conversion of PA to DAG
+    
+### Process
+It is important to note that the protein complexes present on the vacuole membrane prior to fusion are often the result of prior fusion reactions. For example, the cis-SNARE complex is assembled during the final step of the fusion process and remains bound in its cis conformation until the next fusion event. Likewise Sec17 is bound to the cis-SNARE complex in the same fashion. Prior to the initation of priming, Sec18 is bound to the membrane by Phosphatidic acid (PA) and acts as a membrane receptor for the protein LMA1. To initiate priming, PA is converted to Diacylglycerol (DAG) by the phosphatidic acid phosphatase Pah1. This conversion releases monomeric Sec18 from the membrane. The Sec18 monomers then assemble into hexameric complexes and are recruited to cis-SNARE complexes by Sec17. Sec18 binds to Sec17 and hydrolyzes ATP, facilitating the disassembly of the cis-SNARE complex into individual SNARE proteins. During this reaction, LMA1 dissociates from Sec18 and binds to the Qa SNARE (Vam3), providing stabilization. While three of the four SNARE proteins are membrane-anchored, the Qc SNARE (Vam7) is bound only to the other SNARE proteins within the cis-SNARE complex. Upon Sec18 mediated disassembly, the Qc SNARE and Sec17 are released into the cytosol. There is also evidence that bundles of Qa SNAREs exist along the membrane during the priming process. These Qa SNARE groups are sequestered by polymerized Vps1 proteins which prevent Qa snares from associating with other SNARE proteins. Additionally, several phosphoinositides such as Ergesterol and PI(4,5)P2 have been implicated in the priming stage of homotypic vacuole fusion although their functions have yet to be defined.
+
+## Tethering
+### Components
+  - Ypt7 
+    - A Ras-like GTPase which, in conjunction with the HOPS complex, acts as a tether holding the two opposing membranes in close proximity. Ypt7 is present in both its GTP and GDP forms along the vacuole membrane. While Ypt7 is able to associate with the non-phosphorylated HOPS complex in both its GTP and GDP forms, it can only associate with the phosphorylated HOPS complex in its GTP form. 
+  - HOPS Complex
+    - A hexameric protein complex consisting of Vps39,Vps41,Vps33, Vps11, Vps16, and Vps18. The HOPS complex plays two main roles in yeast homotypic vacuole fusion: Vacuole tethering via Ypt7 binding, and organization of SNARE proteins. 
+  - Ccz1–Mon1 Complex
+    - A protein complex responsible for the conversion of Ypt7-GDP to Ypt7-GTP
+  - PI3P
+    - A regulatory lipid which recruits the Ccz1–Mon1 Complex to Ypt7 in its GDP form. PI3P is also responsible for binding the Qc SNARE Vam7 to the HOPS complex
+  - Vam7
+  
+### Process
+
+## Docking
+### Components
+  - Rho1
+  - Cdc42
+
+### Process
+
+## Fusion
+### Components
+### Process
+
+# Guard Cell Homotypic Vacuole Fusion {#GuardFusion}
+
+
+
+
+
