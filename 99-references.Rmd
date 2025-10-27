@@ -21,7 +21,7 @@ to be removed for styles that don't require the hanging indent.-->
 Seals, Darren F., Gary Eitzen, Nathan Margolis, William T. Wickner, and Albert Price. 2000. “A Ypt/Rab Effector Complex Containing the Sec1 Homolog Vps33p Is Required for Homotypic Vacuole Fusion.” Proceedings of the NationalAcademy of Sciences of the United States of America 97(17):9402–7. doi:10.1073/pnas.97.17.9402.
 
 
----
-nocite: |
-  @*
-...
+<!-- --- -->
+<!-- nocite: | -->
+<!--   @* -->
+<!-- ... -->
