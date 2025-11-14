@@ -119,16 +119,18 @@ $endif$
 }
 \makeatother
 
+% pandoc bounded issue update
+\makeatletter
+\@ifundefined{pandocbounded}{\newcommand{\pandocbounded}[1]{#1}}{}
+\makeatother
+
 % From {rticles}
 $if(csl-refs)$
 \newlength{\csllabelwidth}
 \setlength{\csllabelwidth}{3em}
 \newlength{\cslhangindent}
 \setlength{\cslhangindent}{1.5em}
-% pandoc bounded issue update
-\makeatletter
-\@ifundefined{pandocbounded}{\newcommand{\pandocbounded}[1]{#1}}{}
-\makeatother
+
 % CSL issue update
 % Make the CSLReferences environment behave like a bibliography so \bibitem is valid
 \makeatletter

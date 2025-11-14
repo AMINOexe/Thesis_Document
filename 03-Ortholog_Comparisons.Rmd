@@ -1,1 +1,26 @@
 # Ortholog Comparisons {#OrthoComp}
+
+## Layer 0 Homologs and Properties
+
+For the _A. Thaliana_ dataset, layer 0 represented 0.1% of the total nodes and 0.1% of the total edges and had an average clustering coefficient of 0.49. For the _S. Cerevisiae_ dataset, layer 0 represented 0.6% of the total nodes and 0.4% of the total edges. There were a total of 66 homologous edges between layer 0 of the two organisms. These represented 94% (66/70) of the total edges in the initial _A. Thaliana_ layer and 25% (66/256) of the total edges in the initial _S. Cerevisiae_ layer. 
+
+## Layer 1 Homologs and Properties
+
+For the _A. Thaliana_ dataset, layer 1 represented 0.3% of the total nodes and 1% of the total edges and had an average clustering coefficient of 0.59. For the _S. Cerevisiae_ dataset, layer 1 represented 2% of the total nodes and 3% of the total edges. There were a total of 202 homologous edges between layer 1 of the two organisms. These represented 23% (202/844) of the total edges in layer 1 of the _A. Thaliana_ dataset and 15% (202/1336) of the total edges in layer 1 of the _S. Cerevisiae_ dataset. 
+
+## Layer 2 Homologs and Properties
+
+For the _A. Thaliana_ dataset, layer 2 represented 1% of the total nodes and 6% of the total edges and had an average clustering coefficient of 0.59. For the _S. Cerevisiae_ dataset, layer 2 represented 7% of the total nodes and 8% of the total edges. There were a total of 294 homologous edges between layer 2 of the two organisms. These represented 8% (294/3492) of the total edges in layer 2 of the _A. Thaliana_ dataset and 11% (294/2633) of the total edges in layer 2 of the _S. Cerevisiae_ dataset. 
+
+
+```{r, results='asis', echo=FALSE}
+cat("\\newpage")
+```
+
+```{r,echo=FALSE,fig.cap="S. Cerevisiae layer statistics",out.width="100%",out.height="43%"}
+knitr::include_graphics("/Users/adenobrien/Desktop/Thesis_Doc/figure/SC_layer_stats.png")
+```
+
+```{r,echo=FALSE,fig.cap="A. Thaliana layer statistics",out.width="100%",out.height="43%"}
+knitr::include_graphics("/Users/adenobrien/Desktop/Thesis_Doc/figure/AT_layer_stats.png")
+```
