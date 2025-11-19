@@ -1,16 +1,14 @@
 # Ortholog Comparisons {#OrthoComp}
 
-## Layer 0 Homologs and Properties
 
-For the _A. Thaliana_ dataset, layer 0 represented 0.1% of the total nodes and 0.1% of the total edges and had an average clustering coefficient of 0.49. For the _S. Cerevisiae_ dataset, layer 0 represented 0.6% of the total nodes and 0.4% of the total edges. There were a total of 66 homologous edges between layer 0 of the two organisms. These represented 94% (66/70) of the total edges in the initial _A. Thaliana_ layer and 25% (66/256) of the total edges in the initial _S. Cerevisiae_ layer. 
+## Layer 0 Homologs and Properties
+SC Layer 0 represents 0.6% (42/6600) of the total nodes and 0.4% (332/69,784) of the total edges in the _S. Cerevisiae_ dataset. AT Layer 0 represents 0.1% (29/27,462) of the total nodes and 0.1% (70/49,604) of the total edges in the _A. Thaliana_ dataset. Layer 0 displays the largest discrepancy in average clustering values with AT layer 0 displaying an average clustering value of 0.35 while SC layer 0 displayed an average clustering value of 0.69. A total of 66 homologous edges were identified between the two layer 0's representing 19.8% (66/332) of the total _S. Cerevisiae_ layer 0 edges, and 94.2% (66/70) of the total _A. Thaliana_ layer 0 edges. 
 
 ## Layer 1 Homologs and Properties
-
-For the _A. Thaliana_ dataset, layer 1 represented 0.3% of the total nodes and 1% of the total edges and had an average clustering coefficient of 0.59. For the _S. Cerevisiae_ dataset, layer 1 represented 2% of the total nodes and 3% of the total edges. There were a total of 202 homologous edges between layer 1 of the two organisms. These represented 23% (202/844) of the total edges in layer 1 of the _A. Thaliana_ dataset and 15% (202/1336) of the total edges in layer 1 of the _S. Cerevisiae_ dataset. 
+SC Layer 1 represents 3.5% (236/6600)  of the total nodes and 3.5% (2500/69,784) of the total edges in the _S. Cerevisiae_ dataset. AT Layer 1 represents 0.4% (122/27,462) of the total nodes and 1.6% (814/49,604) of the total edges in the _A. Thaliana_ dataset. The average clustering coefficients for each organisms layer 1 were similar with _A. Thaliana_ displaying a 0.59 clustering coefficient and _S. Cerevisiae_ displaying a 0.64 clustring coefficient. A total of 202 homologous edges were identified between the two layer 1's representing 8% of the total _S. Cerevisiae_ layer 1 edges, and 24% of the total _A. Thaliana_ layer 1 edges. 
 
 ## Layer 2 Homologs and Properties
-
-For the _A. Thaliana_ dataset, layer 2 represented 1% of the total nodes and 6% of the total edges and had an average clustering coefficient of 0.59. For the _S. Cerevisiae_ dataset, layer 2 represented 7% of the total nodes and 8% of the total edges. There were a total of 294 homologous edges between layer 2 of the two organisms. These represented 8% (294/3492) of the total edges in layer 2 of the _A. Thaliana_ dataset and 11% (294/2633) of the total edges in layer 2 of the _S. Cerevisiae_ dataset. 
+SC Layer 2 represents 10.6% (704/6600)  of the total nodes and 8.2% (5757/69,784) of the total edges in the _S. Cerevisiae_ dataset. AT Layer 2 represents 1.4% (402/27,462) of the total nodes and 6.8% (3420/49,604) of the total edges in the _A. Thaliana_ dataset. The average clustering coefficients for each organisms layer 2 were nearly identical with _A. Thaliana_ displaying a 0.59 clustering coefficient and _S. Cerevisiae_ displaying a 0.58 clustering coefficient. A total of 294 homologous edges were identified between the two layer 2's representing 5.1% of the total _S. Cerevisiae_ layer 1 edges, and 8.5% of the total _A. Thaliana_ layer 2 edges. 
 
 
 ```{r, results='asis', echo=FALSE}
