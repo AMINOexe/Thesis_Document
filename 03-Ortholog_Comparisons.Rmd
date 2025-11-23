@@ -1,14 +1,29 @@
 # Ortholog Comparisons {#OrthoComp}
 
-
 ## Layer 0 Homologs and Properties
-SC Layer 0 represents 0.6% (42/6600) of the total nodes and 0.4% (332/69,784) of the total edges in the _S. Cerevisiae_ dataset. AT Layer 0 represents 0.1% (29/27,462) of the total nodes and 0.1% (70/49,604) of the total edges in the _A. Thaliana_ dataset. Layer 0 displays the largest discrepancy in average clustering values with AT layer 0 displaying an average clustering value of 0.35 while SC layer 0 displayed an average clustering value of 0.69. A total of 66 homologous edges were identified between the two layer 0's representing 19.8% (66/332) of the total _S. Cerevisiae_ layer 0 edges, and 94.2% (66/70) of the total _A. Thaliana_ layer 0 edges. 
+| SC Layer 0 represents 0.6% (42/6600) of the total nodes and 0.4% (332/69,784) of the total edges in the _S. Cerevisiae_ dataset. AT Layer 0 represents 0.1% (29/27,462) of the total nodes and 0.1% (70/49,604) of the total edges in the _A. Thaliana_ dataset. Layer 0 displays the largest discrepancy in average clustering values with AT layer 0 displaying an average clustering value of 0.35 while SC layer 0 displayed an average clustering value of 0.69. A total of 66 homologous edges were identified between the two layer 0's representing 19.8% (66/332) of the total _S. Cerevisiae_ layer 0 edges, and 94.2% (66/70) of the total _A. Thaliana_ layer 0 edges. 
+|     Analysis of the top 20 layer 0 _A. Thaliana_ nodes by combined network importance score shows that the majority of the top scoring nodes in _A. Thaliana_ layer 0 consist of proteins belonging to the HOPS complex, SNARE complex, and V-ATPase complex. All 6 HOPS proteins, 3 out of the 4 SNARE proteins, and 9 out of the 13 V-ATPase proteins were represented in the top 20 nodes of _A. Thaliana_ layer 0. A comparison of each set of 20 proteins in the respective layer 0's shows that 13 out of the top 20 proteins in  _A. Thaliana_ layer 0 are homologous to proteins in the top 20 proteins in _S. Cerevisiae_ layer 0. Out of the 20 proteins in the _A. Thaliana_ layer 0, two proteins were not members of the HOPS, SNARE, or V-ATPase complex. These two proteins (Vps34 and Vps15) are homologous to _S. Cerevisiae_ Vps34 and Vps15 which have be shown to form complexes responsible for the conversion of membrane bound PI to PI3P.
+
+```{r,echo=FALSE,fig.cap="Layer 0 top 20 Network Importance",out.width="100%",out.height="70%"}
+knitr::include_graphics("/Users/adenobrien/Desktop/Thesis_Doc/figure/L0_stats_fig.png")
+```
+
 
 ## Layer 1 Homologs and Properties
-SC Layer 1 represents 3.5% (236/6600)  of the total nodes and 3.5% (2500/69,784) of the total edges in the _S. Cerevisiae_ dataset. AT Layer 1 represents 0.4% (122/27,462) of the total nodes and 1.6% (814/49,604) of the total edges in the _A. Thaliana_ dataset. The average clustering coefficients for each organisms layer 1 were similar with _A. Thaliana_ displaying a 0.59 clustering coefficient and _S. Cerevisiae_ displaying a 0.64 clustring coefficient. A total of 202 homologous edges were identified between the two layer 1's representing 8% of the total _S. Cerevisiae_ layer 1 edges, and 24% of the total _A. Thaliana_ layer 1 edges. 
+| SC Layer 1 represents 3.5% (236/6600)  of the total nodes and 3.5% (2500/69,784) of the total edges in the _S. Cerevisiae_ dataset. AT Layer 1 represents 0.4% (122/27,462) of the total nodes and 1.6% (814/49,604) of the total edges in the _A. Thaliana_ dataset. The average clustering coefficients for each organisms layer 1 were similar with _A. Thaliana_ displaying a 0.59 clustering coefficient and _S. Cerevisiae_ displaying a 0.64 clustring coefficient. A total of 202 homologous edges were identified between the two layer 1's representing 8% of the total _S. Cerevisiae_ layer 1 edges, and 24% of the total _A. Thaliana_ layer 1 edges. 
+|     Analysis of the top 20 layer 1 _A. Thaliana_ nodes shows a marked difference in comparison to layer 0. All  _A. Thaliana_ layer 0 nodes in the top 20 are involved in lipid synthesis or modification (ie. phosphorylation or transferase activity). A single protein, Vps34, in shared between the top 20 nodes of each layer 1. Out of the top 20 _A. Thaliana_ proteins, 10 have no identified homologs in yeast. 
 
-## Layer 2 Homologs and Properties
+```{r,echo=FALSE,fig.cap="Layer 1 top 20 Network Importance",out.width="100%",out.height="85%"}
+knitr::include_graphics("/Users/adenobrien/Desktop/Thesis_Doc/figure/L1_stats_fig.png")
+```
+
+## Layer 2 Properties
 SC Layer 2 represents 10.6% (704/6600)  of the total nodes and 8.2% (5757/69,784) of the total edges in the _S. Cerevisiae_ dataset. AT Layer 2 represents 1.4% (402/27,462) of the total nodes and 6.8% (3420/49,604) of the total edges in the _A. Thaliana_ dataset. The average clustering coefficients for each organisms layer 2 were nearly identical with _A. Thaliana_ displaying a 0.59 clustering coefficient and _S. Cerevisiae_ displaying a 0.58 clustering coefficient. A total of 294 homologous edges were identified between the two layer 2's representing 5.1% of the total _S. Cerevisiae_ layer 1 edges, and 8.5% of the total _A. Thaliana_ layer 2 edges. 
+
+
+```{r,echo=FALSE,fig.cap="Layer 1 top 20 Network Importance",out.width="80%",out.height="60%"}
+knitr::include_graphics("/Users/adenobrien/Desktop/Thesis_Doc/figure/Layer2_stats.png")
+```
 
 
 ```{r, results='asis', echo=FALSE}
@@ -16,9 +31,9 @@ cat("\\newpage")
 ```
 
 ```{r,echo=FALSE,fig.cap="S. Cerevisiae layer statistics",out.width="100%",out.height="43%"}
-knitr::include_graphics("/Users/adenobrien/Desktop/Thesis_Doc/figure/SC_layer_stats.png")
+knitr::include_graphics("/Users/adenobrien/Desktop/Thesis_Doc/figure/SCL0_hist.png")
 ```
 
 ```{r,echo=FALSE,fig.cap="A. Thaliana layer statistics",out.width="100%",out.height="43%"}
-knitr::include_graphics("/Users/adenobrien/Desktop/Thesis_Doc/figure/AT_layer_stats.png")
+knitr::include_graphics("/Users/adenobrien/Desktop/Thesis_Doc/figure/ATL0_hist.png")
 ```

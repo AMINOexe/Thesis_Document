@@ -391,11 +391,11 @@ The STRING database uses a number of distinct evidence souces to calculate the c
 To further isolate proteins which are likely to implicated in \emph{S. Cerevisiae} vacuole fusion, a literature review was conducted with the goal of creating a list of core homotypic vacuole fusion proteins. A total of 45 proteins were identified in the literature review. 43 of the 45 proteins names were successfully converted to STRING IDs, however, PBI2 has no recorded PPI's with a confidence score greater than 900. Proteins without recorded PPI's cause errors when integrating the identified proteins of interest into the thresholded network and PBI2 has thus been removed from the core protein list. It is impractical to expect every PPI invovled in homotypic vacuole fusion to be identified through literature review, therfore, a K-hop algorithm was employed to create a subgraph which likely includes the majority of PPIs involved in the fusion process. The K-hop algorithm requires a set of initial nodes (in this case the 42 core proteins) and a k value (k=2 for the \emph{S. Cerevisiae} dataset) which dictates the number of `hops' the algorithm performs. This algorithm produces a subgraph which contains the initial nodes and all initial node neighbors that are within k edges from the initial nodes. The \emph{A. Thaliana} dataset was pruned through a similar mechanism. However, due to the lack of literature focusing on \emph{A. Thaliana} guard cell homotypic vacuole fusion, a literature review was insufficient for the purpose of idenitfying a set of core proteins. Therefore, a set of \emph{S. Cerevisiae} homologous proteins was used as the basis for constructing an \emph{A. Thaliana} core protein set. Using the STRING API's `homology\_best?' method, 37 of the 42 \emph{S. Cerevisiae} core proteins were matched with homologous proteins from the \emph{A. Thaliana} dataset. STRING's `homology\_best?' method employs the Smith--Waterman algorithm to perform local sequence alignment and identify likely homologous proteins. This method produces a score which describes the similarity of the two proteins where a higher score denotes a greater similarity between the two proteins. The list of \emph{A. Thaliana} core homologous proteins was thresholded to include only proteins with SW scores greater than 550 and pruned with the K-hop algorithm using parameters identical to those used in \emph{S. Cerevisiae} pruning.
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{figure/SC_subgraph} \caption{S. Cerevisiae subgraph}\label{fig:unnamed-chunk-3}
+\includegraphics[width=1\linewidth]{figure/SC_layer_fig} \caption{S. Cerevisiae layers}\label{fig:unnamed-chunk-3}
 \end{figure}
 
 \begin{figure}
-\includegraphics[width=1\linewidth]{figure/AT_subgraph} \caption{A. Thaliana subgraph}\label{fig:unnamed-chunk-4}
+\includegraphics[width=1\linewidth]{figure/AT_layer_fig} \caption{A. Thaliana layers}\label{fig:unnamed-chunk-4}
 \end{figure}
 
 \section{Network Importance Analysis}\label{network-importance-analysis}
@@ -416,24 +416,38 @@ Two python packages were used to create visual representations of the \emph{S. C
 
 \section{Layer 0 Homologs and Properties}\label{layer-0-homologs-and-properties}
 
-SC Layer 0 represents 0.6\% (42/6600) of the total nodes and 0.4\% (332/69,784) of the total edges in the \emph{S. Cerevisiae} dataset. AT Layer 0 represents 0.1\% (29/27,462) of the total nodes and 0.1\% (70/49,604) of the total edges in the \emph{A. Thaliana} dataset. Layer 0 displays the largest discrepancy in average clustering values with AT layer 0 displaying an average clustering value of 0.35 while SC layer 0 displayed an average clustering value of 0.69. A total of 66 homologous edges were identified between the two layer 0's representing 19.8\% (66/332) of the total \emph{S. Cerevisiae} layer 0 edges, and 94.2\% (66/70) of the total \emph{A. Thaliana} layer 0 edges.
+SC Layer 0 represents 0.6\% (42/6600) of the total nodes and 0.4\% (332/69,784) of the total edges in the \emph{S. Cerevisiae} dataset. AT Layer 0 represents 0.1\% (29/27,462) of the total nodes and 0.1\% (70/49,604) of the total edges in the \emph{A. Thaliana} dataset. Layer 0 displays the largest discrepancy in average clustering values with AT layer 0 displaying an average clustering value of 0.35 while SC layer 0 displayed an average clustering value of 0.69. A total of 66 homologous edges were identified between the two layer 0's representing 19.8\% (66/332) of the total \emph{S. Cerevisiae} layer 0 edges, and 94.2\% (66/70) of the total \emph{A. Thaliana} layer 0 edges.\\
+\strut ~~~~Analysis of the top 20 layer 0 \emph{A. Thaliana} nodes by combined network importance score shows that the majority of the top scoring nodes in \emph{A. Thaliana} layer 0 consist of proteins belonging to the HOPS complex, SNARE complex, and V-ATPase complex. All 6 HOPS proteins, 3 out of the 4 SNARE proteins, and 9 out of the 13 V-ATPase proteins were represented in the top 20 nodes of \emph{A. Thaliana} layer 0. A comparison of each set of 20 proteins in the respective layer 0's shows that 13 out of the top 20 proteins in \emph{A. Thaliana} layer 0 are homologous to proteins in the top 20 proteins in \emph{S. Cerevisiae} layer 0. Out of the 20 proteins in the \emph{A. Thaliana} layer 0, two proteins were not members of the HOPS, SNARE, or V-ATPase complex. These two proteins (Vps34 and Vps15) are homologous to \emph{S. Cerevisiae} Vps34 and Vps15 which have be shown to form complexes responsible for the conversion of membrane bound PI to PI3P.
+
+\begin{figure}
+\includegraphics[width=1\linewidth,height=0.7\textheight]{figure/L0_stats_fig} \caption{Layer 0 top 20 Network Importance}\label{fig:unnamed-chunk-7}
+\end{figure}
 
 \section{Layer 1 Homologs and Properties}\label{layer-1-homologs-and-properties}
 
-SC Layer 1 represents 3.5\% (236/6600) of the total nodes and 3.5\% (2500/69,784) of the total edges in the \emph{S. Cerevisiae} dataset. AT Layer 1 represents 0.4\% (122/27,462) of the total nodes and 1.6\% (814/49,604) of the total edges in the \emph{A. Thaliana} dataset. The average clustering coefficients for each organisms layer 1 were similar with \emph{A. Thaliana} displaying a 0.59 clustering coefficient and \emph{S. Cerevisiae} displaying a 0.64 clustring coefficient. A total of 202 homologous edges were identified between the two layer 1's representing 8\% of the total \emph{S. Cerevisiae} layer 1 edges, and 24\% of the total \emph{A. Thaliana} layer 1 edges.
+SC Layer 1 represents 3.5\% (236/6600) of the total nodes and 3.5\% (2500/69,784) of the total edges in the \emph{S. Cerevisiae} dataset. AT Layer 1 represents 0.4\% (122/27,462) of the total nodes and 1.6\% (814/49,604) of the total edges in the \emph{A. Thaliana} dataset. The average clustering coefficients for each organisms layer 1 were similar with \emph{A. Thaliana} displaying a 0.59 clustering coefficient and \emph{S. Cerevisiae} displaying a 0.64 clustring coefficient. A total of 202 homologous edges were identified between the two layer 1's representing 8\% of the total \emph{S. Cerevisiae} layer 1 edges, and 24\% of the total \emph{A. Thaliana} layer 1 edges.\\
+\strut ~~~~Analysis of the top 20 layer 1 \emph{A. Thaliana} nodes shows a marked difference in comparison to layer 0. All \emph{A. Thaliana} layer 0 nodes in the top 20 are involved in lipid synthesis or modification (ie. phosphorylation or transferase activity). A single protein, Vps34, in shared between the top 20 nodes of each layer 1. Out of the top 20 \emph{A. Thaliana} proteins, 10 have no identified homologs in yeast.
 
-\section{Layer 2 Homologs and Properties}\label{layer-2-homologs-and-properties}
+\begin{figure}
+\includegraphics[width=1\linewidth,height=0.85\textheight]{figure/L1_stats_fig} \caption{Layer 1 top 20 Network Importance}\label{fig:unnamed-chunk-8}
+\end{figure}
+
+\section{Layer 2 Properties}\label{layer-2-properties}
 
 SC Layer 2 represents 10.6\% (704/6600) of the total nodes and 8.2\% (5757/69,784) of the total edges in the \emph{S. Cerevisiae} dataset. AT Layer 2 represents 1.4\% (402/27,462) of the total nodes and 6.8\% (3420/49,604) of the total edges in the \emph{A. Thaliana} dataset. The average clustering coefficients for each organisms layer 2 were nearly identical with \emph{A. Thaliana} displaying a 0.59 clustering coefficient and \emph{S. Cerevisiae} displaying a 0.58 clustering coefficient. A total of 294 homologous edges were identified between the two layer 2's representing 5.1\% of the total \emph{S. Cerevisiae} layer 1 edges, and 8.5\% of the total \emph{A. Thaliana} layer 2 edges.
+
+\begin{figure}
+\includegraphics[width=0.8\linewidth,height=0.6\textheight]{figure/Layer2_stats} \caption{Layer 1 top 20 Network Importance}\label{fig:unnamed-chunk-9}
+\end{figure}
 
 \newpage
 
 \begin{figure}
-\includegraphics[width=1\linewidth,height=0.43\textheight]{figure/SC_layer_stats} \caption{S. Cerevisiae layer statistics}\label{fig:unnamed-chunk-8}
+\includegraphics[width=1\linewidth,height=0.43\textheight]{figure/SCL0_hist} \caption{S. Cerevisiae layer statistics}\label{fig:unnamed-chunk-11}
 \end{figure}
 
 \begin{figure}
-\includegraphics[width=1\linewidth,height=0.43\textheight]{figure/AT_layer_stats} \caption{A. Thaliana layer statistics}\label{fig:unnamed-chunk-9}
+\includegraphics[width=1\linewidth,height=0.43\textheight]{figure/ATL0_hist} \caption{A. Thaliana layer statistics}\label{fig:unnamed-chunk-12}
 \end{figure}
 
 \chapter*{Conclusion}\label{conclusion}
