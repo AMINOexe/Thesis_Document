@@ -71,9 +71,49 @@
 % \usepackage{times} % other fonts are available like times, bookman, charter, palatino
 
 % Syntax highlighting #22
+  \usepackage{color}
+  \usepackage{fancyvrb}
+  \newcommand{\VerbBar}{|}
+  \newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+  \DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+  % Add ',fontsize=\small' for more characters per line
+  \usepackage{framed}
+  \definecolor{shadecolor}{RGB}{248,248,248}
+  \newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+  \newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+  \newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+  \newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+  \newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+  \newcommand{\BuiltInTok}[1]{#1}
+  \newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+  \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+  \newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+  \newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+  \newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+  \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+  \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+  \newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+  \newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+  \newcommand{\ExtensionTok}[1]{#1}
+  \newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+  \newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+  \newcommand{\ImportTok}[1]{#1}
+  \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+  \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+  \newcommand{\NormalTok}[1]{#1}
+  \newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+  \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+  \newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+  \newcommand{\RegionMarkerTok}[1]{#1}
+  \newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+  \newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+  \newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+  \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+  \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+  \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
 
 % To pass between YAML and LaTeX the dollar signs are added by CII
-\title{A Comparison of Orthologous Proteins in Homotypic Vacuole Fusion}
+\title{A Comparison of Homologous Proteins in Homotypic Vacuole Fusion}
 \author{Aden J. O'Brien}
 % The month and year that you submit your FINAL draft TO THE LIBRARY (May or December)
 \date{May 2025}
@@ -135,20 +175,15 @@ I want to thank a few people.
 }
 
 \Dedication{
-You can have a dedication here if you wish.
+false
 }
 
 \Preface{
-This is an example of a thesis setup to use the reed thesis document class
-(for LaTeX) and the R bookdown package, in general.
+false
 }
 
 \Abstract{
-The preface pretty much says it all.
-
-\par
-
-Second paragraph of abstract starts here.
+The vast majority of research on homotypic vacuole fusion has been performed using \emph{S. cerevisiae} models. However, the process of homotypic vacuole fusion is vital for the functioning of a wide array of organisms including \emph{A. thaliana} in which vacuole fusion controls stomatal movement. While homotypic vacuole fusion is known to be a higly conserved process, recent studies point to a non-conserved mechanism driving \emph{A. thaliana} homotypic vacuole fusion. Therefore, in an attempt to elucidate the similarities and differences between \emph{S. cerevisiae} and \emph{A. thaliana} homotypic vacuole fusion, I constructed PPI graph representations of homotypic vacuole fusion in each orgamism. I then compared these graphs to determine which PPIs were conserved between the two organisms. I also performed graph based importance analysis to determine high importance proteins in each organism. By comparing both conserved PPIs and high importance proteins, I was able to determine that the process of homotypic vacuole fusion in \emph{S. cerevisiae} differs significantly from \emph{A. thaliana}. My analysis points to phosphoinositide regulation as a major difference between the two processes with \emph{A. thaliana} displaying a much more complex system of phosphoinositide synthesis and modification.
 }
 
 	\usepackage{setspace}\onehalfspacing
@@ -170,14 +205,11 @@ Second paragraph of abstract starts here.
     I want to thank a few people.
   \end{acknowledgements}
 
-  \begin{preface}
-    This is an example of a thesis setup to use the reed thesis document class
-    (for LaTeX) and the R bookdown package, in general.
-  \end{preface}
 
 \chapter*{List of Abbreviations}
 \begin{longtable}{p{.20\textwidth} | p{.80\textwidth}}
       \textbf{PPI} & Protein Protein Interactions \\
+      \textbf{SW Score} & Smith-Waterman Alignment Score \\
   \end{longtable}
 
   \hypersetup{linkcolor=black}
@@ -185,35 +217,27 @@ Second paragraph of abstract starts here.
   \setcounter{tocdepth}{2}
   \tableofcontents
 
-  \listoftables
 
   \listoffigures
 
   \begin{abstract}
-    The preface pretty much says it all.
-
-    \par
-
-    Second paragraph of abstract starts here.
+    The vast majority of research on homotypic vacuole fusion has been performed using \emph{S. cerevisiae} models. However, the process of homotypic vacuole fusion is vital for the functioning of a wide array of organisms including \emph{A. thaliana} in which vacuole fusion controls stomatal movement. While homotypic vacuole fusion is known to be a higly conserved process, recent studies point to a non-conserved mechanism driving \emph{A. thaliana} homotypic vacuole fusion. Therefore, in an attempt to elucidate the similarities and differences between \emph{S. cerevisiae} and \emph{A. thaliana} homotypic vacuole fusion, I constructed PPI graph representations of homotypic vacuole fusion in each orgamism. I then compared these graphs to determine which PPIs were conserved between the two organisms. I also performed graph based importance analysis to determine high importance proteins in each organism. By comparing both conserved PPIs and high importance proteins, I was able to determine that the process of homotypic vacuole fusion in \emph{S. cerevisiae} differs significantly from \emph{A. thaliana}. My analysis points to phosphoinositide regulation as a major difference between the two processes with \emph{A. thaliana} displaying a much more complex system of phosphoinositide synthesis and modification.
   \end{abstract}
 
-  \begin{dedication}
-    You can have a dedication here if you wish.
-  \end{dedication}
 
 \mainmatter % here the regular arabic numbering starts
 \pagestyle{fancyplain} % turns page numbering back on
 
-\chapter*{Introduction}\label{introduction}
-\addcontentsline{toc}{chapter}{Introduction}
+\chapter*{Background}\label{background}
+\addcontentsline{toc}{chapter}{Background}
 
-At a cursory glance, vacuoles may seem to be relatively simple organelles, storing water, nutrients, and waste products while lacking intra-organelle machinery in comparison to many of the more `glamorous' organelles. However, despite their simplicity, vacuoles play crucial roles in various cellular processes across all eukaryotes. These functions include, but are not limited to, waste disposal, maintaining internal cell pressure, structural support, storage for nutrients, ions, pigments, and water, endocytosis, exocytosis, osmoregulation, autophagy, and defense against pathogens.\\
-\strut ~~~~One such role of vacuoles is the regulation of stomatal opening and closing in the vast majority of terrestrial plants. The intake of carbon dioxide and other atmospheric gasses is essential for photosynthesis in all plants. However, to absorb atmospheric gasses plants must expose their internal structures to the environment which causes water stored within the plant to evaporate. Therefore, plants must carefully balance their CO2 absorption with water availability. Stomata are small mouth shaped pores present on the epidermis of nearly all land plants and are responsible for regulating gas exchange. The term stomata refers to a two part structure consisting of the stomatal aperture and two guard cells which surround the stomatal aperture creating a mouth like appearance. In the stomata's open state, both guard cells are deflated and the stomatal aperture is exposed allowing for the free exchange of atmospheric gasses and water between the plant and its environment. In the stomata's closed state, the guard cells inflate, covering the stomatal aperture and preventing gasses from entering or leaving the plant. In the deflated state, guard cells contain many small vacuoles filled primarily with water. In the inflated state, the vacuoles within guard cells fuse together to form much larger vacuoles, causing the guard cells to swell and cover the stomatal aperture. (write something about how fusion is critical to the functioning of vacuoles)\\
-\strut ~~~~In contrast to their simplistic internal structure, the process of vacuole fusion is remarkably complex. Consequently, researchers have turned to the study of model organisms in an attempt to better understand the components and signaling mechanisms involved in vacuole fusion. \emph{S. Cerevisiae}, also known as brewers yeast, has proven to be an ideal candidate for studying vacuole fusion (specifically homotypic vacuole fusion) due to its extensively studied genome, easy to visualize vacuoles, and our ability to isolate, purify, and store its vacuoles in high quantities. Furthermore, nearly 50 years of extensive research has been devoted to the study of yeast vacuole fusion providing researchers with a strong foundation of research to draw from.
+Vacuoles are intracellular compartments enclosed by a membrane which separates its internal contents from the cytoplasm of its enclosing cell. At a cursory glance, vacuoles may seem to be relatively simple organelles, storing water, nutrients, and waste products while lacking intra-organelle machinery in comparison to many of the more `glamorous' organelles. However, despite their simplicity, vacuoles play crucial roles in various cellular processes across all eukaryotes. These functions include, but are not limited to, waste disposal, maintaining internal cell pressure, structural support, storage for nutrients, ions, pigments, and water, endocytosis, exocytosis, osmoregulation, autophagy, and defense against pathogens.\\
+\strut ~~~~One such role of vacuoles is the regulation of stomatal opening and closing in the vast majority of terrestrial plants. The intake of carbon dioxide and other atmospheric gasses is essential for photosynthesis in all plants. However, to absorb atmospheric gasses plants must expose their internal structures to the environment which causes water stored within the plant to evaporate. Therefore, plants must carefully balance their CO2 absorption with water availability. Stomata are small mouth shaped pores present on the epidermis of nearly all land plants and are responsible for regulating gas exchange. The term stomata refers to a two part structure consisting of the stomatal aperture and two guard cells which surround the stomatal aperture creating a mouth like appearance. In the stomata's open state, both guard cells are deflated and the stomatal aperture is exposed allowing for the free exchange of atmospheric gasses and water between the plant and its environment. In the stomata's closed state, the guard cells inflate, covering the stomatal aperture and preventing gasses from entering or leaving the plant. In the deflated state, guard cells contain many small vacuoles filled primarily with water. In the inflated state, the vacuoles within guard cells fuse together to form much larger vacuoles, causing the guard cells to swell and cover the stomatal aperture. The fusion of two identical vacuole is known as homotypic vacuole fusion. This process differs from heterotypic vacuole fusion (fusion between vacuoles with different morphology) which is usually implicated in the transportation of molecules throughout an organism.\\
+\strut ~~~~In contrast to their simplistic internal structure, the process of vacuole fusion is remarkably complex. Consequently, researchers have turned to the study of model organisms in an attempt to better understand the components and signaling mechanisms involved in vacuole fusion. \emph{S. cerevisiae}, also known as brewers yeast, has proven to be an ideal candidate for studying vacuole fusion (specifically homotypic vacuole fusion) due to its extensively studied genome, easy to visualize vacuoles, and our ability to isolate, purify, and store its vacuoles in high quantities. Furthermore, nearly 50 years of extensive research has been devoted to the study of yeast vacuole fusion providing researchers with a strong foundation of research to draw from.\\
+\strut ~~~~In this thesis, I compare the processes of homotypic vacuole fusion in \emph{S. cerevisiae} and \emph{A. thaliana} to determine which elements of the two processes are conserved. The idea for this thesis came about during my reasearch of \emph{A. thaliana} guard cell vacuole fusion. I noticed that, in comparison to \emph{S. cerevisiae}, \emph{A. thaliana} vacuole fusion was relatively understudied. However, many papers describe homotypic vacuole fusion as a highly conserved process. Therefore, I decided to compare the processes of homotypic vacuole fusion in the two organisms, identifying homologous proteins and interactions existing in both processes. The first chapter contains background information detailing the process of homotypic vacuole fusion in \emph{S. cerevisiae}. The second chapter details the computational methods used to analyze the homologous interactions between each organism. The final chapter discusses the similarities and differences between each organisms homotypic vacuole fusion process.
 
-\chapter{Yeast Homotypic Vacuole Fusion}\label{YeastFusion}
-
-\section{Components}\label{components}
+\section*{\texorpdfstring{\emph{S. cerevisiae} Vacuole Fusion Components}{S. cerevisiae Vacuole Fusion Components}}\label{s.-cerevisiae-vacuole-fusion-components}
+\addcontentsline{toc}{section}{\emph{S. cerevisiae} Vacuole Fusion Components}
 
 \begin{itemize}
 \tightlist
@@ -223,7 +247,7 @@ At a cursory glance, vacuoles may seem to be relatively simple organelles, stori
   \begin{itemize}
   \tightlist
   \item
-    SNARE proteins have two separate classification systems based on functionality and structural features respectively. Functional classification splits SNAREs into two groups: v-SNAREs which are localized to the vesicle, and t-SNAREs which are localized to the target membrane. Likewise, structural classification also splits SNAREs into two groups: Q-SNAREs which contain the central amino acid residue glutamine, and R-SNAREs which contain the central amino acid residue arginine. While it is true that R-SNAREs are often also v-SNAREs and Q-SNAREs are often also t-SNAREs, this is not always the case. There are four distinct SNARE proteins present on the yeast vacuole membrane, three Q-SNAREs: Qa (Vam3), Qb (Vti1), Qc (Vam7), and one R-SNARE: R (Nyv1). In their inactive state, the four SNARE proteins form tightly bound bundles known as cis-SNARE complexes along the vacuole membrane.
+    SNARE proteins have two separate classification systems based on functionality and structural features respectively. Functional classification splits SNAREs into two groups: v-SNAREs which are localized to the vesicle, and t-SNAREs which are localized to the target membrane. Likewise, structural classification also splits SNAREs into two groups: Q-SNAREs which contain the central amino acid residue glutamine, and R-SNAREs which contain the central amino acid residue arginine (Yoon \& Munson, 2018 and Ungermann et al.~1998). While it is true that R-SNAREs are often also v-SNAREs and Q-SNAREs are often also t-SNAREs, this is not always the case (Hong, 2005). There are four distinct SNARE proteins present on the yeast vacuole membrane, three Q-SNAREs: Qa (Vam3), Qb (Vti1), Qc (Vam7), and one R-SNARE: R (Nyv1). In their inactive state, the four SNARE proteins form tightly bound bundles known as cis-SNARE complexes along the vacuole membrane (Zick \& Wickner, 2016).
   \end{itemize}
 \item
   Vps1
@@ -231,7 +255,7 @@ At a cursory glance, vacuoles may seem to be relatively simple organelles, stori
   \begin{itemize}
   \tightlist
   \item
-    Vps1 is responsible for sequestering individual Qa SNAREs, preventing them from forming stable cis-SNARE complexes along with the R SNARE and the other two Q SNAREs. It is thought that Vps1 polymerizes around the Qa SNARE domain, sequestering a population of Qa SNAREs which are able to undergo HOPS tethering but are unable to bind to other SNARE proteins. Vps1 must then be released prior to trans-SNARE assembly in a process involving Sec18 GTP hydrolysis independent from Sec17.
+    Vps1 is responsible for sequestering individual Qa SNAREs, preventing them from forming stable cis-SNARE complexes along with the R SNARE and the other two Q SNAREs. It is thought that Vps1 polymerizes around the Qa SNARE domain, sequestering a population of Qa SNAREs which are able to undergo HOPS tethering but are unable to bind to other SNARE proteins. Vps1 must then be released prior to trans-SNARE assembly in a process involving Sec18 GTP hydrolysis independent from Sec17 (Alpadi et al.~2013; Peters et al.~2004; Rothlisberger et al., 2009).
   \end{itemize}
 \item
   LMA1
@@ -239,7 +263,7 @@ At a cursory glance, vacuoles may seem to be relatively simple organelles, stori
   \begin{itemize}
   \tightlist
   \item
-    While Sec18 is bound to the cis-SNARE complex, LMA1 is bound to Sec18. Upon Sec18 mediated ATP hydrolysis, LMA1 is released from Sec18 and is bound to the Qa SNARE, stabilizing the protein.
+    While Sec18 is bound to the cis-SNARE complex, LMA1 is bound to Sec18. Upon Sec18 mediated ATP hydrolysis, LMA1 is released from Sec18 and is bound to the Qa SNARE, stabilizing the protein (Xu et al., 1998, 1997).
   \end{itemize}
 \item
   Sec17
@@ -247,7 +271,7 @@ At a cursory glance, vacuoles may seem to be relatively simple organelles, stori
   \begin{itemize}
   \tightlist
   \item
-    Sec17 is responsible for the recruitment of Sec18 to cis-SNARE complexes. It functions as an intermediary by binding to both Sec18 and the cis-SNARE complex.
+    Sec17 is responsible for the recruitment of Sec18 to cis-SNARE complexes. It functions as an intermediary by binding to both Sec18 and the cis-SNARE complex (Collins et al., 2005; Haas \& Wickner, 1996; Mayer et al., 1996; Song et al., 2017, 2021; Song \& Wickner, 2021; Zick et al., 2015).
   \end{itemize}
 \item
   Sec18
@@ -255,7 +279,7 @@ At a cursory glance, vacuoles may seem to be relatively simple organelles, stori
   \begin{itemize}
   \tightlist
   \item
-    Sec18 is responsible for ATP hydrolysis leading to the disassembly of the cis-SNARE complex and the transfer of LMA1 to the Qa SNARE.
+    Sec18 is responsible for ATP hydrolysis leading to the disassembly of the cis-SNARE complex and the transfer of LMA1 to the Qa SNARE. (Collins et al., 2005; Haas \& Wickner, 1996; Mayer et al., 1996; Song et al., 2017, 2021; Song \& Wickner, 2021; Zick et al., 2015)
   \end{itemize}
 \item
   Phosphoinositides
@@ -263,7 +287,7 @@ At a cursory glance, vacuoles may seem to be relatively simple organelles, stori
   \begin{itemize}
   \tightlist
   \item
-    The primary role of phosphoinositides during the priming stage is the release of monomeric Sec18 from the vacuole membrane. Phosphatidic acid (PA) is responsible for binding and sequestering Sec18 along the vacuole membrane. The release of Sec18 from the membrane is catalyzed by the phosphatidic acid phosphatase Pah1p which converts PA to diacylglycerol (DAG). Once released from the membrane the Sec18 monomers assemble into the Sec18 hexamer which is the active form responsible for cis-SNARE disassembly.
+    The primary role of phosphoinositides during the priming stage is the release of monomeric Sec18 from the vacuole membrane. Phosphatidic acid (PA) is responsible for binding and sequestering Sec18 along the vacuole membrane. The release of Sec18 from the membrane is catalyzed by the phosphatidic acid phosphatase Pah1p which converts PA to diacylglycerol (DAG). Once released from the membrane the Sec18 monomers assemble into the Sec18 hexamer which is the active form responsible for cis-SNARE disassembly (Boeddinghaus et al., 2002; Cheever et al., 2001; Fratti et al., 2004; Karunakaran et al., 2012; Kato \& Wickner, 2001; Miner et al., 2018, 2019; Orr \& Wickner, 2023; Starr \& Fratti, 2019; Zhang et al., 2022, 2025).
   \end{itemize}
 \item
   Pah1
@@ -271,7 +295,7 @@ At a cursory glance, vacuoles may seem to be relatively simple organelles, stori
   \begin{itemize}
   \tightlist
   \item
-    A phosphatidic acid phosphatase responsible for the conversion of PA to DAG
+    A phosphatidic acid phosphatase responsible for the conversion of PA to DAG (Sasser et al., 2012).
   \end{itemize}
 \item
   Ypt7
@@ -279,7 +303,7 @@ At a cursory glance, vacuoles may seem to be relatively simple organelles, stori
   \begin{itemize}
   \tightlist
   \item
-    A Ras-like GTPase which, in conjunction with the HOPS complex, acts as a tether holding the two opposing membranes in close proximity. Ypt7 is present in both its GTP and GDP forms along the vacuole membrane. While Ypt7 is able to associate with the non-phosphorylated HOPS complex in both its GTP and GDP forms, it can only associate with the phosphorylated HOPS complex in its GTP form.
+    A Ras-like GTPase which, in conjunction with the HOPS complex, acts as a tether holding the two opposing membranes in close proximity. Ypt7 is present in both its GTP and GDP forms along the vacuole membrane. While Ypt7 is able to associate with the non-phosphorylated HOPS complex in both its GTP and GDP forms, it can only associate with the phosphorylated HOPS complex in its GTP form (Hickey et al., 2009; Price et al., 2000; Zick \& Wickner, 2016).
   \end{itemize}
 \item
   HOPS Complex
@@ -287,7 +311,7 @@ At a cursory glance, vacuoles may seem to be relatively simple organelles, stori
   \begin{itemize}
   \tightlist
   \item
-    A hexameric protein complex consisting of Vps39,Vps41,Vps33, Vps11, Vps16, and Vps18. The HOPS complex plays two main roles in yeast homotypic vacuole fusion: Vacuole tethering via Ypt7 binding, and organization of SNARE proteins.
+    A hexameric protein complex consisting of Vps39,Vps41,Vps33, Vps11, Vps16, and Vps18. The HOPS complex plays two main roles in yeast homotypic vacuole fusion: Vacuole tethering via Ypt7 binding, and organization of SNARE proteins (Auffarth et al., 2014; Baker et al., 2015; Brillada et al., 2018; Bröcker et al., 2012; Ho \& Stroupe, n.d.; Krämer \& Ungermann, 2011; Price et al., 2000; Seals et al., 2000; Shvarev et al., 2022b, 2022a; Song et al., 2020; Starai et al., 2008; Stroupe et al., 2006).
   \end{itemize}
 \item
   Ccz1--Mon1 Complex
@@ -295,7 +319,7 @@ At a cursory glance, vacuoles may seem to be relatively simple organelles, stori
   \begin{itemize}
   \tightlist
   \item
-    A protein complex responsible for the conversion of Ypt7-GDP to Ypt7-GTP. Mon1 is released from the vacuole in an ATP-dependant fashion at which point it dimerizes with Ccz1 throug a currently uncharacterized mechanism.
+    A protein complex responsible for the conversion of Ypt7-GDP to Ypt7-GTP. Mon1 is released from the vacuole in an ATP-dependant fashion at which point it dimerizes with Ccz1 throug a currently uncharacterized mechanism (Eitzen et al., 2001; Irazoqui et al., 2003; Müller et al., 2001; Wang et al., 2003).
   \end{itemize}
 \item
   PI3P
@@ -303,15 +327,7 @@ At a cursory glance, vacuoles may seem to be relatively simple organelles, stori
   \begin{itemize}
   \tightlist
   \item
-    A regulatory lipid which recruits the Ccz1--Mon1 Complex to Ypt7 in its GDP form. PI3P is also responsible for binding the Qc SNARE Vam7 to the membrane and recruiting the HOPS complex.
-  \end{itemize}
-\item
-  PI
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Phosphatidylinositol is a glycerophospholipid present in the cytosolic leaflet of the vacuole membrane. While it serves no direct function in vacuole fusion, it serves as a precursor lipid for a variety of Phosphoinositides such as PI3P and PI(4,5)P.
+    A regulatory lipid which recruits the Ccz1--Mon1 Complex to Ypt7 in its GDP form. PI3P is also responsible for binding the Qc SNARE Vam7 to the membrane and recruiting the HOPS complex. (Starr et al., 2019, Cabrera et al., 2014;)
   \end{itemize}
 \item
   Vps34/Vps15 Complex
@@ -319,7 +335,7 @@ At a cursory glance, vacuoles may seem to be relatively simple organelles, stori
   \begin{itemize}
   \tightlist
   \item
-    Vps34 is a PI3 kinase responsible for the conversion of membrane bound Phosphatidylinositol (PI) to PI3P. It forms complexes with Vps15 which acts as a membrane anchor. Once bound to the membrane, Vps34 is activated by its effector protein Gpa1 and converts PI into PI3P.
+    Vps34 is a PI3 kinase responsible for the conversion of membrane bound Phosphatidylinositol (PI) to PI3P. It forms complexes with Vps15 which acts as a membrane anchor. Once bound to the membrane, Vps34 is activated by its effector protein Gpa1 and converts PI into PI3P (Heenan et al., 2009; Slessareva et al., 2006; Stack et al., 1993).
   \end{itemize}
 \item
   Vam7
@@ -327,7 +343,7 @@ At a cursory glance, vacuoles may seem to be relatively simple organelles, stori
   \begin{itemize}
   \tightlist
   \item
-    Origially part of the cis-SNARE complex, Vam7 is expelled into the cytosol following cis-SNARE dissassembly. Vam7 is then recruited to the vacuole membrane by PI3P and is partially responsible for HOPS complex tethering.
+    Origially part of the cis-SNARE complex, Vam7 is expelled into the cytosol following cis-SNARE dissassembly. Vam7 is then recruited to the vacuole membrane by PI3P and is partially responsible for HOPS complex tethering (Zick \& Wickner, 2013).
   \end{itemize}
 \item
   V-ATPase Complex
@@ -335,7 +351,7 @@ At a cursory glance, vacuoles may seem to be relatively simple organelles, stori
   \begin{itemize}
   \tightlist
   \item
-    A 13 member protein complex split into two sectors. The V0 sector is comprised of VPH1, VMA3, VMA11, VMA16, and VMA6. The V1 sector is comprised of VMA1, VMA2, VMA4, VMA5, VMA7, VMA8, VMA10, AND VMA13. While the V-ATPase complex is commonly implicated in the active transport of protons across the vacuolar membrane, evidence points to a separate role of the V-ATPase complex in homotypic vacuole fusion. Analysis of V-ATPase activity during vacuole fusion has shown that the V0 sectors of V-ATPase complexes on the opposing membranes form inter-membrane V0 complexes. It has been proposed that these inter-membrane V0 complexes act as the initial fusion pores during the process of vertex ring hemifusion.
+    A 13 member protein complex split into two sectors. The V0 sector is comprised of VPH1, VMA3, VMA11, VMA16, and VMA6. The V1 sector is comprised of VMA1, VMA2, VMA4, VMA5, VMA7, VMA8, VMA10, AND VMA13. While the V-ATPase complex is commonly implicated in the active transport of protons across the vacuolar membrane, evidence points to a separate role of the V-ATPase complex in homotypic vacuole fusion. Analysis of V-ATPase activity during vacuole fusion has shown that the V0 sectors of V-ATPase complexes on the opposing membranes form inter-membrane V0 complexes. It has been proposed that these inter-membrane V0 complexes act as the initial fusion pores during the process of vertex ring hemifusion (Baars et al., 2007; Coonrod et al., 2013; Desfougères et al., 2016; Graham et al., 2003).
   \end{itemize}
 \item
   Cadmodulin
@@ -343,7 +359,7 @@ At a cursory glance, vacuoles may seem to be relatively simple organelles, stori
   \begin{itemize}
   \tightlist
   \item
-    A regulatory protein which responds to Ca+ concentration and is bound to the membrane in a Ca+ dependant fashion. Cadmodulin binds to the V0 sector of the V-ATPase complex and, in response to Ca+, induces the formation of a V0 protein pore.
+    A regulatory protein which responds to Ca+ concentration and is bound to the membrane in a Ca+ dependant fashion. Cadmodulin binds to the V0 sector of the V-ATPase complex and, in response to Ca+, induces the formation of a V0 protein pore (Peters et al., 2001; Bayer et al., 2003).
   \end{itemize}
 \item
   VTC Complex
@@ -351,153 +367,279 @@ At a cursory glance, vacuoles may seem to be relatively simple organelles, stori
   \begin{itemize}
   \tightlist
   \item
-    A 4 member protein complex comprised of VTC1, VTC2, VTC3, and VTC4. Co-immunoprecipitation studies have shown that the VTC complex binds to the VPH1 protein present in the V0 sector of V-ATPase. This binding activity is theorized to induce conformational changes in the V0 sector and induce the opening of the fusion pore.
+    A 4 member protein complex comprised of VTC1, VTC2, VTC3, and VTC4. Co-immunoprecipitation studies have shown that the VTC complex binds to the VPH1 protein present in the V0 sector of V-ATPase. This binding activity is theorized to induce conformational changes in the V0 sector and induce the opening of the fusion pore (Müller et al., 2002, 2003).
   \end{itemize}
 \end{itemize}
 
-\section{Stages}\label{stages}
+\section*{\texorpdfstring{\emph{S. cerevisiae} Vacuole Fusion Stages}{S. cerevisiae Vacuole Fusion Stages}}\label{s.-cerevisiae-vacuole-fusion-stages}
+\addcontentsline{toc}{section}{\emph{S. cerevisiae} Vacuole Fusion Stages}
 
-The process of homotypic vacuole fusion in \emph{S. Cerevisiae} is commonly divided into four general stages: Priming, Tethering, Docking, and Fusion.
+The process of homotypic vacuole fusion in \emph{S. cerevisiae} is commonly divided into four general stages: Priming, Tethering, Docking, and Fusion. During the priming stage, cellular machinery is prepared for the vacuole fusion process. Tethering involves binding the two vacuole membranes together using sets of linkage proteins. Docking finalizes the positioning of the linking proteins, brinking the two vacuole membranes into close proximity. Finally, fusion involves the zippering the two vacuole membranes together, forming the final fused vacuole.
 
-\subsection{Priming}\label{priming}
+\subsection*{Priming}\label{priming}
+\addcontentsline{toc}{subsection}{Priming}
 
-It is important to note that the protein complexes present on the vacuole membrane prior to fusion are often the result of prior fusion reactions. For example, the cis-SNARE complex is assembled during the final step of the fusion process and remains bound in its cis conformation until the next fusion event. Likewise Sec17 is bound to the cis-SNARE complex in the same fashion. Prior to the initation of priming, Sec18 is bound to the membrane by Phosphatidic acid (PA) and acts as a membrane receptor for the protein LMA1. To initiate priming, PA is converted to Diacylglycerol (DAG) by the phosphatidic acid phosphatase Pah1. This conversion releases monomeric Sec18 from the membrane. The Sec18 monomers then assemble into hexameric complexes and are recruited to cis-SNARE complexes by Sec17. Sec18 binds to Sec17 and hydrolyzes ATP, facilitating the disassembly of the cis-SNARE complex into individual SNARE proteins. During this reaction, LMA1 dissociates from Sec18 and binds to the Qa SNARE (Vam3), providing stabilization. While three of the four SNARE proteins are membrane-anchored, the Qc SNARE (Vam7) is bound only to the other SNARE proteins within the cis-SNARE complex. Upon Sec18 mediated disassembly, the Qc SNARE and Sec17 are released into the cytosol. There is also evidence that bundles of Qa SNAREs exist along the membrane during the priming process. These Qa SNARE groups are sequestered by polymerized Vps1 proteins which prevent Qa snares from associating with other SNARE proteins. Additionally, several phosphoinositides such as Ergesterol and PI(4,5)P2 have been implicated in the priming stage of homotypic vacuole fusion although their functions have yet to be defined.
-
-\subsection{Tethering \& Docking}\label{tethering-docking}
-
-In the initial stage of the tethering process, both Vps41 (a HOPS complex subunit) and Ypt7 must be phosphorylated by Yck3 and the Ccz1-Mon1 complex respectively. during this step, Vps34 is recruited to the membrane by the membrane bound Vps15. This Vps34/15 complex is then activated by Gpa1 to synthesize PI3P from PI. Following these phosphorylation events, the HOPS complex binds to Ypt7 proteins on the two opposing membranes tethering the two vesicles in close proximity. The HOPS complex shares a binding affinity for both Vam7 and the PI3P which promotes the localization of both components along the vertex ring at which point HOPS-Vam7 binding initiates trans-SNARE assembly. It is important to note that this process not only tethers the two membranes together but also correctly positions the SNARE proteins on the opposing membranes as antiparallel bound SNAREs often lead to fusion inactive complexes. In addition to the numerous regulatory mechanisms above, tethering is also mediated by the dynamin-like Vps1 protein. As discussed in the priming stage, Vps1 sequesters a population of individual Qa SNARE proteins which remain separate from cis-SNARE complexes. Qa SNARE bundles associated with Vps1 can undergo tethering upon contact with the HOPS complex; however, to form trans-SNARE complexes, Vps1 must be depolymerized by Sec18 to release the individual Qa-SNAREs. While tethering and docking are generally defined as separate processes in yeast homotypic vacuole fusion, the distinction between when tethering ends and docking begins is not clearly delinated.\\
-\strut ~~~~Docking is said to be completed once trans-SNARE complexes have been established, bridging the two opposing membranes. This process is primarily mediated by the HOPS complex. During the docking process, the HOPS complex protects trans SNARE complexes from Sec18 mediated dissassembly, initiates trans SNARE complex assembly by binding to the Qa SNARE and R SNARE on opposing membranes, proofreads SNARE complexes allowing only correctly assembled SNARES to undergo trans-complex formation, and recruits the remaining Q-SNAREs to its binding site to complete trans SNARE complex assembly. While it has been shown that Qa and R SNARE HOPS association precedes the recruitment of the remaining Q-SNAREs, the mechanism behind the recruitment of the remaining Q-SNAREs and the order of their assembly is currently unknown. (add section about luminal acidification/ Ca+)
-
-\subsection{Fusion}\label{fusion}
-
-The final fusion event is perhaps the least understood stage of \emph{S. Cerevisiae} vacuole fusion. Although a number of components have been linked to the final fusion process through genetic deletion screens and co-immunoprecipitation, the mechanisms by which many components regulate the fusion event have yet to be revealed. The final fusion event begins once trans-SNARE complexes have been established between two vacuoles. The assembly of trans-SNARE complexes induces the formation of the vertex ring, a region in which the two vacuole membranes are pressed tightly together forming a flattened boundary. Bilayer and Lumenal Content Mixing is thought to occur via vertex ring hemifusion. Whereas the classical model of hemifusion involves the zippering of membranes proceeding outward from a single fusion pore, the vertex ring hemifusion model proceeds via two separate fusion pores resulting in a fused vacuole containing smaller intralumenal membrane vesicles. These intralumenal membrane vesicles can be observed in \emph{S. Cerevisiae} post fusion which provides strong evidence for the vertex ring hemifusion model as the classical model of hemifusion cannot account for the formation of such vesicles. The activity of the V-ATP complex is one of the several proposed mechanisms by which hemifusion occurs. In response to luminal acidification, the V1 subunit is released from the membrane bound V0 subunit. Concomitantly, in response to Ca+ efflux triggered by trans-SNARE formation, cadmodulin binds to and triggers conformational change in the V0 subunit. The VTC complex is thought to bind to, and stabilize these primed V0 subunits. Following priming, two V0 subunits on the opposing membranes form trans-V0 complexes which are thought to act as fusion pores.
-
-\chapter{Guard Cell Homotypic Vacuole Fusion}\label{GuardFusion}
-
-While \emph{S. Cerevisiae} homotypic vacuole fusion has been extensively studied, the process is not well characterized in \emph{A. Thaliana} or other plant models. It is known that homotypic vacuole fusion is highly conserved among eukaryotes. However, recent studies have shown that \emph{A. Thaliana} guard cell vacuole fusion may occur through an unknown mechanism, unlike those observed in \emph{S. Cerevisiae} homotypic vacuole fusion. In both \emph{A. Thaliana} and \emph{S. Cerevisiae}, the phosphoinositide PI3P is required for the recruitment of the HOPS complex to the vacuole membrane. However, chemical depletion of PI3P via wortmanin treatment in \emph{A. Thaliana} has been shown to induce rapid guard cell vacuole fusion while the same treatment applied to \emph{S. Cerevisiae} significantly inhibited vacuole fusion. The mechanism underlying this disparity is still being investigated with current research pointing to phosphoproteomic regulation as a possible factor.\\
-\strut ~~~~Despite the relatively understudied nature of \emph{A. Thaliana} homotypic vacuole fusion, and the observed disparities between \emph{A. Thaliana} and \emph{S. Cerevisiae} vacuole fusion processes, there are a number of conserved elements which have been confirmed to perform similar roles in each organism. One such element is the HOPS complex, a hexamer composed of 6 homologous proteins (VPS 11,16,18,33,39, and 41). Additionally, the YPT7 homolog in \emph{A. Thaliana}, RABG3f, has been shown to be mediated by the MON1-CCZ1 complex and, in turn, mediates downstream HOPS complex interactions.
-
-Homotypic vacuole fusion is highly conserved among eukaryotes. However, while vacuole fusion has been extensively studied in \emph{S. Cerevisiae} models, \emph{A. Thaliana} guard cell vacuole fusion has received comparatively little research. Furthermore, continuing research into the process of \emph{A. Thaliana} guard cell vacuole fusion indicates a number of inconsistencies between the processes of guard cell vacuole fusion and \emph{S. Cerevisiae} homotypic vacuole fusion. For example, chemical depletion of PI3P via wortmanin treatment in \emph{A. Thaliana} has been shown to induce rapid guard cell vacuole fusion while the same treatment applied to \emph{S. Cerevisiae} significantly inhibited vacuole fusion. PI3P is an essential regulatory lipid in \emph{S. Cerevisiae}, and in both organisms, is responsible for the recruitment of the HOPS complex to the vacuole membrane. This disparity exemplifies the fact that, while proteins may share homologous structure, their regulation and participation in signaling pathways may be significantly different.
-
-\chapter{Computational Methods}\label{CompMethods}
-
-\section{Data Collection}\label{data-collection}
-
-All protein-protein interaction data for both \emph{A. Thaliana} and \emph{S. Cerevisiae} were downloaded from the STRING database (\url{https://string-db.org/}). For each organism, two files were downloaded: protein-info and protein-links. The protein-info files contain the STRING ID of each protein, the proteins common name, the proteins size, and any annotations attached to the protein. The protein-links files contain protein-protein pairs representing individual protein interactions, a number of scoring parameters, and a combined score value which represents the certainty of the interaction. The \emph{A. Thaliana} dataset consisted of 27,463 proteins and 12,557,495 protein-protein interactions while the \emph{S. Cerevisiae} dataset contained 6601 proteins and 2,824,843 protein-protein interactions.
-
-\section{Thresholding and Pruning}\label{thresholding-and-pruning}
-
-The STRING database uses a number of distinct evidence souces to calculate the confidence score of each protein protein interaction. Several of these sources use homologous protein interactions as evidence to support the possiblily of identical protein protein interactions occuring in the organism of interest. Due to the nature of this study, interaction evidence obtained through the comparison of homologs must be excluded to prevent the possiblilty of data contamination. Fortunatly, the STRING database provides their edge scoring algorithm as a python script which allowed for evidence channels obtained through homology to be removed and for the combined scores to be re-calculated. The homolog-free edgelist was then thresholded, allowing only PPI's with a combined confidence score greater than 900 to be included in the dataset. This step reduced the \emph{S. Cerevisiae} edge count to 69,784 and the \emph{A. Thaliana} edge count to 49,604.
-To further isolate proteins which are likely to implicated in \emph{S. Cerevisiae} vacuole fusion, a literature review was conducted with the goal of creating a list of core homotypic vacuole fusion proteins. A total of 45 proteins were identified in the literature review. 43 of the 45 proteins names were successfully converted to STRING IDs, however, PBI2 has no recorded PPI's with a confidence score greater than 900. Proteins without recorded PPI's cause errors when integrating the identified proteins of interest into the thresholded network and PBI2 has thus been removed from the core protein list. It is impractical to expect every PPI invovled in homotypic vacuole fusion to be identified through literature review, therfore, a K-hop algorithm was employed to create a subgraph which likely includes the majority of PPIs involved in the fusion process. The K-hop algorithm requires a set of initial nodes (in this case the 42 core proteins) and a k value (k=2 for the \emph{S. Cerevisiae} dataset) which dictates the number of `hops' the algorithm performs. This algorithm produces a subgraph which contains the initial nodes and all initial node neighbors that are within k edges from the initial nodes. The \emph{A. Thaliana} dataset was pruned through a similar mechanism. However, due to the lack of literature focusing on \emph{A. Thaliana} guard cell homotypic vacuole fusion, a literature review was insufficient for the purpose of idenitfying a set of core proteins. Therefore, a set of \emph{S. Cerevisiae} homologous proteins was used as the basis for constructing an \emph{A. Thaliana} core protein set. Using the STRING API's `homology\_best?' method, 37 of the 42 \emph{S. Cerevisiae} core proteins were matched with homologous proteins from the \emph{A. Thaliana} dataset. STRING's `homology\_best?' method employs the Smith--Waterman algorithm to perform local sequence alignment and identify likely homologous proteins. This method produces a score which describes the similarity of the two proteins where a higher score denotes a greater similarity between the two proteins. The list of \emph{A. Thaliana} core homologous proteins was thresholded to include only proteins with SW scores greater than 550 and pruned with the K-hop algorithm using parameters identical to those used in \emph{S. Cerevisiae} pruning.
-
-\begin{figure}
-\includegraphics[width=1\linewidth]{figure/SC_layer_fig} \caption{S. Cerevisiae layers}\label{fig:unnamed-chunk-3}
-\end{figure}
-
-\begin{figure}
-\includegraphics[width=1\linewidth]{figure/AT_layer_fig} \caption{A. Thaliana layers}\label{fig:unnamed-chunk-4}
-\end{figure}
-
-\section{Network Importance Analysis}\label{network-importance-analysis}
-
-The steps above resulted in two datasets, one for each organism, each containing three `layers' consisting of a set of core proteins, the immidiate neighbors of the core proteins, and the neighbors of the immediate neighbors (henceforth referred to as layer 0, layer 1 and layer 2 respectively). All layers were analyzed to determine the degree centrality and clustering coefficient of their constituent nodes. Degree centrality measures the number of edges connecting the node of interest to other nodes within the graph (ie. if a node is connected to 5 neighbors in the graph that node will have a degree centrality of 5). Nodes with higher degree are often thought to be more `important' to the process modeled by the network and the distribution of node degrees in a network often occurs in a scale free fashion where a small number of nodes have very high degree centrailty while the majority of the nodes have low degree centrality. This is thought to be somewhat of an evolutionary defense mechanism against genetic mutation as loss of function mutations in proteins with low degree centrality are both more likely to happen and are less likely to cause major disruptions in signaling pathways. Clustering coefficinet measures the interconnectedness of nodes in a network. Individual node clustering coefficients are calculated by counting the number of edges between a nodes neighbors and dividing that number by the number of possible connnections between those neighbors. These individual clustering coefficients can be used as a metric for node importance similar to degree or averaged to determine the overal clustering coefficent of the network. Layer 0 of each organism was also analyzed to determine the proportion of homologous edges (ie. edges in which both proteins are homologous and the edge between them appears in both organisms).
-
-\section{Network Visualization}\label{network-visualization}
-
-Two python packages were used to create visual representations of the \emph{S. Cerevisiae} and \emph{A. Thaliana} PPI networks. Cosmograph was used to create two network visualizations for each organism, one which displays a subgraph containing the initial core proteins and their k-neighbors, and one which displays the aforementioned subgraph within the context of the full STRING PPI network. Pymnet was used to construct a multi-layer network visualization in which each of the two layers represents the PPI's between the core proteins of each organism, and edges between the layers represent homologous proteins present in each organim.
+~~~~It is important to note that the protein complexes present on the vacuole membrane prior to fusion are often the result of prior fusion reactions. For example, the cis-SNARE complex is assembled during the final step of the fusion process and remains bound in its cis conformation until the next fusion event (Ungermann et al., 1998). Likewise Sec17 is bound to the cis-SNARE complex in the same fashion (Collins et al., 2005). Prior to the initation of priming, Sec18 is bound to the membrane by Phosphatidic acid (PA) and acts as a membrane receptor for the protein LMA1 (Starr et al., 2019; Xu et al., 1998). To initiate priming, PA is converted to Diacylglycerol (DAG) by the phosphatidic acid phosphatase Pah1 (Sasser et al., 2012). This conversion releases monomeric Sec18 from the membrane. The Sec18 monomers then assemble into hexameric complexes and are recruited to cis-SNARE complexes by Sec17 (Starr et al., 2019; Delgado Cruz \& Kim, 2019). Sec18 binds to Sec17 and hydrolyzes ATP, facilitating the disassembly of the cis-SNARE complex into individual SNARE proteins (Song et al., 2017). During this reaction, LMA1 dissociates from Sec18 and binds to the Qa SNARE (Vam3), providing stabilization (Xu et al., 1997). While three of the four SNARE proteins are membrane-anchored, the Qc SNARE (Vam7) is bound only to the other SNARE proteins within the cis-SNARE complex. Upon Sec18 mediated disassembly, the Qc SNARE and Sec17 are released into the cytosol (Collins et al., 2005). There is also evidence that bundles of Qa SNAREs exist along the membrane during the priming process. These Qa SNARE groups are sequestered by polymerized Vps1 proteins which prevent Qa snares from associating with other SNARE proteins (Alpadi et al., 2013; Röthlisberger et al., 2009). Additionally, several phosphoinositides such as Ergesterol and PI(4,5)P2 have been implicated in the priming stage of homotypic vacuole fusion although their functions have yet to be defined (Kato \& Wickner, 2001).
 
 \newpage
 
 \begin{figure}
-\includegraphics[width=1.2\linewidth]{figure/Multilayer_network} \caption{Homologous edges between A. Thaliana and S. Cervisiae}\label{fig:unnamed-chunk-6}
+\includegraphics[width=1\linewidth]{figure/Priming_diagram} \caption{Priming Diagram}\label{fig:unnamed-chunk-4}
 \end{figure}
 
-\chapter{Ortholog Comparisons}\label{OrthoComp}
+\subsection*{Tethering \& Docking}\label{tethering-docking}
+\addcontentsline{toc}{subsection}{Tethering \& Docking}
 
-\section{Layer 0 Homologs and Properties}\label{layer-0-homologs-and-properties}
-
-SC Layer 0 represents 0.63\% (42/6,600) of the total nodes and 0.47\% (166/34,892) of the total edges in the \emph{S. Cerevisiae} dataset. AT Layer 0 represents 0.10\% (28/27,462) of the total nodes and 0.14\% (35/24,802) of the total edges in the \emph{A. Thaliana} dataset. Layer 0 displays the largest discrepancy in average clustering values with AT layer 0 displaying an average clustering value of 0.35 while SC layer 0 displayed an average clustering value of 0.69. A total of 33 homologous edges were identified between the two layer 0's representing 19.87\% (33/166) of the total \emph{S. Cerevisiae} layer 0 edges, and 94.28\% (33/35) of the total \emph{A. Thaliana} layer 0 edges.\\
-\strut ~~~~Analysis of the top 20 layer 0 \emph{A. Thaliana} nodes by combined network importance score shows that the majority of the top scoring nodes in \emph{A. Thaliana} layer 0 consist of proteins belonging to the HOPS complex, SNARE complex, and V-ATPase complex. All 6 HOPS proteins, 3 out of the 4 SNARE proteins, and 9 out of the 13 V-ATPase proteins were represented in the top 20 nodes of \emph{A. Thaliana} layer 0. A comparison of each set of 20 proteins in the respective layer 0's shows that 13 out of the top 20 proteins in \emph{A. Thaliana} layer 0 are homologous to proteins in the top 20 proteins in \emph{S. Cerevisiae} layer 0. Out of the 20 proteins in the \emph{A. Thaliana} layer 0, two proteins were not members of the HOPS, SNARE, or V-ATPase complex. These two proteins (Vps34 and Vps15) are homologous to \emph{S. Cerevisiae} Vps34 and Vps15 which have be shown to form complexes responsible for the conversion of membrane bound PI to PI3P.
+~~~~In the initial stage of the tethering process, both Vps41 (a HOPS complex subunit) and Ypt7 must be phosphorylated by Yck3 and the Ccz1-Mon1 complex respectively (Zick \& Wickner, 2012; Wang et al., 2003). During this step, Vps34 is recruited to the membrane by the membrane bound Vps15. This Vps34/15 complex is then activated by Gpa1 to synthesize PI3P from PI (Stack et al., 1993). Following these phosphorylation events, the HOPS complex binds to Ypt7 proteins on the two opposing membranes tethering the two vesicles in close proximity (Price et al., 2000). The HOPS complex shares a binding affinity for both Vam7 and PI3P which promotes the localization of both components along the vertex ring at which point HOPS-Vam7 binding initiates trans-SNARE assembly (Stroupe et al., 2006). It is important to note that this process not only tethers the two membranes together but also correctly positions the SNARE proteins on the opposing membranes as antiparallel bound SNAREs often lead to fusion inactive complexes (Song \& Wickner, 2019). In addition to the numerous regulatory mechanisms above, tethering is also mediated by the dynamin-like Vps1 protein. Vps1 sequesters a population of individual Qa SNARE proteins which remain separate from cis-SNARE complexes. Qa SNARE bundles associated with Vps1 can undergo tethering upon contact with the HOPS complex; however, to form trans-SNARE complexes, Vps1 must be depolymerized by Sec18 to release the individual Qa-SNAREs (Alpadi et al., 2013; Peters et al., 2004; Röthlisberger et al., 2009).\\
+\strut ~~~~While tethering and docking are generally defined as separate processes in yeast homotypic vacuole fusion, the distinction between when tethering ends and docking begins is not clearly delinated. Docking is said to be completed once trans-SNARE complexes have been established, bridging the two opposing membranes. This process is primarily mediated by the HOPS complex (Ho \& Stroupe, 2016). During the docking process, the HOPS complex protects trans SNARE complexes from Sec18 mediated dissassembly, initiates trans SNARE complex assembly by binding to the Qa SNARE and R SNARE on opposing membranes, proofreads SNARE complexes allowing only correctly assembled SNARES to undergo trans-complex formation, and recruits the remaining Q-SNAREs to its binding site to complete trans SNARE complex assembly (Song et al., 2020; Starai et al., 2008; Zick \& Wickner, 2013; Collins et al., 2005). While it has been shown that Qa and R SNARE HOPS association precedes the recruitment of the remaining Q-SNAREs, the mechanism behind the recruitment of the remaining Q-SNAREs and the order of their assembly is currently unknown (Shvarev et al., 2022).
 
 \begin{figure}
-\includegraphics[width=1\linewidth,height=0.7\textheight]{figure/L0_importance_updated_fig} \caption{Layer 0 top 20 Network Importance}\label{fig:unnamed-chunk-7}
+\includegraphics[width=1\linewidth]{figure/Tethering_diagram} \caption{Tethering Diagram}\label{fig:unnamed-chunk-5}
 \end{figure}
 
-\section{Layer 1 Homologs and Properties}\label{layer-1-homologs-and-properties}
+\subsection*{Fusion}\label{fusion}
+\addcontentsline{toc}{subsection}{Fusion}
 
-SC Layer 1 represents 3.5\% (236/6,600) of the total nodes and 3.5\% (1,250/34,892) of the total edges in the \emph{S. Cerevisiae} dataset. AT Layer 1 represents 0.44\% (121/27,462) of the total nodes and 1.64\% (407/24,902) of the total edges in the \emph{A. Thaliana} dataset. The average clustering coefficients for each organisms layer 1 were similar with \emph{A. Thaliana} displaying a 0.59 clustering coefficient and \emph{S. Cerevisiae} displaying a 0.64 clustring coefficient. A total of 101 homologous edges were identified between the two layer 1's representing 8.08\% (101/1,250) of the total \emph{S. Cerevisiae} layer 1 edges, and 24.81\% (101/407) of the total \emph{A. Thaliana} layer 1 edges.\\
-\strut ~~~~Analysis of the top 20 layer 1 \emph{A. Thaliana} nodes shows a marked difference in comparison to layer 0. All \emph{A. Thaliana} layer 0 nodes in the top 20 are involved in lipid synthesis or modification (ie. phosphorylation or transferase activity). A single protein, Vps34, in shared between the top 20 nodes of each layer 1. Out of the top 20 \emph{A. Thaliana} proteins, 10 have no identified homologs in yeast.
+The final fusion event is perhaps the least understood stage of \emph{S. cerevisiae} vacuole fusion. Although a number of components have been linked to the final fusion process through genetic deletion screens and co-immunoprecipitation, the mechanisms by which many components regulate the fusion event have yet to be revealed (Bayer et al., 2003; Müller et al., 2002; Peters et al., 2001). The final fusion event begins once trans-SNARE complexes have been established between two vacuoles (Jun \& Wickner, 2007). The assembly of trans-SNARE complexes induces the formation of the vertex ring, a region in which the two vacuole membranes are pressed tightly together forming a flattened boundary (Wickner, 2010). Bilayer and Lumenal Content Mixing is thought to occur via vertex ring hemifusion. Whereas the classical model of hemifusion involves the zippering of membranes proceeding outward from a single fusion pore, the vertex ring hemifusion model proceeds via two separate fusion pores resulting in a fused vacuole containing smaller intralumenal membrane vesicles (Wang et al., 2002). These intralumenal membrane vesicles can be observed in \emph{S. cerevisiae} post fusion which provides strong evidence for the vertex ring hemifusion model as the classical model of hemifusion cannot account for the formation of such vesicles. The activity of the V-ATP complex is one of the several proposed mechanisms by which hemifusion occurs. In response to luminal acidification, the V1 subunit is released from the membrane bound V0 subunit. Concomitantly, in response to Ca+ efflux triggered by trans-SNARE formation, cadmodulin binds to and triggers conformational change in the V0 subunit. The VTC complex is thought to bind to, and stabilize these primed V0 subunits. Following priming, two V0 subunits on the opposing membranes form trans-V0 complexes which are thought to act as fusion pores (Müller et al., 2002; Peters et al., 2001). Although the role of the V-ATPase complex in vacuole fusion is largely attributed to its formation of fusion pores, it is important to note that the complex is also involved in vacuole luminal acidification. Luminal acidification has been shown to negatively regulate vacuole fusion and recent studies have shown that decoupling of the V1 and V0 V-ATPase subunits occurs only in vescicles with sufficiently acidified vacuoles (Desfougères et al., 2016; Poëa-Guyon et al., 2013).
 
 \begin{figure}
-\includegraphics[width=1\linewidth,height=0.85\textheight]{figure/L1_importance_updated_fig} \caption{Layer 1 top 20 Network Importance}\label{fig:unnamed-chunk-8}
+\includegraphics[width=1\linewidth]{figure/Fusion_diagram} \caption{Fusion Diagram}\label{fig:unnamed-chunk-6}
 \end{figure}
 
-\section{Layer 2 Properties}\label{layer-2-properties}
+\section*{\texorpdfstring{\emph{A. thaliana} Guard Cell Homotypic Vacuole Fusion}{A. thaliana Guard Cell Homotypic Vacuole Fusion}}\label{a.-thaliana-guard-cell-homotypic-vacuole-fusion}
+\addcontentsline{toc}{section}{\emph{A. thaliana} Guard Cell Homotypic Vacuole Fusion}
 
-SC Layer 2 represents 10.66\% (704/6,600) of the total nodes and 9.58\% (3,345/34,892) of the total edges in the \emph{S. Cerevisiae} dataset. AT Layer 2 represents 1.46\% (401/27,462) of the total nodes and 7.99\% (1,983/24,802) of the total edges in the \emph{A. Thaliana} dataset. The average clustering coefficients for each organisms layer 2 were nearly identical with \emph{A. Thaliana} displaying a 0.59 clustering coefficient and \emph{S. Cerevisiae} displaying a 0.58 clustering coefficient. A total of 158 homologous edges were identified between the two layer 2's representing 4.72\% (158/3,345) of the total \emph{S. Cerevisiae} layer 1 edges, and 7.96\% (158/1,983) of the total \emph{A. Thaliana} layer 2 edges.
+~~~~While \emph{S. cerevisiae} homotypic vacuole fusion has been extensively studied, the process is not well characterized in \emph{A. thaliana} or other plant models. It is known that homotypic vacuole fusion is highly conserved among eukaryotes (Wickner \& Schekman, 2008). However, recent studies have shown that \emph{A. thaliana} guard cell vacuole fusion may occur through an unknown mechanism, unlike those observed in \emph{S. cerevisiae} homotypic vacuole fusion. In both \emph{A. thaliana} and \emph{S. cerevisiae}, the phosphoinositide PI3P is required for the recruitment of the HOPS complex to the vacuole membrane. However, chemical depletion of PI3P in \emph{A. thaliana} has been shown to induce rapid guard cell vacuole fusion while the same treatment applied to \emph{S. cerevisiae} significantly inhibited vacuole fusion (Hodgens et al., 2024). Depletion of PI3P is acheived by incubating \emph{A. thaliana} leaves in a buffer solution containing the fugal metabolite wortmannin, which targets PI3K and PI4K in a dose dependant manner, for two hours in the dark (Takáč et al., 2012). PI3K is the kinase responsible for the production of PI3P and its inhibition leads to PI3P depletion in wortmannin treated leaves (Lee et al., 2008; Hodgens et al., 2024). The mechanism underlying the disparity between \emph{S. cerevisiae} and \emph{A. thaliana} PI3P function is still being investigated with current research pointing to phosphoproteomic regulation as a possible factor.\\
+\strut ~~~~Despite the relatively understudied nature of \emph{A. thaliana} homotypic vacuole fusion, and the observed disparities between \emph{A. thaliana} and \emph{S. cerevisiae} vacuole fusion processes, there are a number of conserved elements which have been confirmed to perform similar roles in each organism. One such element is the HOPS complex, a hexamer composed of 6 homologous proteins (VPS 11,16,18,33,39, and 41) (Pullen et al., 2025). Additionally, the YPT7 homolog in \emph{A. thaliana}, RABG3f, has been shown to be mediated by the MON1-CCZ1 complex and, in turn, mediates downstream HOPS complex interactions (Cui et al., 2014).
+
+\chapter*{Computational Methods}\label{computational-methods}
+\addcontentsline{toc}{chapter}{Computational Methods}
+
+\section*{Data Collection}\label{data-collection}
+\addcontentsline{toc}{section}{Data Collection}
+
+All protein-protein interaction data for both \emph{A. thaliana} and \emph{S. cerevisiae} were downloaded from the STRING database (\url{https://string-db.org/}). For each organism, two files were downloaded: protein-info and protein-links. The protein-info files contain the STRING ID of each protein, the proteins common name, the proteins size, and any annotations attached to the protein. The protein-links files contain protein-protein pairs representing individual protein interactions, a number of scoring parameters, and a combined score value which represents the certainty of the interaction. The \emph{A. thaliana} dataset consisted of 27,463 proteins and 12,557,495 protein-protein interactions while the \emph{S. cerevisiae} dataset contained 6601 proteins and 2,824,843 protein-protein interactions. When constructing a graph representation of the STRING data, each protein is represented by a node and each interaction between two proteins is represented by an edge which connects the two proteins.
 
 \begin{figure}
-\includegraphics[width=0.9\linewidth,height=0.6\textheight]{figure/L2_stats_updated_fig} \caption{Layer 1 top 20 Network Importance}\label{fig:unnamed-chunk-9}
+\includegraphics[width=0.6\linewidth,height=0.3\textheight]{figure/STRING_example} \caption{STRING DB Example Graph}\label{fig:unnamed-chunk-7}
 \end{figure}
 
-\section{Discussion}\label{discussion}
+\section*{Thresholding and Pruning}\label{thresholding-and-pruning}
+\addcontentsline{toc}{section}{Thresholding and Pruning}
 
-\subsection{Data Availability and Quality}\label{data-availability-and-quality}
+The STRING database uses a number of distinct evidence souces to calculate the confidence score of each protein protein interaction. Several of these sources use homologous protein interactions as evidence to support the possiblily of identical protein protein interactions occuring in the organism of interest. As this thesis involves mapping homologous interactions between two organisms, including PPI's established through STRINGs homology data had the potential to introduce confounding variables. Therefore, interaction evidence obtained through the comparison of homologs must was excluded when building each graph. Fortunatly, the STRING database provides their edge scoring algorithm as a python script which allowed for evidence channels obtained through homology to be removed and for the combined scores to be re-calculated. The homolog-free edgelist was then thresholded, allowing only PPI's with a combined confidence score greater than 900 to be included in the dataset. This step reduced the \emph{S. cerevisiae} edge count to 69,784 and the \emph{A. thaliana} edge count to 49,604.
+To further isolate proteins which are likely to implicated in \emph{S. cerevisiae} vacuole fusion, a literature review was conducted with the goal of creating a list of core homotypic vacuole fusion proteins. A total of 45 proteins were identified in a literature review of approximately 90 papers. 43 of the 45 proteins names were successfully converted to STRING IDs, however, PBI2 has no recorded PPI's with a confidence score greater than 900. Proteins without recorded PPI's cause errors when integrating the identified proteins of interest into the thresholded network and PBI2 has thus been removed from the core protein list. It is impractical to expect every PPI invovled in homotypic vacuole fusion to be identified through literature review, therfore, a K-hop algorithm was employed to create a subgraph which likely includes the majority of PPIs involved in the fusion process. The K-hop algorithm utilizes the concept of node neighbors within a graph. Neighbors are defined as all nodes connected directly to the node of interest by one or more edges.
+The K-hop algorithm requires a set of PPIs representing the graph, a set of initial nodes (in this case the 42 core proteins) and a k value (k=2 for the \emph{S. cerevisiae} dataset) which dictates the number of `hops' the algorithm performs. In this context, a ``hop'' involves collecting all neighbors of each protein in the specified list of proteins. Any subsequent hops collect the neighbors of the previous hops collected neighbors. This algorithm produces a subgraph which contains the initial nodes and all initial node neighbors that are within k edges from the initial nodes. The \emph{A. thaliana} dataset was pruned through a similar mechanism. However, due to the lack of literature focusing on \emph{A. thaliana} guard cell homotypic vacuole fusion, a literature review was insufficient for the purpose of idenitfying a set of core proteins. Therefore, a set of \emph{S. cerevisiae} homologous proteins was used as the basis for constructing an \emph{A. thaliana} core protein set. Using the STRING API's `homology\_best?' method, 37 of the 42 \emph{S. cerevisiae} core proteins were matched with homologous proteins from the \emph{A. thaliana} dataset. STRING's `homology\_best?' method employs the Smith--Waterman algorithm to perform local sequence alignment and identify likely homologous proteins. This method produces a score which describes the similarity of the two proteins where a higher score denotes a greater similarity between the two proteins. The list of \emph{A. thaliana} core homologous proteins was pruned with the K-hop algorithm using parameters identical to those used in \emph{S. cerevisiae} pruning.
 
-As with any computation based study, the quality and quantity of data is extremely important. All data used in this study was downloaded from the STRING database which collects both known and predicted protein protein interactions (PPI's). STRING draws from a number of data sources when collecting PPI's. These sources include automated text mining of the scientific literature, computational interaction predictions from co-expression, conserved genomic context, databases of interaction experiments and known complexes/pathways from curated sources. String assigns each PPI a confidence score with higher scores signaling a higher confidence that the two proteins are interacting in vivo. As a single PPI may have multiple sources of evidence, the confidence score is calculated as an average of all evidence channels. However, to account for the probabililty that any two random proteins may interact, a prior value of 0.41 is integrated into each evidence channel score and must be removed and re-applied when calculating the overall confidence score of an interaction. As mentioned above, one of the evidence sources used by STRING to calculate confidence scores is conserved genomic context. Out of the 14 individual evidence channels used to calculate the confidence score, 6 consist of interaction data inferred from homologous PPI's observed in other species. While evidence obtained through homology is by no means inaccurate or invalid, these evidence channels were excluded from the data used in this analysis. As the goal of this experiment is to compare homolgous PPI's present in both \emph{A. Thaliana} and \emph{S. Cerevisiae}, including PPI's inferred through homology introduces potentially confounding data. For example, If a PPI in \emph{S. Cerevisiae} was inferred through an observed interaction between homologous proteins in \emph{D. Melanogaster} , the STRING data would include that interaction in the \emph{S. Cerevisiae} PPI dataset. If those two proteins also interact in the \emph{A. Thaliana}, this interaction would be classified as homologous between \emph{A. Thaliana} and \emph{S. Cerevisiae} despite the data actually being representative of a homologous PPI between \emph{A. Thaliana} and \emph{D. Melanogaster}. Fortunately, STRING provides the script used for calculating confidence scores from individual evidence channels and evidence inferred through homology was easily removed. In addition to removing potentially confounding evidence channels, a thresholding mechanism was employed during the data cleaning process. The threshold was set at a somewhat arbitrary value of 900, meaning that only PPI's with a total confidence score of 900 or greater would be included in the dataset. A threshold of 900 is relatively high in the context of STRING confidence scores and was chosen with the intention that all PPI's included in the dataset would have strong evidence backing their interaction in vivo. While removing homology derived evidence and thresholding by confidence scores reduce confounding data and increase data quality respectively, these two measures also reduce the total number of PPI's in the dataset. This potentially means removing PPI's that do occur in vivo, yet don't have sufficient supporing evidnece in the literature. This is unfortunately unavoidable, yet must be taken into consideration when comparing the two PPI networks.
+\section*{Network Importance Analysis}\label{network-importance-analysis}
+\addcontentsline{toc}{section}{Network Importance Analysis}
 
-\subsection{Layer Based Analysis}\label{layer-based-analysis}
+The steps above resulted in two datasets, one for each organism, each containing three `layers' consisting of a set of core proteins, the immidiate neighbors of the core proteins, and the neighbors of the immediate neighbors (henceforth referred to as layer 0, layer 1 and layer 2 respectively). All layers were analyzed to determine the degree centrality, harmonic centrality, and clustering coefficient of their constituent nodes. Degree centrality measures the number of edges connecting the node of interest to other nodes within the graph (ie. if a node is connected to 5 neighbors in the graph that node will have a degree centrality of 5). Nodes with higher degree are often thought to be more `important' to the process modeled by the network and the distribution of node degrees in a network often occurs in a scale free fashion where a small number of nodes have very high degree centrailty while the majority of the nodes have low degree centrality. This is thought to be somewhat of an evolutionary defense mechanism against genetic mutation as loss of function mutations in proteins with low degree centrality are both more likely to happen and are less likely to cause major disruptions in signaling pathways. Harmonic centrality measures how central a node is within the context of the graph. Nodes that are more central to the network are often more important for the flow of information through signaling pathways. Clustering coefficinet measures the interconnectedness of nodes in a network. Individual node clustering coefficients are calculated by counting the number of edges between a nodes neighbors and dividing that number by the number of possible connnections between those neighbors. These individual clustering coefficients can be used as a metric for node importance similar to degree or averaged to determine the overal clustering coefficent of the network. Layer 0 of each organism was also analyzed to determine the proportion of homologous edges (ie. edges in which both proteins are homologous and the edge between them appears in both organisms). While each individual node importance metric provides important insight, analyzing each of the several thousand nodes in each network by each individual importance metric is not feasible. Therefore, an average importance metric was calculated for the purposes of assessing a nodes overall importance in the network. However, a simple average of scores does not suffice in this case, as each importance metric score is represented by a different range of values (ex. clustering coefficient is always a number between 0 and 1 while harmonic centrality values are unconstrained). Therfore each network importance metric for each node was assigned a score based on the nodes position in a list of nodes sorted by the importance network score (ex. if a node has the highest clustering coefficient in its layer, the clustering coefficient score of that node will be 1). These relative node importance scores were then added to create an overall network importance score (or combined index score as seen in figures 4.1 and 4.2) for each node where lower scores represent a higher total network importance (with a score of 3 being the highest possible overall importance).
 
-The decision to perform independant analyses of each layer was a natural consequence of the data pruning process. After re-calculating confidence scores and thresholding the STRING data, additional processing was needed to isolate the subnetwork in each oraganisms dataset containing proteins likely to be implicated in the homotypic vacuole fusion process. While there are multiple methods for isolating subgraphs, a neighborhood-based approach seemed to be the best fit for the purpose of this experiment. By expanding the subgraph based on the neighbors of the nodes in the current subgraph, all edges between all nodes in the subgraph are preserved which increases the potential number of observed homologous edges. Additionally, by confining the subgraph to a maximum of two `hops', the longest distance between any periphrial node and a layer 0 node is two edges, which increases the likelyhood that periphrial nodes are in some way invloved in the homotypic vacuole fusion process. Initially, the process of determining the initial protein set for each organim was identical, perform a literature review and collate a list of proteins which have been experimentally verified to participate in the process of homotypic vacuole fusion. However, after completing \emph{S. Cerevisiae} literature review, it became apparent that a similar process was not feasible for \emph{A. Thaliana}. \emph{S. Cerevisiae} is considered to be the model organism for studing the process of homotypic vaculole fusion and a large body of work is devoted to the study of this particular process in both isolated \emph{S. Cerevisiae} vacuoles and living \emph{S. Cerevisiae} models. Conversely, there is little research devoted to the process of homotypic vacuole fusion in \emph{A. Thaliana} and even less research focused on the precise mechanism of \emph{A. Thaliana} guard cell homotypic vacuole fusion. Therefore, in lieu of compiling a initial protein set for \emph{A. Thaliana} through literature review, an initial set of \emph{A. Thaliana} proteins was inferred by compiling all proteins in the \emph{S. Cerevisiae} initial protein set and selecting those with homologous proteins in \emph{A. Thaliana}. This decision is justified by substantial evidence pointing towards the highly conserved nature of homotypic vacuole fusion accross all eukaryotes. In theory, if the homotypic vacuole fusion process is highly conserved, then the core homologous proteins in \emph{S. Cerevisiae} should, to an extent, represent proteins highly involved in the \emph{A. Thaliana} homotypic vacuole fusion process.
+\section*{Network Visualization}\label{network-visualization}
+\addcontentsline{toc}{section}{Network Visualization}
 
-\subsection{Node Importance Metrics}\label{node-importance-metrics}
+Two python packages were used to create visual representations of the \emph{S. cerevisiae} and \emph{A. thaliana} PPI networks. Cosmograph was used to create two network visualizations for each organism, one which displays a subgraph containing the initial core proteins and their k-neighbors, and one which displays the aforementioned subgraph within the context of the full STRING PPI network. Pymnet was used to construct a multi-layer network visualization in which each of the two layers represents the PPI's between the core proteins of each organism, and edges between the layers represent homologous proteins present in each organim.
 
-While a host of node importance metrics are commonly used in network analysis, several considerations were taken into accound when selecting the three importance metrics used in this experiment. The three selected importance metrics represent three general methods for assessing node importance, degree, clustering, and centrality. Degree centrality represents the number of neighbors connected to each node. Nodes with higher degree are considered to be more important in the context of the network as they represent a higher proportion of the PPI's than nodes with lower degree. To assess the clustering coefficient of each node a standard clustering coefficient algorithm was employed. The clustering coefficient algorithm counts the number of neighbors connected to any one node and uses that number to calculate the maximum number of edges that could exist between each neighbor. The maximum number of edges betweeen neighbors is then divided by the observed number of edges between neighbors to compute the clustering coefficient. Clustering coefficient measures how interconnected a node is within its immediate neighborhood. This metric is useful for identifying biologically relevant subnetworks such as protein complexes as each protein within the complex interacts with most if not all of the other proteins in the complex, increasing the clustering coeffient for all proteins in the complex. Computing node centrality was slightly more challenging due to the \emph{A. Thaliana} network being composed of multiple disconnected components. While degree and clustering calculations are not confined to fully connected networks, many centrality measures assume a fully connected network. Therefore, the harmonic centrality algorithm was used to compute node centrality. The harmonic centrality algorithm assigns a centrality value to a node equal to the sum of the reciprocals of each shortest path between a node and every other node in the graph. If there is no path between a node and another node in the graph, the reciprocal value of that path is set to 0 and does not affect the calculation. Centrality is used to identify nodes which are likely important to the flow of information throughout the network. While each individual node importance metric provides important insight, analyzing each of the several thousand nodes in each network by each individual importance metric is not feasible. Therefore, an average importance metric was calculated for the purposes of assessing a nodes overall importance in the network. However, a simple average of scores does not suffice in this case, as each importance metric score is represented by a different range of values (ex. clustering coefficient is always a number between 0 and 1 while harmonic centrality values are unconstrained). Therfore each network importance metric for each node was assigned a score based on the nodes position in a list of nodes sorted by the importance network score (ex. if a node has the highest clustering coefficient in its layer, the clustering coefficient score of that node will be 1). These relative node importance scores were then added to create an overall network importance score for each node where lower scores represent a higher total network importance (with a score of 3 being the highest possible overall importance).
+\newpage
 
-\subsection{Protein Protein Interaction Networks}\label{protein-protein-interaction-networks}
+\begin{figure}
+\includegraphics[width=1.1\linewidth]{figure/Multilayer_network} \caption{Homologous edges between A. Thaliana and S. Cervisiae}\label{fig:unnamed-chunk-9}
+\end{figure}
+
+\chapter*{Results}\label{results}
+\addcontentsline{toc}{chapter}{Results}
+
+\section*{Generated Networks}\label{generated-networks}
+\addcontentsline{toc}{section}{Generated Networks}
+
+~~~~SC Layer 0 represents 0.63\% (42/6,600) of the total nodes and 0.47\% (166/34,892) of the total edges in the \emph{S. cerevisiae} dataset. AT Layer 0 represents 0.10\% (28/27,462) of the total nodes and 0.14\% (35/24,802) of the total edges in the \emph{A. thaliana} dataset. Layer 0 displays the largest discrepancy in average clustering values with AT layer 0 displaying an average clustering value of 0.35 while SC layer 0 displayed an average clustering value of 0.69. A total of 33 homologous edges were identified between the two layer 0's representing 19.87\% (33/166) of the total \emph{S. cerevisiae} layer 0 edges, and 94.28\% (33/35) of the total \emph{A. thaliana} layer 0 edges.\\
+\strut ~~~~SC Layer 1 represents 3.5\% (236/6,600) of the total nodes and 3.5\% (1,250/34,892) of the total edges in the \emph{S. cerevisiae} dataset. AT Layer 1 represents 0.44\% (121/27,462) of the total nodes and 1.64\% (407/24,902) of the total edges in the \emph{A. thaliana} dataset. The average clustering coefficients for each organisms layer 1 were similar with \emph{A. thaliana} displaying a 0.59 clustering coefficient and \emph{S. cerevisiae} displaying a 0.64 clustring coefficient. A total of 101 homologous edges were identified between the two layer 1's representing 8.08\% (101/1,250) of the total \emph{S. cerevisiae} layer 1 edges, and 24.81\% (101/407) of the total \emph{A. thaliana} layer 1 edges.
+
+\newpage
+
+\begin{figure}
+\includegraphics[width=1\linewidth]{figure/SC_layer_fig} \caption{Layer 0 represents the initial node set. layers 1 and 2 represent the neighbors collected in the the first and second hop. All Layers represents both the initial node set and all neighbors collected from each hop}\label{fig:unnamed-chunk-11}
+\end{figure}
+
+\newpage
+
+\begin{figure}
+\includegraphics[width=1\linewidth]{figure/AT_layer_fig} \caption{Layer 0 represents the initial node set. layers 1 and 2 represent the neighbors collected in the the first and second hop. All Layers represents both the initial node set and all neighbors collected from each hop}\label{fig:unnamed-chunk-13}
+\end{figure}
+
+\newpage
+
+\section*{Layer 0 Homologs}\label{layer-0-homologs}
+\addcontentsline{toc}{section}{Layer 0 Homologs}
+
+~~~~Analysis of the top 20 layer 0 \emph{A. thaliana} nodes by combined network importance score shows that the majority of the top scoring nodes in \emph{A. thaliana} layer 0 consist of proteins belonging to the HOPS complex, SNARE complex, and V-ATPase complex. All 6 HOPS proteins, 3 out of the 4 SNARE proteins, and 9 out of the 13 V-ATPase proteins were represented in the top 20 nodes of \emph{A. thaliana} layer 0. A comparison of each set of 20 proteins in the respective layer 0's shows that 13 out of the top 20 proteins in \emph{A. thaliana} layer 0 are homologous to proteins in the top 20 proteins in \emph{S. cerevisiae} layer 0. Out of the 20 proteins in the \emph{A. thaliana} layer 0, two proteins were not members of the HOPS, SNARE, or V-ATPase complex. These two proteins (Vps34 and Vps15) are homologous to \emph{S. cerevisiae} Vps34 and Vps15 which have be shown to form complexes responsible for the conversion of membrane bound PI to PI3P.
+
+\newpage
+
+\begin{figure}
+\includegraphics[width=1\linewidth,height=0.7\textheight]{figure/L0_importance_updated_fig} \caption{Each node in the graph represents a protein while each edge between two nodes represents a PPI between the nodes. The combined scores collumns represent the top 20 proteins in each layer 0 ranked by combined index score (see Network Importance Analysis in the Computational Methods Section). Each graph displays the entirety of each layer 0 with darker node color representing higher combined index score. Some edges between nodes may be obscured by overlapping neighboring nodes, however, if a node has any amount of coloring, it is connected by an edge to at least one other node}\label{fig:unnamed-chunk-16}
+\end{figure}
+
+\newpage
+
+\section*{Layer 1 Homologs}\label{layer-1-homologs}
+\addcontentsline{toc}{section}{Layer 1 Homologs}
+
+~~~~Analysis of the top 20 layer 1 \emph{A. thaliana} nodes shows a marked difference in comparison to layer 0. All \emph{A. thaliana} layer 0 nodes in the top 20 are involved in lipid synthesis or modification (ie. phosphorylation or transferase activity). A single protein, Vps34, in shared between the top 20 nodes of each layer 1. Out of the top 20 \emph{A. thaliana} proteins, 10 have no identified homologs in yeast.
+
+\newpage
+
+\begin{figure}
+\includegraphics[width=1\linewidth,height=0.85\textheight]{figure/L1_importance_updated_fig} \caption{Each node in the graph represents a protein while each edge between two nodes represents a PPI between the nodes. The combined scores collumns represent the top 20 proteins in each layer 1 ranked by combined index score (see Network Importance Analysis in the Computational Methods Section). Each graph displays the entirety of each layer 1 with node color corresponding to the nodes combined index score (darker colors represent higher importance nodes).}\label{fig:unnamed-chunk-19}
+\end{figure}
+
+\newpage
+
+\section*{Layer 2 Properties}\label{layer-2-properties}
+\addcontentsline{toc}{section}{Layer 2 Properties}
+
+SC Layer 2 represents 10.66\% (704/6,600) of the total nodes and 9.58\% (3,345/34,892) of the total edges in the \emph{S. cerevisiae} dataset. AT Layer 2 represents 1.46\% (401/27,462) of the total nodes and 7.99\% (1,983/24,802) of the total edges in the \emph{A. thaliana} dataset. The average clustering coefficients for each organisms layer 2 were nearly identical with \emph{A. thaliana} displaying a 0.59 clustering coefficient and \emph{S. cerevisiae} displaying a 0.58 clustering coefficient. A total of 158 homologous edges were identified between the two layer 2's representing 4.72\% (158/3,345) of the total \emph{S. cerevisiae} layer 1 edges, and 7.96\% (158/1,983) of the total \emph{A. thaliana} layer 2 edges.
+
+\begin{figure}
+\includegraphics[width=0.9\linewidth,height=0.6\textheight]{figure/L2_stats_updated_fig} \caption{Layer 2 combined index score statistics.}\label{fig:unnamed-chunk-21}
+\end{figure}
+
+\chapter*{Discussion}\label{discussion}
+\addcontentsline{toc}{chapter}{Discussion}
+
+\section*{Layer 0 Analysis}\label{layer-0-analysis}
+\addcontentsline{toc}{section}{Layer 0 Analysis}
+
+Due to the methodology of curating \emph{A. thaliana} layer 0 proteins from the list of \emph{S. cerevisiae} layer 0 proteins, a comparison betweeen the two layer's should be treated as a control case as opposed to experimental results. One of the most obvious discrepancies between the two layers is a marked difference between edge counts. While \emph{S. cerevisiae} layer 0 contains 166 edges, \emph{A. thaliana} layer 0 contains only 35. There are several possible explanations for this discrepancy. It is possible that edges in the \emph{A. thaliana} dataset were highly dependent on homology data which would have reduced the nubmer of edges included when homology data was removed from the edge confidence calculation. Likewise, it is also possible that \emph{A. thaliana} edges had a lower confidence scores overall and, combined with a further reduction of confidence due to homology data removal, were greatly reduced in number by the 900 confidence score threshold. Another possible explanation is that the nodes in \emph{A. thaliana} layer 0 simply have less edges connecting them to other layer 0 nodes. This explanation is supported by the relatively low clustering coefficient displayed by \emph{A. thaliana} layer 0. The low clustering coefficient and relatively disconnected nodes in \emph{A. thaliana} layer 0 indicate that the individual connected components are not directly interacting with each other as they are in the \emph{S. cerevisiae} layer 0 and that additional regulatory elements are required to bridge the connected components. Conversely, the highly connected nature of the \emph{S. cerevisiae} layer 0 subgraph indicates that the literature review process was successful in identifying core proteins involved in the \emph{S. cerevisiae} homotypic vacuole fusion process.
+
+\section*{Layer 1 Analysis}\label{layer-1-analysis}
+\addcontentsline{toc}{section}{Layer 1 Analysis}
+
+Layer 1 is the most experimentally relevant layer out of the three. While layer 0 is moreso representative of choices in methology, layer 1 serves as somewhat of a middleground where each node is likely involved in homotypic vacuole fusion yet was not curated directly through the literature review process. Comparing the top 20 proteins of each layer 1 subgraph by combined network importance score reveals a striking difference in protein function between the two organisms. While the majority of the high importance nodes in the \emph{S. cerevisiae} subgraph are subcomponents of the various protein complexes known to be essential for homotypic vacuole fusion, all of the top 20 high importance nodes in the \emph{A. thaliana} layer 0 subgraph are involved in lipid synthesis or modification. This incongruity is likely representative of an outsized role of regulatory lipids in the process of \emph{A. thaliana} homotypic vacuol fusion in comparison to \emph{S. cerevisiae} homotypic vacuole fusion. This conclusion is supported by the fact that there are fundamental differences between the phospholipid biosynthetic pathways of \emph{A. thaliana} and \emph{S. cerevisiae}. Furthermore depletion of PI3P, an essential regulatory lipid in the \emph{S. cerevisiae} homotypic vacuole fusion process, has been shown to rapidly induce \emph{A. thaliana} guard cell vacuole fusion.
+
+\section*{Layer 2 Analysis}\label{layer-2-analysis}
+\addcontentsline{toc}{section}{Layer 2 Analysis}
+
+Layer 2 was determined to not be experimentally relevant as the majority of proteins added in the conversion between layer 1 and layer 2 were not implicated in the vacuole fusion process. Furthermore, the majority of the top 20 high importance nodes in each layer 2 represent proteins which are not known to affect vacuole fusion. This conclusion is further supported by the low combined index scores of the top 20 proteins in each layer 2 subgraph. These scores show that nodes in the top 20 importance metric score relatively high in one metric but not others, indicating that the network lacks true `hubs' and that the proteins in each subgraph are more likely to be representative of multiple distinct signaling pathways rather than the process of homotypic vacuole fusion.
+
+\newpage
+
+\begin{figure}
+\includegraphics[width=1\linewidth,height=0.43\textheight]{figure/SC_hist_updated} \caption{S. Cerevisiae layer statistics}\label{fig:unnamed-chunk-23}
+\end{figure}
+
+\begin{figure}
+\includegraphics[width=1\linewidth,height=0.43\textheight]{figure/AT_hist_updated} \caption{A. Thaliana layer statistics}\label{fig:unnamed-chunk-24}
+\end{figure}
+
+\section*{Data Availability and Quality}\label{data-availability-and-quality}
+\addcontentsline{toc}{section}{Data Availability and Quality}
+
+As with any computation based study, the quality and quantity of data is extremely important. All data used in this study was downloaded from the STRING database which collects both known and predicted protein protein interactions (PPI's). STRING draws from a number of data sources when collecting PPI's. These sources include automated text mining of the scientific literature, computational interaction predictions from co-expression, conserved genomic context, databases of interaction experiments and known complexes/pathways from curated sources. String assigns each PPI a confidence score with higher scores signaling a higher confidence that the two proteins are interacting in vivo. As a single PPI may have multiple sources of evidence, the confidence score is calculated as an average of all evidence channels. However, to account for the probabililty that any two random proteins may interact, a prior value of 0.41 is integrated into each evidence channel score and must be removed and re-applied when calculating the overall confidence score of an interaction. As mentioned above, one of the evidence sources used by STRING to calculate confidence scores is conserved genomic context. Out of the 14 individual evidence channels used to calculate the confidence score, 6 consist of interaction data inferred from homologous PPI's observed in other species. While evidence obtained through homology is by no means inaccurate or invalid, these evidence channels were excluded from the data used in this analysis. As the goal of this experiment is to compare homolgous PPI's present in both \emph{A. thaliana} and \emph{S. cerevisiae}, including PPI's inferred through homology introduces potentially confounding data. For example, If a PPI in \emph{S. cerevisiae} was inferred through an observed interaction between homologous proteins in \emph{D. melanogaster} , the STRING data would include that interaction in the \emph{S. cerevisiae} PPI dataset. If those two proteins also interact in the \emph{A. thaliana}, this interaction would be classified as homologous between \emph{A. thaliana} and \emph{S. cerevisiae} despite the data actually being representative of a homologous PPI between \emph{A. thaliana} and \emph{D. melanogaster}. Fortunately, STRING provides the script used for calculating confidence scores from individual evidence channels and evidence inferred through homology was easily removed. In addition to removing potentially confounding evidence channels, a thresholding mechanism was employed during the data cleaning process. The threshold was set at a somewhat arbitrary value of 900, meaning that only PPI's with a total confidence score of 900 or greater would be included in the dataset. A threshold of 900 is relatively high in the context of STRING confidence scores and was chosen with the intention that all PPI's included in the dataset would have strong evidence backing their interaction in vivo. While removing homology derived evidence and thresholding by confidence scores reduce confounding data and increase data quality respectively, these two measures also reduce the total number of PPI's in the dataset. This potentially means removing PPI's that do occur in vivo, yet don't have sufficient supporing evidnece in the literature. This is unfortunately unavoidable, yet must be taken into consideration when comparing the two PPI networks.
+
+\section*{Layer Based Analysis}\label{layer-based-analysis}
+\addcontentsline{toc}{section}{Layer Based Analysis}
+
+The decision to perform independant analyses of each layer was a natural consequence of the data pruning process. After re-calculating confidence scores and thresholding the STRING data, additional processing was needed to isolate the subnetwork in each oraganisms dataset containing proteins likely to be implicated in the homotypic vacuole fusion process. While there are multiple methods for isolating subgraphs, a neighborhood-based approach seemed to be the best fit for the purpose of this experiment. By expanding the subgraph based on the neighbors of the nodes in the current subgraph, all edges between all nodes in the subgraph are preserved which increases the potential number of observed homologous edges. Additionally, by confining the subgraph to a maximum of two `hops', the longest distance between any periphrial node and a layer 0 node is two edges, which increases the likelyhood that periphrial nodes are in some way invloved in the homotypic vacuole fusion process. Initially, the process of determining the initial protein set for each organim was identical, perform a literature review and collate a list of proteins which have been experimentally verified to participate in the process of homotypic vacuole fusion. However, after completing \emph{S. cerevisiae} literature review, it became apparent that a similar process was not feasible for \emph{A. thaliana}. \emph{S. cerevisiae} is considered to be the model organism for studing the process of homotypic vaculole fusion and a large body of work is devoted to the study of this particular process in both isolated \emph{S. cerevisiae} vacuoles and living \emph{S. cerevisiae} models. Conversely, there is little research devoted to the process of homotypic vacuole fusion in \emph{A. thaliana} and even less research focused on the precise mechanism of \emph{A. thaliana} guard cell homotypic vacuole fusion. Therefore, in lieu of compiling a initial protein set for \emph{A. thaliana} through literature review, an initial set of \emph{A. thaliana} proteins was inferred by compiling all proteins in the \emph{S. cerevisiae} initial protein set and selecting those with homologous proteins in \emph{A. thaliana}. This decision is justified by substantial evidence pointing towards the highly conserved nature of homotypic vacuole fusion accross all eukaryotes. In theory, if the homotypic vacuole fusion process is highly conserved, then the core homologous proteins in \emph{S. cerevisiae} should, to an extent, represent proteins highly involved in the \emph{A. thaliana} homotypic vacuole fusion process.
+
+\section*{Node Importance Metrics}\label{node-importance-metrics}
+\addcontentsline{toc}{section}{Node Importance Metrics}
+
+While a host of node importance metrics are commonly used in network analysis, several considerations were taken into accound when selecting the three importance metrics used in this experiment. The three selected importance metrics represent three general methods for assessing node importance, degree, clustering, and centrality. Degree centrality represents the number of neighbors connected to each node. Nodes with higher degree are considered to be more important in the context of the network as they represent a higher proportion of the PPI's than nodes with lower degree. To assess the clustering coefficient of each node a standard clustering coefficient algorithm was employed. The clustering coefficient algorithm counts the number of neighbors connected to any one node and uses that number to calculate the maximum number of edges that could exist between each neighbor. The maximum number of edges betweeen neighbors is then divided by the observed number of edges between neighbors to compute the clustering coefficient. Clustering coefficient measures how interconnected a node is within its immediate neighborhood. This metric is useful for identifying biologically relevant subnetworks such as protein complexes as each protein within the complex interacts with most if not all of the other proteins in the complex, increasing the clustering coeffient for all proteins in the complex. Computing node centrality was slightly more challenging due to the \emph{A. thaliana} network being composed of multiple disconnected components. While degree and clustering calculations are not confined to fully connected networks, many centrality measures assume a fully connected network. Therefore, the harmonic centrality algorithm was used to compute node centrality. The harmonic centrality algorithm assigns a centrality value to a node equal to the sum of the reciprocals of each shortest path between a node and every other node in the graph. If there is no path between a node and another node in the graph, the reciprocal value of that path is set to 0 and does not affect the calculation. Centrality is used to identify nodes which are likely important to the flow of information throughout the network.
+
+\section*{Protein Protein Interaction Networks}\label{protein-protein-interaction-networks}
+\addcontentsline{toc}{section}{Protein Protein Interaction Networks}
 
 The PPI networks used in this experiment represent a subset of the data collected from the analysis of the signaling pathways governing homotypic vacuole fusion. Both networks are undirected graphs meaning that each PPI represents the interaction of two proteins, not the way in which one protein affects another. Additionally, the type of interaction is not included in the dataset, meaning that an interaction in which one protein phosphorylates another is indistinguisable from two proteins binding to form a complex. Furthermore, any non-protein regulatory element such as lipids are not represented in the PPI dataset. These factors limit the conclusions that can be drawn from PPI networks. However, for the purposes of this experiment, PPI networks provide sufficient data for the identification of broad potential similarities between the signaling networks involved in homotypic vacuole fusion between organisms.
 
-\subsection{Smith-Waterman Alignment}\label{smith-waterman-alignment}
+\section*{Smith-Waterman Alignment}\label{smith-waterman-alignment}
+\addcontentsline{toc}{section}{Smith-Waterman Alignment}
 
 The Smith-Waterman alignment algorithm was employed to assess the likelihood that a protein from one organism was homologous to a protein from another organism. The algorithm compares segments of each proteins nucleotide sequence, taking into account gaps between aligned sequences, and calculates an overall alignment score which represents the similarity between each proteins nucleotide sequence. However, comparing SW scores between proteins is complicated as the SW score is dependant on the length of the proteins being compared. This means that a pair of relatively long proteins with a SW score of 200 are less similar than a pair of relatively short proteins with the same score. It may be possible to normalize the SW score of each protein pair based on length, however due to the time constraints of this project, this step was not performed and all proteins identified via SW alignment were designated as homologous regardless of SW score.
-
-\subsection{Layer 0}\label{layer-0}
-
-Due to the methodology of curating \emph{A. Thaliana} layer 0 proteins from the list of \emph{S. Cerevisiae} layer 0 proteins, a comparison betweeen the two layer's should be treated as a control case as opposed to experimental results. One of the most obvious discrepancies between the two layers is a marked difference between edge counts. While \emph{S. Cerevisiae} layer 0 contains 166 edges, \emph{A. Thaliana} layer 0 contains only 35. There are several possible explanations for this discrepancy. It is possible that edges in the \emph{A. Thaliana} dataset were highly dependent on homology data which would have reduced the nubmer of edges included when homology data was removed from the edge confidence calculation. Likewise, it is also possible that \emph{A. Thaliana} edges had a lower confidence scores overall and, combined with a further reduction of confidence due to homology data removal, were greatly reduced in number by the 900 confidence score threshold. Another possible explanation is that the nodes in \emph{A. Thaliana} layer 0 simply have less edges connecting them to other layer 0 nodes. This explanation is supported by the relatively low clustering coefficient displayed by \emph{A. Thaliana} layer 0. The low clustering coefficient and relatively disconnected nodes in \emph{A. Thaliana} layer 0 indicate that the individual connected components are not directly interacting with each other as they are in the \emph{S. Cerevisiae} layer 0 and that additional regulatory elements are required to bridge the connected components. Conversely, the highly connected nature of the \emph{S. Cerevisiae} layer 0 subgraph indicates that the literature review process was successful in identifying core proteins involved in the \emph{S. Cerevisiae} homotypic vacuole fusion process.
-
-\subsection{Layer 1}\label{layer-1}
-
-Layer 1 is the most experimentally relevant layer out of the three. While layer 0 is moreso representative of choices in methology, layer 1 serves as somewhat of a middleground where each node is likely involved in homotypic vacuole fusion yet was not curated directly through the literature review process. Comparing the top 20 proteins of each layer 1 subgraph by combined network importance score reveals a striking difference in protein function between the two organisms. While the majority of the high importance nodes in the \emph{S. Cerevisiae} subgraph are subcomponents of the various protein complexes known to be essential for homotypic vacuole fusion, all of the top 20 hight importance nodes in the \emph{A. Thaliana} layer 0 subgraph are involved in lipid synthesis or modification. This incongruity is likely representative of an outsized role of regulatory lipids in the process of \emph{A. Thaliana} homotypic vacuol fusion in comparison to \emph{S. Cerevisiae} homotypic vacuole fusion. This conclusion is supported by the fact that there are fundamental differences between the phospholipid biosynthetic pathways of \emph{A. Thaliana} and \emph{S. Cerevisiae}. Furthermore depletion of PI3P, an essential regulatory lipid in the \emph{S. Cerevisiae} homotypic vacuole fusion process, has been shown to rapidly induce \emph{A. Thaliana} guard cell vacuole fusion.
-
-\subsection{Layer 2}\label{layer-2}
-
-Layer 2 was determined to not be experimentally relevant as the majority of proteins added in the conversion between layer 1 and layer 2 were not implicated in the vacuole fusion process. This conclusion is further supported by the low combined index scores of the top 20 proteins in each layer 2 subgraph. These scores show that nodes in the top 20 importance metric score relatively high in one metric but not others, indicating that the network lacks true `hubs' and that the proteins in each subgraph are more likely to be representative of multiple distinct signaling pathways rather than the process of homotypic vacuole fusion.
-
-\newpage
-
-\begin{figure}
-\includegraphics[width=1\linewidth,height=0.43\textheight]{figure/SC_hist_updated} \caption{S. Cerevisiae layer statistics}\label{fig:unnamed-chunk-11}
-\end{figure}
-
-\begin{figure}
-\includegraphics[width=1\linewidth,height=0.43\textheight]{figure/AT_hist_updated} \caption{A. Thaliana layer statistics}\label{fig:unnamed-chunk-12}
-\end{figure}
 
 \chapter*{Conclusion}\label{conclusion}
 \addcontentsline{toc}{chapter}{Conclusion}
 
-If we don't want Conclusion to have a chapter number next to it, we can add the \texttt{\{-\}} attribute.
-
-\textbf{More info}
-
-And here's some other random info: the first paragraph after a chapter title or section head \emph{shouldn't be} indented, because indents are to tell the reader that you're starting a new paragraph. Since that's obvious after a chapter or section title, proper typesetting doesn't add an indent there.
+The goal of this thesis was to compare the homotypic vacuole fusion processes of \emph{S. cerevisiae} and \emph{A. thaliana}. I was originally drawn to this project while researching guard cell vacuole fusion in \emph{A. thaliana}. During that process, I saw many papers eluding to the conserved nature of homotypic vacuole fusion. Furthermore, many papers investigating guard cell vacuole fusion used \emph{S. cerevisiae} homotypic vacuole fusion as a model to contextualize the process of \emph{A. thaliana} vacuole fusion. Therefore, I decided to investigate the similarities and differences between the PPIs in each process. Using the K-hop algorithm I constructed layered graph representations of the PPIs in both \emph{A. thaliana} guard cell vacuole fusion and \emph{S. cerevisiae} homotypic vacuole fusion. Analysis of each layer indicated that, while there were a number of conserved PPIs, the two processes had many inconsistencies. The largest diffence between the two vacuole fusion processes lies in the synthesis, modification, and function of phosphoinositides. In comparison to \emph{S. cerevisiae}, \emph{A. thaliana} guard cell vacuole fusion utilizes phosphoniositide singaling to a far greater extent. While PPI graphs are useful for generalized visualizations and analysis, they fail to capture more complex aspects of signaling pathways. Therefore, given that phosphoinositide singaling seems to play a large role in guard cell vacuole fusion, including phosphorylation events, lipid interactions, and other singaling pathway components may allow for a deeper analysis of the role that phosphoinositides play in guard cell vacuole fusion.
 
 \chapter*{Appendix}\label{appendix}
 \addcontentsline{toc}{chapter}{Appendix}
 
 \section*{Protein Tables}\label{protein-tables}
 \addcontentsline{toc}{section}{Protein Tables}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(knitr)}
+\NormalTok{AT\_L0 }\OtherTok{=} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"/Users/adenobrien/Desktop/Thesis\_Doc/figure/AT\_L0.csv"}\NormalTok{)}
+\FunctionTok{kable}\NormalTok{(AT\_L0)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{tabular}{l}
+\hline
+X0\\
+\hline
+VHA-c1\\
+\hline
+VAMP713\\
+\hline
+VHA-C\\
+\hline
+PAH1\\
+\hline
+VPS11\\
+\hline
+VHA-a3\\
+\hline
+VHA-B1\\
+\hline
+ARAC3\\
+\hline
+VTI13\\
+\hline
+VPS33\\
+\hline
+SYP21\\
+\hline
+VPS39\\
+\hline
+VPS18\\
+\hline
+VPS15\\
+\hline
+VHA-c2\\
+\hline
+VHA-D\\
+\hline
+VHA-d2\\
+\hline
+VPS34\\
+\hline
+VHA-c''1\\
+\hline
+MON1\\
+\hline
+VHA-F\\
+\hline
+VHA-A\\
+\hline
+VCL1\\
+\hline
+GPA1\\
+\hline
+VHA-H\\
+\hline
+ARAC3\\
+\hline
+DRP3B\\
+\hline
+VPS41\\
+\hline
+VHA-E3\\
+\hline
+\end{tabular}
 
 \subsection*{\texorpdfstring{\emph{S. Cerevisiae}}{S. Cerevisiae}}\label{s.-cerevisiae}
 \addcontentsline{toc}{subsection}{\emph{S. Cerevisiae}}
@@ -516,7 +658,201 @@ And here's some other random info: the first paragraph after a chapter title or 
 
 \setlength{\parindent}{-0.20in}
 
-Seals, Darren F., Gary Eitzen, Nathan Margolis, William T. Wickner, and Albert Price. 2000. ``A Ypt/Rab Effector Complex Containing the Sec1 Homolog Vps33p Is Required for Homotypic Vacuole Fusion.'' Proceedings of the NationalAcademy of Sciences of the United States of America 97(17):9402--7. \url{doi:10.1073/pnas.97.17.9402}.
+A membrane‐associated complex containing the Vps15 protein kinase and the Vps34 PI 3‐kinase is essential for protein sorting to the yeast lysosome‐like vacuole. (n.d.). Retrieved October 23, 2025, from \url{https://www.embopress.org/doi/epdf/10.1002/j.1460-2075.1993.tb05867.x}
+
+Alpadi, K., Kulkarni, A., Namjoshi, S., Srinivasan, S., Sippel, K. H., Ayscough, K., Zieger, M., Schmidt, A., Mayer, A., Evangelista, M., Quiocho, F. A., \& Peters, C. (2013). Dynamin-SNARE interactions control trans-SNARE formation in intracellular membrane fusion. Nature Communications, 4, 1704. \url{https://doi.org/10.1038/ncomms2724}
+Auffarth, K., Arlt, H., Lachmann, J., Cabrera, M., \& Ungermann, C. (2014). Tracking of the dynamic localization of the Rab-specific HOPS subunits reveal their distinct interaction with Ypt7 and vacuoles. Cellular Logistics. \url{https://doi.org/10.4161/cl.29191}
+
+Baars, T. L., Petri, S., Peters, C., \& Mayer, A. (2007). Role of the V-ATPase in Regulation of the Vacuolar Fission--Fusion Equilibrium. Molecular Biology of the Cell, 18(10), 3873--3882. \url{https://doi.org/10.1091/mbc.E07-03-0205}
+
+Baker, R. W., Jeffrey, P. D., Zick, M., Phillips, B. P., Wickner, W. T., \& Hughson, F. M. (2015). A direct role for the Sec1/Munc18-family protein Vps33 as a template for SNARE assembly. Science, 349(6252), 1111--1114. \url{https://doi.org/10.1126/science.aac7906}
+
+Balderhaar, H. J. kleine, \& Ungermann, C. (2013). CORVET and HOPS tethering complexes -- coordinators of endosome and lysosome fusion. Journal of Cell Science, 126(6), 1307--1316. \url{https://doi.org/10.1242/jcs.107805}
+
+Bates, G. W., Rosenthal, D. M., Sun, J., Chattopadhyay, M., Peffer, E., Yang, J., Ort, D. R., \& Jones, A. M. (2012). A comparative study of the Arabidopsis thaliana guard-cell transcriptome and its modulation by sucrose. PloS One, 7(11), e49641. \url{https://doi.org/10.1371/journal.pone.0049641}
+
+Bayer, M. J., Reese, C., Bühler, S., Peters, C., \& Mayer, A. (2003). Vacuole membrane fusion. The Journal of Cell Biology, 162(2), 211--222. \url{https://doi.org/10.1083/jcb.200212004}
+Boeddinghaus, C., Merz, A. J., Laage, R., \& Ungermann, C. (2002). A cycle of Vam7p release from and PtdIns 3-P--dependent rebinding to the yeast vacuole is required for homotypic vacuole fusion. Journal of Cell Biology, 157(1), 79--90. \url{https://doi.org/10.1083/jcb.200112098}
+
+Brillada, C., Zheng, J., Krüger, F., Rovira-Diaz, E., Askani, J. C., Schumacher, K., \& Rojas-Pierce, M. (2018a). Phosphoinositides control the localization of HOPS subunit VPS41, which together with VPS33 mediates vacuole fusion in plants. Proceedings of the National Academy of Sciences, 115(35), E8305--E8314. \url{https://doi.org/10.1073/pnas.1807763115}
+
+Brillada, C., Zheng, J., Krüger, F., Rovira-Diaz, E., Askani, J. C., Schumacher, K., \& Rojas-Pierce, M. (2018b). Phosphoinositides control the localization of HOPS subunit VPS41, which together with VPS33 mediates vacuole fusion in plants. Proceedings of the National Academy of Sciences of the United States of America, 115(35), E8305--E8314. \url{https://doi.org/10.1073/pnas.1807763115}
+
+Bröcker, C., Kuhlee, A., Gatsogiannis, C., kleine Balderhaar, H. J., Hönscher, C., Engelbrecht-Vandré, S., Ungermann, C., \& Raunser, S. (2012). Molecular architecture of the multisubunit homotypic fusion and vacuole protein sorting (HOPS) tethering complex. Proceedings of the National Academy of Sciences, 109(6), 1991--1996. \url{https://doi.org/10.1073/pnas.1117797109}
+
+Cabrera, M., Langemeyer, L., Mari, M., Rethmeier, R., Orban, I., Perz, A., Bröcker, C., Griffith, J., Klose, D., Steinhoff, H.-J., Reggiori, F., Engelbrecht-Vandré, S., \& Ungermann, C. (2010). Phosphorylation of a membrane curvature--sensing motif switches function of the HOPS subunit Vps41 in membrane tethering. The Journal of Cell Biology, 191(4), 845--859. \url{https://doi.org/10.1083/jcb.201004092}
+
+Cabrera, M., Nordmann, M., Perz, A., Schmedt, D., Gerondopoulos, A., Barr, F., Piehler, J., Engelbrecht-Vandré, S., \& Ungermann, C. (2014). The Mon1--Ccz1 GEF activates the Rab7 GTPase Ypt7 via a longin-fold--Rab interface and association with PI3P-positive membranes. Journal of Cell Science, 127(5), 1043--1051. \url{https://doi.org/10.1242/jcs.140921}
+
+Cai, S., Chen, G., Wang, Y., Huang, Y., Marchant, D. B., Wang, Y., Yang, Q., Dai, F., Hills, A., Franks, P. J., Nevo, E., Soltis, D. E., Soltis, P. S., Sessa, E., Wolf, P. G., Xue, D., Zhang, G., Pogson, B. J., Blatt, M. R., \& Chen, Z.-H. (2017). Evolutionary Conservation of ABA Signaling for Stomatal Closure. Plant Physiology, 174(2), 732--747. \url{https://doi.org/10.1104/pp.16.01848}
+
+Cheever, M. L., Sato, T. K., de Beer, T., Kutateladze, T. G., Emr, S. D., \& Overduin, M. (2001). Phox domain interaction with PtdIns(3)P targets the Vam7 t-SNARE to vacuole membranes. Nature Cell Biology, 3(7), 613--618. \url{https://doi.org/10.1038/35083000}
+
+Collins, K. M., Thorngren, N. L., Fratti, R. A., \& Wickner, W. T. (2005). Sec17p and HOPS, in distinct SNARE complexes, mediate SNARE complex disruption or assembly for fusion. The EMBO Journal. \url{https://doi.org/10.1038/sj.emboj.7600658}
+
+Collins, K. M., \& Wickner, W. T. (2007). Trans-SNARE complex assembly and yeast vacuole membrane fusion. Proceedings of the National Academy of Sciences, 104(21), 8755--8760. \url{https://doi.org/10.1073/pnas.0702290104}
+
+Coonrod, E. M., Graham, L. A., Carpp, L. N., Carr, T. M., Stirrat, L., Bowers, K., Bryant, N. J., \& Stevens, T. H. (2013). Homotypic Vacuole Fusion in Yeast Requires Organelle Acidification and not the V-ATPase Membrane Domain. Developmental Cell, 27(4), 462--468. \url{https://doi.org/10.1016/j.devcel.2013.10.014}
+
+Cotthem, W. V. (2018, August 16). The interactive function of actin and vacuole in stomatal movement regulation. PLANT STOMATA ENCYCLOPEDIA. \url{https://plantstomata.wordpress.com/2018/08/16/the-interactive-function-of-actin-and-vacuole-in-stomatal-movement-regulation}
+
+Cui, Y., Zhao, Q., Gao, C., Ding, Y., Zeng, Y., Ueda, T., Nakano, A., \& Jiang, L. (2014). Activation of the Rab7 GTPase by the MON1-CCZ1 Complex Is Essential for PVC-to-Vacuole Trafficking and Plant Growth in Arabidopsis{[}C{]}{[}W{]}. The Plant Cell, 26(5), 2080--2097. \url{https://doi.org/10.1105/tpc.114.123141}
+
+Desfougères, Y., Vavassori, S., Rompf, M., Gerasimaite, R., \& Mayer, A. (2016). Organelle acidification negatively regulates vacuole membrane fusion in vivo. Scientific Reports, 6(1), 29045. \url{https://doi.org/10.1038/srep29045}
+
+Eastmond, P. J., Quettier, A.-L., Kroon, J. T. M., Craddock, C., Adams, N., \& Slabas, A. R. (2010). PHOSPHATIDIC ACID PHOSPHOHYDROLASE1 and 2 Regulate Phospholipid Synthesis at the Endoplasmic Reticulum in Arabidopsis{[}W{]}. The Plant Cell, 22(8), 2796--2811. \url{https://doi.org/10.1105/tpc.109.071423}
+
+Ebine, K., Okatani, Y., Uemura, T., Goh, T., Shoda, K., Niihama, M., Morita, M. T., Spitzer, C., Otegui, M. S., Nakano, A., \& Ueda, T. (2008). A SNARE Complex Unique to Seed Plants Is Required for Protein Storage Vacuole Biogenesis and Seed Development of Arabidopsis thaliana. The Plant Cell, 20(11), 3006--3021. \url{https://doi.org/10.1105/tpc.107.057711}
+Eisenach, C., Chen, Z.-H., Grefen, C., \& Blatt, M. R. (2012). The trafficking protein SYP121 of Arabidopsis connects programmed stomatal closure and K+ channel activity with vegetative growth. The Plant Journal, 69(2), 241--251. \url{https://doi.org/10.1111/j.1365-313X.2011.04786.x}
+
+Eitzen, G., Thorngren, N., \& Wickner, W. (2001). Rho1p and Cdc42p act after Ypt7p to regulate vacuole docking. The EMBO Journal. \url{https://doi.org/10.1093/emboj/20.20.5650}
+Fratti, R. A., Jun, Y., Merz, A. J., Margolis, N., \& Wickner, W. (2004). Interdependent assembly of specific regulatory lipids and membrane fusion proteins into the vertex ring domain of docked vacuoles. Journal of Cell Biology, 167(6), 1087--1098. \url{https://doi.org/10.1083/jcb.200409068}
+
+Fujiwara, M., Uemura, T., Ebine, K., Nishimori, Y., Ueda, T., Nakano, A., Sato, M. H., \& Fukao, Y. (2014). Interactomics of Qa-SNARE in Arabidopsis thaliana. Plant and Cell Physiology, 55(4), 781--789. \url{https://doi.org/10.1093/pcp/pcu038}
+
+Graham, L. A., Flannery, A. R., \& Stevens, T. H. (2003). Structure and Assembly of the Yeast V-ATPase. Journal of Bioenergetics and Biomembranes, 35(4), 301--312. \url{https://doi.org/10.1023/A:1025772730586}
+
+Haas, A., \& Wickner, W. (1996). Homotypic vacuole fusion requires Sec17p (yeast alpha-SNAP) and Sec18p (yeast NSF). The EMBO Journal, 15(13), 3296--3305.
+
+Han, B.-K., Bogomolnaya, L. M., Totten, J. M., Blank, H. M., Dangott, L. J., \& Polymenis, M. (2005). Bem1p, a scaffold signaling protein, mediates cyclin-dependent control of vacuolar homeostasis in Saccharomyces cerevisiae. Genes \& Development, 19(21), 2606--2618. \url{https://doi.org/10.1101/gad.1361505}
+
+Heenan, E. J., Vanhooke, J. L., Temple, B. R., Betts, L., Sondek, J. E., \& Dohlman, H. G. (2009). Structure and Function of Vps15 in the Endosomal G Protein Signaling Pathway. Biochemistry, 48(27), 6390--6401. \url{https://doi.org/10.1021/bi900621w}
+
+Hickey, C. M., Stroupe, C., \& Wickner, W. (2009). The Major Role of the Rab Ypt7p in Vacuole Fusion Is Supporting HOPS Membrane Association. The Journal of Biological Chemistry, 284(24), 16118--16125. \url{https://doi.org/10.1074/jbc.M109.000737}
+
+Ho, R., \& Stroupe, C. (n.d.). The HOPS/Class C Vps Complex Tethers High‐Curvature Membranes via a Direct Protein--Membrane Interaction. \url{https://doi.org/10.1111/tra.12421}
+
+Hodgens, C., Flaherty, D. T., Pullen, A.-M., Khan, I., English, N. J., Gillan, L., Rojas-Pierce, M., \& Akpa, B. S. (2024). Model-based inference of a dual role for HOPS in regulating guard cell vacuole fusion. In Silico Plants, 6(2), diae015. \url{https://doi.org/10.1093/insilicoplants/diae015}
+
+Hong, W. (2005). SNAREs and traffic. Biochimica et Biophysica Acta (BBA) - Molecular Cell Research, 1744(2), 120--144. \url{https://doi.org/10.1016/j.bbamcr.2005.03.014}
+
+Irazoqui, J. E., Gladfelter, A. S., \& Lew, D. J. (2003). Scaffold-mediated symmetry breaking by Cdc42p. Nature Cell Biology, 5(12), 1062--1070. \url{https://doi.org/10.1038/ncb1068}
+
+Jahn, R., Cafiso, D. C., \& Tamm, L. K. (2024). Mechanisms of SNARE proteins in membrane fusion. Nature Reviews Molecular Cell Biology, 25(2), 101--118. \url{https://doi.org/10.1038/s41580-023-00668-x}
+
+Jalakas, P., Yarmolinsky, D., Kollist, H., \& Brosche, M. (2017). Isolation of Guard-cell Enriched Tissue for RNA Extraction. Bio-Protocol, 7(15). \url{https://doi.org/10.21769/BioProtoc.2447}
+
+Karunakaran, S., Sasser, T., Rajalekshmi, S., \& Fratti, R. A. (2012). SNAREs, HOPS and regulatory lipids control the dynamics of vacuolar actin during homotypic fusion in S. cerevisiae. Journal of Cell Science, 125(7), 1683--1692. \url{https://doi.org/10.1242/jcs.091900}
+
+Kato, M., \& Wickner, W. (2001). Ergosterol is required for the Sec18/ATP‐dependent priming step of homotypic vacuole fusion. The EMBO Journal, 20(15), 4035--4040. \url{https://doi.org/10.1093/emboj/20.15.4035}
+
+Kirkham, M. B. (2023). Stomatal anatomy and stomatal resistance. In Principles of Soil and Plant Water Relations (pp.~473--496). Elsevier. \url{https://doi.org/10.1016/B978-0-323-95641-3.00020-9}
+
+Krämer, L., \& Ungermann, C. (2011). HOPS drives vacuole fusion by binding the vacuolar SNARE complex and the Vam7 PX domain via two distinct sites. Molecular Biology of the Cell, 22(14), 2601--2611. \url{https://doi.org/10.1091/mbc.e11-02-0104}
+
+Laage, R., \& Ungermann, C. (2001). The N-terminal Domain of the t-SNARE Vam3p Coordinates Priming and Docking in Yeast Vacuole Fusion. Molecular Biology of the Cell, 12(11), 3375--3385. \url{https://doi.org/10.1091/mbc.12.11.3375}
+
+Lee, S.-A., Chan, C., Tsai, C.-H., Lai, J.-M., Wang, F.-S., Kao, C.-Y., \& Huang, C.-Y. F. (2008). Ortholog-based protein-protein interaction prediction and its application to inter-species interactions. BMC Bioinformatics, 9(Suppl 12), S11. \url{https://doi.org/10.1186/1471-2105-9-S12-S11}
+
+Lee, Y., Kim, E.-S., Choi, Y., Hwang, I., Staiger, C. J., Chung, Y.-Y., \& Lee, Y. (2008). The Arabidopsis Phosphatidylinositol 3-Kinase Is Important for Pollen Development. Plant Physiology, 147(4), 1886--1897. \url{https://doi.org/10.1104/pp.108.121590}
+
+Li, L.-J., Ren, F., Gao, X.-Q., Wei, P.-C., \& Wang, X.-C. (2013). The reorganization of actin filaments is required for vacuolar fusion of guard cells during stomatal opening in Arabidopsis. Plant, Cell \& Environment, 36(2), 484--497. \url{https://doi.org/10.1111/j.1365-3040.2012.02592.x}
+
+Mayer, A., Wickner, W., \& Haas, A. (1996). Sec18p (NSF)-Driven Release of Sec17p (alpha-SNAP) Can Precede Docking and Fusion of Yeast Vacuoles. Cell, 85(1), 83--94. \url{https://doi.org/10.1016/S0092-8674(00)81084-3}
+
+Miner, G. E., Sullivan, K. D., Guo, A., Jones, B. C., Hurst, L. R., Ellis, E. C., Starr, M. L., \& Fratti, R. A. (2019). Phosphatidylinositol 3,5-bisphosphate regulates the transition between trans-SNARE complex formation and vacuole membrane fusion. Molecular Biology of the Cell, 30(2), 201--208. \url{https://doi.org/10.1091/mbc.E18-08-0505}
+
+Miner, G. E., Sullivan, K. D., Guo, A., Jones, B. C., Starr, M. L., \& Fratti, R. A. (2018). Phosphatidylinositol 3,5-Bisphosphate Regulates Yeast Vacuole Fusion at the Transition between trans-SNARE Complex Formation and Hemifusion (p.~390062). bioRxiv. \url{https://doi.org/10.1101/390062}
+
+Müller, O., Bayer, M. J., Peters, C., Andersen, J. S., Mann, M., \& Mayer, A. (2002). The Vtc proteins in vacuole fusion: Coupling NSF activity to V(0) trans-complex formation. The EMBO Journal, 21(3), 259--269. \url{https://doi.org/10.1093/emboj/21.3.259}
+
+Müller, O., Johnson, D. I., \& Mayer, A. (2001). Cdc42p functions at the docking stage of yeast vacuole membrane fusion. The EMBO Journal. \url{https://doi.org/10.1093/emboj/20.20.5657}
+
+Müller, O., Neumann, H., Bayer, M. J., \& Mayer, A. (2003). Role of the Vtc proteins in V-ATPase stability and membrane trafficking. Journal of Cell Science, 116(6), 1107--1115. \url{https://doi.org/10.1242/jcs.00328}
+
+Orr, A., \& Wickner, W. (2023). PI3P regulates multiple stages of membrane fusion. Molecular Biology of the Cell, 34(3), ar17. \url{https://doi.org/10.1091/mbc.E22-10-0486}
+
+Park, M., Mayer, U., Richter, S., \& Jürgens, G. (2023). NSF/alphaSNAP2-mediated cis-SNARE complex disassembly precedes vesicle fusion in Arabidopsis cytokinesis. Nature Plants, 9(6), 889--897. \url{https://doi.org/10.1038/s41477-023-01427-8}
+
+Peters, C., Baars, T. L., Bühler, S., \& Mayer, A. (2004). Mutual Control of Membrane Fission and Fusion Proteins. Cell, 119(5), 667--678. \url{https://doi.org/10.1016/j.cell.2004.11.023}
+
+Peters, C., Bayer, M. J., Bühler, S., Andersen, J. S., Mann, M., \& Mayer, A. (2001). Trans-complex formation by proteolipid channels in the terminal phase of membrane fusion. Nature, 409(6820), 581--588. \url{https://doi.org/10.1038/35054500}
+
+Phosphatidylinositol 3-Kinase Encoded by Yeast VPS34 Gene Essential for Protein Sorting \textbar{} Science. (n.d.). Retrieved October 8, 2025, from \url{https://www.science.org/doi/10.1126/science.8385367}
+
+Poëa-Guyon, S., Ammar, M. R., Erard, M., Amar, M., Moreau, A. W., Fossier, P., Gleize, V., Vitale, N., \& Morel, N. (2013). The V-ATPase membrane domain is a sensor of granular pH that controls the exocytotic machinery. Journal of Cell Biology, 203(2), 283--298. \url{https://doi.org/10.1083/jcb.201303104}
+
+Price, A., Seals, D., Wickner, W., \& Ungermann, C. (2000). The Docking Stage of Yeast Vacuole Fusion Requires the Transfer of Proteins from a Cis-Snare Complex to a Rab/Ypt Protein. Journal of Cell Biology, 148(6), 1231--1238. \url{https://doi.org/10.1083/jcb.148.6.1231}
+
+Pullen, A.-M., Billings, G., Hodgens, C., White, G., Akpa, B. S., \& Rojas-Pierce, M. (2025). Regulation of Vacuole Fusion in Stomata by Dephosphorylation of the HOPS subunit VPS39 (p.~2025.10.02.680005). bioRxiv. \url{https://doi.org/10.1101/2025.10.02.680005}
+
+Rattei, T., Arnold, R., Tischler, P., Lindner, D., Stümpflen, V., \& Mewes, H. W. (2006). SIMAP: The similarity matrix of proteins. Nucleic Acids Research, 34(Database issue), D252--D256. \url{https://doi.org/10.1093/nar/gkj106}
+
+Röthlisberger, S., Jourdain, I., Johnson, C., Takegawa, K., \& Hyams, J. S. (2009). The dynamin-related protein Vps1 regulates vacuole fission, fusion and tubulation in the fission yeast, Schizosaccharomyces pombe. Fungal Genetics and Biology, 46(12), 927--935. \url{https://doi.org/10.1016/j.fgb.2009.07.008}
+
+Rout, T., Mohapatra, A., Kar, M., Patra, S., \& Muduly, D. (2024). Centrality Measures and Their Applications in Network Analysis: Unveiling Important Elements and Their Impact. Procedia Computer Science, 235, 2756--2765. \url{https://doi.org/10.1016/j.procs.2024.04.260}
+
+Sasser, T., Qiu, Q.-S., Karunakaran, S., Padolina, M., Reyes, A., Flood, B., Smith, S., Gonzales, C., \& Fratti, R. A. (2012). Yeast Lipin 1 Orthologue Pah1p Regulates Vacuole Homeostasis and Membrane Fusion. The Journal of Biological Chemistry, 287(3), 2221--2236. \url{https://doi.org/10.1074/jbc.M111.317420}
+
+Schwartz, M. L., Nickerson, D. P., Lobingier, B. T., Plemel, R. L., Duan, M., Angers, C. G., Zick, M., \& Merz, A. J. (2017). Sec17 (alpha-SNAP) and an SM-tethering complex regulate the outcome of SNARE zippering in vitro and in vivo. eLife, 6, e27396. \url{https://doi.org/10.7554/eLife.27396}
+
+Seals, D. F., Eitzen, G., Margolis, N., Wickner, W. T., \& Price, A. (2000). A Ypt/Rab effector complex containing the Sec1 homolog Vps33p is required for homotypic vacuole fusion. Proceedings of the National Academy of Sciences of the United States of America, 97(17), 9402--9407. \url{https://doi.org/10.1073/pnas.97.17.9402}
+
+Shvarev, D., Schoppe, J., König, C., Perz, A., Füllbrunn, N., Kiontke, S., Langemeyer, L., Januliene, D., Schnelle, K., Kümmel, D., Fröhlich, F., Moeller, A., \& Ungermann, C. (2022a). Structure of the HOPS tethering complex, a lysosomal membrane fusion machinery. eLife, 11, e80901. \url{https://doi.org/10.7554/eLife.80901}
+
+Shvarev, D., Schoppe, J., König, C., Perz, A., Füllbrunn, N., Kiontke, S., Langemeyer, L., Januliene, D., Schnelle, K., Kümmel, D., Fröhlich, F., Moeller, A., \& Ungermann, C. (2022b). Structure of the lysosomal membrane fusion machinery (p.~2022.05.05.490745). bioRxiv. \url{https://doi.org/10.1101/2022.05.05.490745}
+
+Slessareva, J. E., Routt, S. M., Temple, B., Bankaitis, V. A., \& Dohlman, H. G. (2006). Activation of the Phosphatidylinositol 3-Kinase Vps34 by a G Protein alpha Subunit at the Endosome. Cell, 126(1), 191--203. \url{https://doi.org/10.1016/j.cell.2006.04.045}
+
+Song, H., Orr, A., Duan, M., Merz, A. J., \& Wickner, W. (2017). Sec17/Sec18 act twice, enhancing membrane fusion and then disassembling cis-SNARE complexes. eLife, 6, e26646. \url{https://doi.org/10.7554/eLife.26646}
+
+Song, H., Orr, A. S., Lee, M., Harner, M. E., \& Wickner, W. T. (2020). HOPS recognizes each SNARE, assembling ternary trans-complexes for rapid fusion upon engagement with the 4th SNARE. eLife, 9, e53559. \url{https://doi.org/10.7554/eLife.53559}
+
+Song, H., Torng, T. L., Orr, A. S., Brunger, A. T., \& Wickner, W. T. (2021). Sec17/Sec18 can support membrane fusion without help from completion of SNARE zippering. eLife, 10, e67578. \url{https://doi.org/10.7554/eLife.67578}
+
+Song, H., \& Wickner, W. (2019). Tethering guides fusion-competent trans-SNARE assembly. Proceedings of the National Academy of Sciences, 116(28), 13952--13957. \url{https://doi.org/10.1073/pnas.1907640116}
+
+Song, H., \& Wickner, W. T. (2021). Fusion of tethered membranes can be driven by Sec18/NSF and Sec17/alphaSNAP without HOPS. eLife, 10, e73240. \url{https://doi.org/10.7554/eLife.73240}
+
+Stack, J. H., Herman, P. K., Schu, P. V., \& Emr, S. D. (1993). A membrane‐associated complex containing the Vps15 protein kinase and the Vps34 PI 3‐kinase is essential for protein sorting to the yeast lysosome‐like vacuole. The EMBO Journal, 12(5), 2195--2204. \url{https://doi.org/10.1002/j.1460-2075.1993.tb05867.x}
+
+Starai, V. J., Hickey, C. M., \& Wickner, W. (2008). HOPS Proofreads the trans -SNARE Complex for Yeast Vacuole Fusion. Molecular Biology of the Cell, 19(6), 2500--2508. \url{https://doi.org/10.1091/mbc.e08-01-0077}
+
+Starr, M. L., \& Fratti, R. A. (2019). The Participation of Regulatory Lipids in Vacuole Homotypic Fusion. Trends in Biochemical Sciences, 44(6), 546--554. \url{https://doi.org/10.1016/j.tibs.2018.12.003}
+
+Starr, M. L., Sparks, R. P., Arango, A. S., Hurst, L. R., Zhao, Z., Lihan, M., Jenkins, J. L., Tajkhorshid, E., \& Fratti, R. A. (2019). Phosphatidic acid induces conformational changes in Sec18 protomers that prevent SNARE priming. The Journal of Biological Chemistry, 294(9), 3100--3116. \url{https://doi.org/10.1074/jbc.RA118.006552}
+
+Stroupe, C., Collins, K. M., Fratti, R. A., \& Wickner, W. (2006). Purification of active HOPS complex reveals its affinities for phosphoinositides and the SNARE Vam7p. The EMBO Journal. \url{https://doi.org/10.1038/sj.emboj.7601051}
+
+Takáč, T., Pechan, T., Šamajová, O., Ovečka, M., Richter, H., Eck, C., Niehaus, K., \& Šamaj, J. (2012). Wortmannin Treatment Induces Changes in Arabidopsis Root Proteome and Post-Golgi Compartments. Journal of Proteome Research, 11(6), 3127--3142. \url{https://doi.org/10.1021/pr201111n}
+
+Takemoto, K., Ebine, K., Askani, J. C., Krüger, F., Gonzalez, Z. A., Ito, E., Goh, T., Schumacher, K., Nakano, A., \& Ueda, T. (2018). Distinct sets of tethering complexes, SNARE complexes, and Rab GTPases mediate membrane fusion at the vacuole in Arabidopsis. Proceedings of the National Academy of Sciences, 115(10), E2457--E2466. \url{https://doi.org/10.1073/pnas.1717839115}
+
+The GTPase Ypt7p of Saccharomyces cerevisiae is required on both partner vacuoles for the homotypic fusion step of vacuole inheritance. (n.d.). Retrieved September 26, 2025, from \url{https://www.embopress.org/doi/epdf/10.1002/j.1460-2075.1995.tb00210.x}
+
+The Vtc proteins in vacuole fusion: Coupling NSF activity to V0 trans‐complex formation. (n.d.). \url{https://doi.org/10.1093/emboj/21.3.259}
+
+Ungermann, C., Nichols, B. J., Pelham, H. R. B., \& Wickner, W. (1998). A Vacuolar v--t-SNARE Complex, the Predominant Form In Vivo and on Isolated Vacuoles, Is Disassembled and Activated for Docking and Fusion. Journal of Cell Biology, 140(1), 61--69. \url{https://doi.org/10.1083/jcb.140.1.61}
+
+Ungermann, C., Price, A., \& Wickner, W. (2000). A new role for a SNARE protein as a regulator of the Ypt7/Rab-dependent stage of docking. Proceedings of the National Academy of Sciences, 97(16), 8889--8891. \url{https://doi.org/10.1073/pnas.160269997}
+
+Ungermann, C., Sato, K., \& Wickner, W. (1998). Defining the functions of trans-SNARE pairs. Nature, 396(6711), 543--548. \url{https://doi.org/10.1038/25069}
+
+Wang, C.-W., Stromhaug, P. E., Kauffman, E. J., Weisman, L. S., \& Klionsky, D. J. (2003). Yeast homotypic vacuole fusion requires the Ccz1--Mon1 complex during the tethering/docking stage. The Journal of Cell Biology, 163(5), 973--985. \url{https://doi.org/10.1083/jcb.200308071}
+
+Xu, Z., Mayer, A., Muller, E., \& Wickner, W. (1997). A Heterodimer of Thioredoxin and IB 2 Cooperates with Sec18p (NSF) to Promote Yeast Vacuole Inheritance. The Journal of Cell Biology, 136(2), 299--306. \url{https://doi.org/10.1083/jcb.136.2.299}
+
+Xu, Z., Sato, K., \& Wickner, W. (1998). LMA1 Binds to Vacuoles at Sec18p (NSF), Transfers upon ATP Hydrolysis to a t-SNARE (Vam3p) Complex, and Is Released during Fusion. Cell, 93(7), 1125--1134. \url{https://doi.org/10.1016/S0092-8674(00)81457-9}
+
+Ye, W., Koya, S., Hayashi, Y., Jiang, H., Oishi, T., Kato, K., Fukatsu, K., \& Kinoshita, T. (2021). Identification of Genes Preferentially Expressed in Stomatal Guard Cells of Arabidopsis thaliana and Involvement of the Aluminum-Activated Malate Transporter 6 Vacuolar Malate Channel in Stomatal Opening. Frontiers in Plant Science, 12. \url{https://doi.org/10.3389/fpls.2021.744991}
+
+Yeger-Lotem, E., Sattath, S., Kashtan, N., Itzkovitz, S., Milo, R., Pinter, R. Y., Alon, U., \& Margalit, H. (2004). Network motifs in integrated cellular networks of transcription--regulation and protein--protein interaction. Proceedings of the National Academy of Sciences, 101(16), 5934--5939. \url{https://doi.org/10.1073/pnas.0306752101}
+
+Yoon, T.-Y., \& Munson, M. (2018). SNARE complex assembly and disassembly. Current Biology, 28(8), R397--R401. \url{https://doi.org/10.1016/j.cub.2018.01.005}
+
+Zhang, C., Calderin, J. D., Topiwalla, A., Shah, V., Karat, J. M., Knapp, C. T., Ahmed, R., Grudzien, D., Williamson, E., \& Fratti, R. A. (2025). Vacuolar Phosphatidylinositol 3,4,5-trisphosphate controls fusion through binding Vam7, and membrane microdomain assembly (p.~2025.08.01.668199). bioRxiv. \url{https://doi.org/10.1101/2025.08.01.668199}
+
+Zhang, C., Feng, Y., Balutowski, A., Miner, G. E., Rivera-Kohr, D. A., Hrabak, M. R., Sullivan, K. D., Guo, A., Calderin, J. D., \& Fratti, R. A. (2022). The interdependent transport of yeast vacuole Ca2+ and H+ and the role of phosphatidylinositol 3,5-bisphosphate. The Journal of Biological Chemistry, 298(12), 102672. \url{https://doi.org/10.1016/j.jbc.2022.102672}
+
+Zheng, J., Han, S. W., Rodriguez-Welsh, M. F., \& Rojas-Pierce, M. (2014). Homotypic Vacuole Fusion Requires VTI11 and Is Regulated by Phosphoinositides. Molecular Plant, 7(6), 1026--1040. \url{https://doi.org/10.1093/mp/ssu019}
+
+Zick, M., Orr, A., Schwartz, M. L., Merz, A. J., \& Wickner, W. T. (2015). Sec17 can trigger fusion of trans-SNARE paired membranes without Sec18. Proceedings of the National Academy of Sciences of the United States of America, 112(18), E2290-2297. \url{https://doi.org/10.1073/pnas.1506409112}
+
+Zick, M., \& Wickner, W. (2012). Phosphorylation of the effector complex HOPS by the vacuolar kinase Yck3p confers Rab nucleotide specificity for vacuole docking and fusion. Molecular Biology of the Cell, 23(17), 3429--3437. \url{https://doi.org/10.1091/mbc.E12-04-0279}
+
+Zick, M., \& Wickner, W. (2013). The tethering complex HOPS catalyzes assembly of the soluble SNARE Vam7 into fusogenic trans-SNARE complexes. Molecular Biology of the Cell, 24(23), 3746--3753. \url{https://doi.org/10.1091/mbc.E13-07-0419}
+
+Zick, M., \& Wickner, W. (2016). Improved reconstitution of yeast vacuole fusion with physiological SNARE concentrations reveals an asymmetric Rab(GTP) requirement. Molecular Biology of the Cell, 27(16), 2590--2597. \url{https://doi.org/10.1091/mbc.e16-04-0230}
 
 
 % Index?
