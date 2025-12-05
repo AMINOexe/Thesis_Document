@@ -18,9 +18,8 @@ delete "References" and replace it.
 \setlength{\parindent}{-0.20in}<!--To create a hanging indent and spacing between entries. This line may need 
 to be removed for styles that don't require the hanging indent.-->
 
-A membrane‐associated complex containing the Vps15 protein kinase and the Vps34 PI 3‐kinase is essential for protein sorting to the yeast lysosome‐like vacuole. (n.d.). Retrieved October 23, 2025, from https://www.embopress.org/doi/epdf/10.1002/j.1460-2075.1993.tb05867.x
-
 Alpadi, K., Kulkarni, A., Namjoshi, S., Srinivasan, S., Sippel, K. H., Ayscough, K., Zieger, M., Schmidt, A., Mayer, A., Evangelista, M., Quiocho, F. A., & Peters, C. (2013). Dynamin-SNARE interactions control trans-SNARE formation in intracellular membrane fusion. Nature Communications, 4, 1704. https://doi.org/10.1038/ncomms2724
+
 Auffarth, K., Arlt, H., Lachmann, J., Cabrera, M., & Ungermann, C. (2014). Tracking of the dynamic localization of the Rab-specific HOPS subunits reveal their distinct interaction with Ypt7 and vacuoles. Cellular Logistics. https://doi.org/10.4161/cl.29191
 
 Baars, T. L., Petri, S., Peters, C., & Mayer, A. (2007). Role of the V-ATPase in Regulation of the Vacuolar Fission–Fusion Equilibrium. Molecular Biology of the Cell, 18(10), 3873–3882. https://doi.org/10.1091/mbc.E07-03-0205
@@ -35,8 +34,6 @@ Bayer, M. J., Reese, C., Bühler, S., Peters, C., & Mayer, A. (2003). Vacuole me
 Boeddinghaus, C., Merz, A. J., Laage, R., & Ungermann, C. (2002). A cycle of Vam7p release from and PtdIns 3-P–dependent rebinding to the yeast vacuole is required for homotypic vacuole fusion. Journal of Cell Biology, 157(1), 79–90. https://doi.org/10.1083/jcb.200112098
 
 Brillada, C., Zheng, J., Krüger, F., Rovira-Diaz, E., Askani, J. C., Schumacher, K., & Rojas-Pierce, M. (2018a). Phosphoinositides control the localization of HOPS subunit VPS41, which together with VPS33 mediates vacuole fusion in plants. Proceedings of the National Academy of Sciences, 115(35), E8305–E8314. https://doi.org/10.1073/pnas.1807763115
-
-Brillada, C., Zheng, J., Krüger, F., Rovira-Diaz, E., Askani, J. C., Schumacher, K., & Rojas-Pierce, M. (2018b). Phosphoinositides control the localization of HOPS subunit VPS41, which together with VPS33 mediates vacuole fusion in plants. Proceedings of the National Academy of Sciences of the United States of America, 115(35), E8305–E8314. https://doi.org/10.1073/pnas.1807763115
 
 Bröcker, C., Kuhlee, A., Gatsogiannis, C., kleine Balderhaar, H. J., Hönscher, C., Engelbrecht-Vandré, S., Ungermann, C., & Raunser, S. (2012). Molecular architecture of the multisubunit homotypic fusion and vacuole protein sorting (HOPS) tethering complex. Proceedings of the National Academy of Sciences, 109(6), 1991–1996. https://doi.org/10.1073/pnas.1117797109
 
@@ -63,6 +60,7 @@ Desfougères, Y., Vavassori, S., Rompf, M., Gerasimaite, R., & Mayer, A. (2016).
 Eastmond, P. J., Quettier, A.-L., Kroon, J. T. M., Craddock, C., Adams, N., & Slabas, A. R. (2010). PHOSPHATIDIC ACID PHOSPHOHYDROLASE1 and 2 Regulate Phospholipid Synthesis at the Endoplasmic Reticulum in Arabidopsis[W]. The Plant Cell, 22(8), 2796–2811. https://doi.org/10.1105/tpc.109.071423
 
 Ebine, K., Okatani, Y., Uemura, T., Goh, T., Shoda, K., Niihama, M., Morita, M. T., Spitzer, C., Otegui, M. S., Nakano, A., & Ueda, T. (2008). A SNARE Complex Unique to Seed Plants Is Required for Protein Storage Vacuole Biogenesis and Seed Development of Arabidopsis thaliana. The Plant Cell, 20(11), 3006–3021. https://doi.org/10.1105/tpc.107.057711
+
 Eisenach, C., Chen, Z.-H., Grefen, C., & Blatt, M. R. (2012). The trafficking protein SYP121 of Arabidopsis connects programmed stomatal closure and K+ channel activity with vegetative growth. The Plant Journal, 69(2), 241–251. https://doi.org/10.1111/j.1365-313X.2011.04786.x
 
 Eitzen, G., Thorngren, N., & Wickner, W. (2001). Rho1p and Cdc42p act after Ypt7p to regulate vacuole docking. The EMBO Journal. https://doi.org/10.1093/emboj/20.20.5650
@@ -128,7 +126,7 @@ Peters, C., Baars, T. L., Bühler, S., & Mayer, A. (2004). Mutual Control of Mem
 
 Peters, C., Bayer, M. J., Bühler, S., Andersen, J. S., Mann, M., & Mayer, A. (2001). Trans-complex formation by proteolipid channels in the terminal phase of membrane fusion. Nature, 409(6820), 581–588. https://doi.org/10.1038/35054500
 
-Phosphatidylinositol 3-Kinase Encoded by Yeast VPS34 Gene Essential for Protein Sorting | Science. (n.d.). Retrieved October 8, 2025, from https://www.science.org/doi/10.1126/science.8385367
+Peter V. Schu et al. ,Phosphatidylinositol 3-Kinase Encoded by Yeast VPS34 Gene Essential for Protein Sorting.Science260,88-91(1993).DOI:10.1126/science.8385367
 
 Poëa-Guyon, S., Ammar, M. R., Erard, M., Amar, M., Moreau, A. W., Fossier, P., Gleize, V., Vitale, N., & Morel, N. (2013). The V-ATPase membrane domain is a sensor of granular pH that controls the exocytotic machinery. Journal of Cell Biology, 203(2), 283–298. https://doi.org/10.1083/jcb.201303104
 
@@ -149,8 +147,6 @@ Schwartz, M. L., Nickerson, D. P., Lobingier, B. T., Plemel, R. L., Duan, M., An
 Seals, D. F., Eitzen, G., Margolis, N., Wickner, W. T., & Price, A. (2000). A Ypt/Rab effector complex containing the Sec1 homolog Vps33p is required for homotypic vacuole fusion. Proceedings of the National Academy of Sciences of the United States of America, 97(17), 9402–9407. https://doi.org/10.1073/pnas.97.17.9402
 
 Shvarev, D., Schoppe, J., König, C., Perz, A., Füllbrunn, N., Kiontke, S., Langemeyer, L., Januliene, D., Schnelle, K., Kümmel, D., Fröhlich, F., Moeller, A., & Ungermann, C. (2022a). Structure of the HOPS tethering complex, a lysosomal membrane fusion machinery. eLife, 11, e80901. https://doi.org/10.7554/eLife.80901
-
-Shvarev, D., Schoppe, J., König, C., Perz, A., Füllbrunn, N., Kiontke, S., Langemeyer, L., Januliene, D., Schnelle, K., Kümmel, D., Fröhlich, F., Moeller, A., & Ungermann, C. (2022b). Structure of the lysosomal membrane fusion machinery (p. 2022.05.05.490745). bioRxiv. https://doi.org/10.1101/2022.05.05.490745
 
 Slessareva, J. E., Routt, S. M., Temple, B., Bankaitis, V. A., & Dohlman, H. G. (2006). Activation of the Phosphatidylinositol 3-Kinase Vps34 by a G Protein alpha Subunit at the Endosome. Cell, 126(1), 191–203. https://doi.org/10.1016/j.cell.2006.04.045
 
@@ -178,9 +174,7 @@ Takáč, T., Pechan, T., Šamajová, O., Ovečka, M., Richter, H., Eck, C., Nieh
 
 Takemoto, K., Ebine, K., Askani, J. C., Krüger, F., Gonzalez, Z. A., Ito, E., Goh, T., Schumacher, K., Nakano, A., & Ueda, T. (2018). Distinct sets of tethering complexes, SNARE complexes, and Rab GTPases mediate membrane fusion at the vacuole in Arabidopsis. Proceedings of the National Academy of Sciences, 115(10), E2457–E2466. https://doi.org/10.1073/pnas.1717839115
 
-The GTPase Ypt7p of Saccharomyces cerevisiae is required on both partner vacuoles for the homotypic fusion step of vacuole inheritance. (n.d.). Retrieved September 26, 2025, from https://www.embopress.org/doi/epdf/10.1002/j.1460-2075.1995.tb00210.x
-
-The Vtc proteins in vacuole fusion: Coupling NSF activity to V0 trans‐complex formation. (n.d.). https://doi.org/10.1093/emboj/21.3.259
+Haas, A., Scheglmann, D., Lazar, T. et al. The GTPase Ypt7p of Saccharomyces cerevisiae is required on both partner vacuoles for the homotypic fusion step of vacuole inheritance.. EMBO J 14, 5258–5270 (1995). https://doi.org/10.1002/j.1460-2075.1995.tb00210.x
 
 Ungermann, C., Nichols, B. J., Pelham, H. R. B., & Wickner, W. (1998). A Vacuolar v–t-SNARE Complex, the Predominant Form In Vivo and on Isolated Vacuoles, Is Disassembled and Activated for Docking and Fusion. Journal of Cell Biology, 140(1), 61–69. https://doi.org/10.1083/jcb.140.1.61
 
