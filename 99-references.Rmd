@@ -215,7 +215,10 @@ Zick, M., & Wickner, W. (2013). The tethering complex HOPS catalyzes assembly of
 Zick, M., & Wickner, W. (2016). Improved reconstitution of yeast vacuole fusion with physiological SNARE concentrations reveals an asymmetric Rab(GTP) requirement. Molecular Biology of the Cell, 27(16), 2590–2597. https://doi.org/10.1091/mbc.e16-04-0230
 
 Rokotyan, N., Stukova, O., Kolmakova D. & Ovsyannikov, D. (2022). Cosmograph: GPU-accelerated Force Graph Layout and Rendering [Computer software]. https://cosmograph.app/
-<!-- --- -->
-<!-- nocite: | -->
-<!--   @* -->
-<!-- ... -->
+
+Boldi, Paolo, and Sebastiano Vigna. “Axioms for centrality.” Internet Mathematics 10.3-4 (2014): 222-262.
+
+Falco Krüger, Karin Schumacher,Pumping up the volume - vacuole biogenesis in Arabidopsis thaliana,Seminars in Cell & Developmental Biology,Volume 80,2018,Pages 106-112,ISSN 1084-9521,https://doi.org/10.1016/j.semcdb.2017.07.008.
+
+Gao, X.-Q., Wang, X.-L., Ren, F., Chen, J., & Wang, X.-C. (2009). Dynamics of vacuoles and actin filaments in guard cells and their roles in stomatal movement. Plant, Cell & Environment, 32(8), 1108–1116. https://doi.org/10.1111/j.1365-3040.2009.01993.x
+

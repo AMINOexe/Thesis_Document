@@ -2,13 +2,4 @@
 
 `r if(!knitr:::is_latex_output()) '# Appendix {-}'`
 
-
-## Protein Tables {-}
-
-```{r, layout="l-body-outset"}
-library(knitr)
-AT_L0 = read.csv("/Users/adenobrien/Desktop/Thesis_Doc/figure/AT_L0.csv")
-kable(AT_L0)
-```
-### _S. Cerevisiae_ {-}
-### _A. Thaliana_ {-}
+All protein data and code can be found at https://github.com/AMINOexe/Thesis_Document 
