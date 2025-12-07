@@ -7,6 +7,9 @@
 
 
 ##  _S. cerevisiae_ Vacuole Fusion Components {.unnumbered}
+
+The following section describes proteins and protein complexes known to be involved in _S. cerevisiae_ homotypic vacuole fusion. These components are shown in figures 1,2, and 3 and discussed further in the 'fusion stages' section. For readers, it may be helpful to skip to the 'fusion stages' section and to use the vacuole fusion components section as a reference while reading. 
+
   * SNARE Complex
     * SNARE proteins have two separate classification systems based on functionality and structural features respectively. Functional classification splits SNAREs into two groups: v-SNAREs which are localized to the vesicle, and t-SNAREs which are localized to the target membrane. Likewise, structural classification also splits SNAREs into two groups: Q-SNAREs which contain the central amino acid residue glutamine, and R-SNAREs which contain the central amino acid residue arginine (Yoon & Munson, 2018 and Ungermann et al. 1998). While it is true that R-SNAREs are often also v-SNAREs and Q-SNAREs are often also t-SNAREs, this is not always the case (Hong, 2005). There are four distinct SNARE proteins present on the yeast vacuole membrane, three Q-SNAREs: Qa (Vam3), Qb (Vti1), Qc (Vam7), and one R-SNARE: R (Nyv1). In their inactive state, the four SNARE proteins form tightly bound bundles known as cis-SNARE complexes along the vacuole membrane (Zick & Wickner, 2016).
   * Vps1

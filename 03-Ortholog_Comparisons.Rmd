@@ -9,7 +9,7 @@
 cat("\\newpage")
 ```
 
-```{r, echo=FALSE, fig.cap="S. cerevisiase layers. Layer 0 represents the initial node set. layers 1 and 2 represent the neighbors collected in the the first and second hop. All Layers represents both the initial node set and all neighbors collected from each hop",out.width="100%"}
+```{r, echo=FALSE, fig.cap="S. cerevisiae layers. Layer 0 represents the initial node set. layers 1 and 2 represent the neighbors collected in the the first and second hop. All Layers represents both the initial node set and all neighbors collected from each hop",out.width="100%"}
 knitr::include_graphics("/Users/adenobrien/Desktop/Thesis_Doc/figure/SC_layer_fig.png")
 ```
 
@@ -34,7 +34,7 @@ cat("\\newpage")
 cat("\\newpage")
 ```
 
-```{r,echo=FALSE,fig.scrap="Layer 0 top 20 Network Importance", fig.cap="Each node in the graph represents a protein while each edge between two nodes represents a PPI between the nodes. The combined scores collumns represent the top 20 proteins in each layer 0 ranked by combined index score (see Network Importance Analysis in the Computational Methods Section). Each graph displays the entirety of each layer 0 with darker node color representing higher combined index score. Some edges between nodes may be obscured by overlapping neighboring nodes, however, if a node has any amount of coloring, it is connected by an edge to at least one other node",out.width="100%",out.height="70%"}
+```{r,echo=FALSE, fig.cap="Layer 0 top 20 Network Importance. Each node in the graph represents a protein while each edge between two nodes represents a PPI between the nodes. The combined scores collumns represent the top 20 proteins in each layer 0 ranked by combined index score (see Network Importance Analysis in the Computational Methods Section). Each graph displays the entirety of each layer 0 with darker node color representing higher combined index score. Some edges between nodes may be obscured by overlapping neighboring nodes, however, if a node has any amount of coloring, it is connected by an edge to at least one other node",out.width="100%",out.height="70%"}
 knitr::include_graphics("/Users/adenobrien/Desktop/Thesis_Doc/figure/L0_importance_updated_fig.png")
 ```
 

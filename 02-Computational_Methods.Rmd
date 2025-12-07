@@ -2,7 +2,11 @@
 
 ## Data Collection {.unnumbered}
 
-All protein-protein interaction data for both _A. thaliana_ and _S. cerevisiae_ were downloaded from the STRING database (https://string-db.org/). For each organism, two files were downloaded: protein-info and protein-links. The protein-info files contain the STRING ID of each protein, the proteins common name, the proteins size, and any annotations attached to the protein. The protein-links files contain protein-protein pairs representing individual protein interactions, a number of scoring parameters, and a combined score value which represents the certainty of the interaction. The _A. thaliana_ dataset consisted of 27,463 proteins and 12,557,495 protein-protein interactions while the _S. cerevisiae_ dataset contained 6601 proteins and 2,824,843 protein-protein interactions. When constructing a graph representation of the STRING data, each protein is represented by a node and each interaction between two proteins is represented by an edge which connects the two proteins (see Fig.4). 
+All protein-protein interaction data for both _A. thaliana_ and _S. cerevisiae_ were downloaded from the STRING database (https://string-db.org/). For each organism, two files were downloaded: protein-info and protein-links. The protein-info files contain the STRING ID of each protein, the proteins common name, the proteins size, and any annotations attached to the protein. The protein-links files contain protein-protein pairs representing individual protein interactions, a number of scoring parameters, and a combined score value which represents the certainty of the interaction. The _A. thaliana_ dataset consisted of 27,463 proteins and 12,557,495 protein-protein interactions while the _S. cerevisiae_ dataset contained 6601 proteins and 2,824,843 protein-protein interactions. When constructing a graph representation of the STRING data, each protein is represented by a node (represented by colored circles with black name tags in figure 4) and each interaction between two proteins is represented by an edge (represented by black lines connecting sets of nodes in figure 4) which connects the two proteins. 
+
+```{r, results='asis', echo=FALSE}
+cat("\\newpage")
+```
 
 ```{r,echo=FALSE,fig.cap="STRING DB Example Graph",out.width="60%", out.height = "30%"}
 knitr::include_graphics("/Users/adenobrien/Desktop/Thesis_Doc/figure/STRING_example.png",)
